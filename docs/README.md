@@ -27,6 +27,7 @@
 | [01 — Архитектурный план](./architecture/01-architecture.md) | Стек, слои, online/offline, deployment, границы систем |
 | [02 — Логический план](./architecture/02-logical.md) | Модель данных, движок Activity, модульная система, FSRS, sync и job-queue |
 | [03 — Функциональный план](./architecture/03-functional.md) | Модули (languages, ml), типы Activity, пользовательские сценарии, MVP и roadmap |
+| [04 — Фронтенд (FSD)](./architecture/04-frontend-fsd.md) | Feature-Sliced Design для клиента: слои, маппинг Praxis→FSD, размещение ядра |
 
 ---
 

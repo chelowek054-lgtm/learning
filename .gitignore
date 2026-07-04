@@ -1,41 +1,14 @@
-# Dependencies
-node_modules/
-.pnp
-.pnp.js
-
-# Builds
-dist/
-build/
-*.tsbuildinfo
+# Суперпроект Praxis. Код фронта/бэка игнорируется в своих сабмодулях (свои .gitignore).
 
 # Env / secrets
 .env
 .env.*
 !.env.example
 
-# Expo / RN
-.expo/
-.expo-shared/
-*.orig.*
-web-build/
-
-# Python / backend
-services/api/.venv/
-__pycache__/
-*.pyc
-.pytest_cache/
-.ruff_cache/
-
 # Editors / OS
-.vscode/*
-!.vscode/extensions.json
-.idea/
 .DS_Store
 Thumbs.db
+.idea/
 
 # Logs
 *.log
-npm-debug.log*
-
-# Test / coverage
-coverage/

@@ -110,29 +110,36 @@
 
 ---
 
-## 5. Структура репозитория (монорепо)
+## 5. Структура репозитория (суперпроект + сабмодули)
+
+Репозиторий — **git-суперпроект** с двумя сабмодулями (отдельные репозитории). `docs/` — в суперпроекте.
 
 ```
-/                         (текущий D:\work\learning)
-├── docs/                 ← этот раздел
-├── apps/
-│   └── mobile/           ← Expo (сейчас learningFront; переедет сюда)
-├── services/
-│   └── api/              ← FastAPI
-│       ├── core/         (sync, jobs, auth, ai_gateway)
-│       └── modules/
-│           ├── languages/  (рубрики, генераторы)
-│           └── ml/
-├── packages/
-│   ├── core-engine/      ← TS: Activity, FSRS, event log, sync-client, job-queue
-│   ├── module-languages/ ← TS: типы Activity, рендереры, локальные проверки
-│   ├── module-ml/
-│   └── ui-kit/           ← общие UI-компоненты
+/                         (D:\work\learning — суперпроект)
+├── docs/                 ← этот раздел (источник правды)
+├── learningFront/        ← САБМОДУЛЬ: клиент (Expo/RN), архитектура FSD
+│   └── src/
+│       ├── app/          FSD app-слой + expo-router роуты + composition root
+│       ├── pages/        экраны
+│       ├── widgets/      ActivityDispatcher, TodayQueue
+│       ├── features/     по типам Activity (vocab-review, ielts-writing, …)
+│       ├── entities/     activity, srs-card, response, module
+│       └── shared/
+│           ├── engine/   ← доменно-независимое ядро (Activity, реестр, FSRS, порты)
+│           ├── ui/       ui-kit
+│           ├── api/      http-клиент, sync-адаптер, SQLite LocalStore
+│           ├── config/   env, константы
+│           └── lib/      утилиты
+└── learningBack/         ← САБМОДУЛЬ: backend (FastAPI, Python, uv)
+    ├── core/             sync, jobs, auth, ai_gateway
+    └── modules/
+        ├── languages/    рубрики, генераторы
+        └── ml/
 ```
 
-> **Примечание о миграции:** текущий scaffold в `learningFront/` будет перенесён в `apps/mobile/`. До миграции разработка может идти в `learningFront/`, но целевая структура — выше.
+Фронтенд организован по **Feature-Sliced Design** — детали и маппинг Praxis→FSD в [04 — Фронтенд (FSD)](./04-frontend-fsd.md). Ядро (ex «core-engine») живёт в `src/shared/engine`.
 
-Инструмент монорепо: **npm workspaces**. Backend — отдельное Python-окружение на **uv**, не входит в npm-workspace, связан только по HTTP-контракту.
+Backend — отдельное Python-окружение на **uv**, связан с клиентом только по HTTP-контракту. Инструменты фронта — обычный **npm** (без workspaces: единое приложение, общий код — FSD-слои, а не пакеты).
 
 ---
 
