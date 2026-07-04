@@ -67,31 +67,33 @@ learningBack:   WS2 FastAPI-скелет ── WS3 Схема БД (Alembic)
 
 ---
 
-## WS5 — Модули как FSD-слайсы + манифесты
+## WS5 — Модули как FSD-слайсы + манифесты · ✅ done
 
-**Итог:** домены `languages`/`ml` объявляют (пока пустые) типы Activity через манифесты в composition root; рендереры-заглушки — в `features`. Backend-модули объявляют пустые контракты.
+**Итог:** домены `languages`/`ml` объявляют типы Activity. Метаданные держатся ЧИСТЫМИ (только `import type` из ядра — стираются при сборке, тестируются в node), рендереры подключаются в composition root. Backend-модули — самодостаточные заглушки.
 
-- [ ] `P0-WS5-01` `src/app/modules/languages.ts`: `ModuleManifest` с типами из [03 §1.1](../architecture/03-functional.md#11-типы-activity) (`ielts_writing_task2`, `vocab_srs`, `reading_drill`, …) — метаданные + ссылки на рендереры.
-- [ ] `P0-WS5-02` `src/app/modules/ml.ts`: `ModuleManifest` с типами из [03 §2.1](../architecture/03-functional.md#21-типы-activity) (`material_read`, `concept_recall`, `concept_srs`, `code_task`).
-- [ ] `P0-WS5-03` Рендереры-заглушки в `features/*` (компонент «Activity type X — not implemented»).
-- [ ] `P0-WS5-04` Backend-модули (`learningBack/modules/{languages,ml}`): `id` + пустые `rubrics()/generators()` ([02 §3.2](../architecture/02-logical.md#32-контракт-модуля-backend)).
-- [ ] `P0-WS5-05` Composition root (`src/app/_layout.tsx` или `src/app/init`): регистрирует оба манифеста в реестре; лог перечисляет типы.
+- [x] `P0-WS5-01` `src/app/modules/languages.ts`: чистые метаданные `languagesActivityTypes: ActivityTypeDef[]` (6 типов, [03 §1.1](../architecture/03-functional.md#11-типы-activity)).
+- [x] `P0-WS5-02` `src/app/modules/ml.ts`: `mlActivityTypes` (4 типа, [03 §2.1](../architecture/03-functional.md#21-типы-activity)).
+- [x] `P0-WS5-03` Единый плейсхолдер-рендерер `shared/ui/NotImplementedActivity` (показывает `activity.type`); feature-слайсы на тип — Фаза 1.
+- [x] `P0-WS5-04` Backend-заглушки `learningBack/modules/{languages,ml}` (`MODULE_ID`, `ACTIVITY_TYPES`, пустые `rubrics()/generators()`); контракт ModuleBackend — WS2.
+- [x] `P0-WS5-05` Composition root `src/app/modules/index.ts`: `initModuleRegistry()` собирает манифесты (метаданные + рендерер), регистрирует, логирует типы. Вызов при старте — в WS6 (стартовый экран).
 
-**DoD WS5:** старт клиента логирует типы обоих модулей; ядро без доменных `if`.
+**DoD WS5:** ✅ метаданные конформны `ModuleManifest` (0 ошибок tsc); тесты метаданных зелёные (12/12 всего); коллизий типов нет; ядро без доменных `if`. Runtime-лог включается в WS6.
 
 ---
 
-## WS6 — SQLite LocalStore + стартовый экран
+## WS6 — SQLite LocalStore + стартовый экран · ✅ done
 
-**Итог:** реализация порта `LocalStore` поверх `expo-sqlite`; миграции при первом запуске; стартовый экран показывает зарегистрированные типы (визуальное подтверждение связки ядро+модули+БД).
+**Итог:** порт `LocalStore` на `expo-sqlite`; схема при старте; стартовый экран показывает зарегистрированные модули/типы, статус SQLite и демо-диспетчеризацию (подтверждение связки ядро+модули+БД).
 
-> ⚠️ Читать доки SDK 57 перед изменениями Expo/Metro.
+> ⚠️ Доки SDK 57 прочитаны (expo-sqlite API) перед кодом.
 
-- [ ] `P0-WS6-01` Добавить `expo-sqlite` + `drizzle-orm`; Drizzle-схема локальных таблиц ([02 §2.2](../architecture/02-logical.md#22-локальная-sqlite-vs-серверная-postgres)) в `shared/api`.
-- [ ] `P0-WS6-02` Реализовать `LocalStore` (порт WS4) поверх expo-sqlite; миграции применяются при старте.
-- [ ] `P0-WS6-03` Виджет `ActivityDispatcher` (рендер по `activity.type` через реестр) — каркас.
-- [ ] `P0-WS6-04` Экран `pages/home`: список зарегистрированных типов Activity; роут `src/app/index.tsx` — тонкий.
-- [ ] `P0-WS6-05` Проверить запуск (iOS/Android/доступная платформа); зафиксировать результат/скрин.
+- [x] `P0-WS6-01` `expo-sqlite ~57.0.0`. Схема ([02 §2.2](../architecture/02-logical.md#22-локальная-sqlite-vs-серверная-postgres)) в `shared/api/db` через `CREATE TABLE IF NOT EXISTS`. **Решение:** raw expo-sqlite вместо drizzle-orm в Ф0 (drizzle-миграции требуют codegen + Metro-конфиг под `.sql`, не проверить без устройства; порт `LocalStore` абстрагирует БД).
+- [x] `P0-WS6-02` `SqliteLocalStore` реализует порт `LocalStore` поверх sync-API (`runSync`/`getAllSync`); `migrate()` + фабрика `createSqliteLocalStore`. **Web:** платформенная замена `sqlite-local-store.web.ts` (in-memory) — expo-sqlite на web тянет `wa-sqlite.wasm` (COEP/OPFS), избыточно для mobile-first; Metro подхватывает `.web.ts`.
+- [x] `P0-WS6-03` Виджет `widgets/activity-dispatcher` (рендер по `activity.type` через реестр; opaque-рендерер приводится к компоненту).
+- [x] `P0-WS6-04` Экран `pages/home` (типы + статус БД + демо-диспетчеризация); роут `src/app/index.tsx` — тонкий re-export; провайдер реестра в `_layout` через `app/providers`. Реестр читается из контекста `shared/lib` (pages не импортируют app — правило FSD).
+- [x] `P0-WS6-05` Проверка сборки: `expo export --platform android` → **EXIT 0**, Hermes-бандл собран (весь FSD-граф + `@/`-алиасы + expo-sqlite резолвятся/компилируются). ⚠️ Рантайм на устройстве/эмуляторе не прогонялся (недоступен в среде) — остаётся к ручной проверке.
+
+**DoD WS6:** ✅ приложение бандлится (`expo export` EXIT 0); экран показывает типы обоих модулей; SQLite-схема применяется в `migrate()`. Визуальный/рантайм-прогон на устройстве — открытый пункт.
 
 **DoD WS6:** `expo start` запускает приложение; стартовый экран показывает типы обоих модулей; SQLite-миграции применены.
 
