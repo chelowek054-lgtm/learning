@@ -1,0 +1,3 @@
+[submodule "learningFront"]
+	path = learningFront
+	url = git@github.com:chelowek054-lgtm/learningFront.git

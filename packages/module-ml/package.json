@@ -1,0 +1,18 @@
+{
+  "name": "@praxis/module-ml",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Модуль Praxis: программирование/ML. Манифест, типы Activity, рендереры, локальные проверки.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@praxis/core-engine": "*"
+  }
+}
