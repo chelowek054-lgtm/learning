@@ -30,10 +30,21 @@ git submodule update --init --recursive
 
 ## Запуск
 
+**Весь стенд (Postgres + API) через docker-compose из корня** — оркестрация всех сервисов живёт здесь (масштабируется на будущие микросервисы/внешние сервисы). Данные контейнеров — в `./.data` (вне git).
+
 ```bash
-# Клиент
+cp .env.example .env          # параметры стенда (креды/порты)
+docker compose up --build     # Postgres + миграции + API → http://localhost:8000/docs
+```
+
+Отдельные сервисы для разработки:
+
+```bash
+# Клиент (Expo)
 cd learningFront && npm install && npx expo start
 
-# Backend (появляется в WS2)
+# Только backend локально (Postgres можно поднять из корня: docker compose up -d postgres)
 cd learningBack && uv sync && uv run uvicorn core.app:app --reload
 ```
+
+> **DevOps-раскладка:** `docker-compose.yml`, `.env.example`, `./.data` — в корне (оркестрация). `Dockerfile` каждого сервиса — в его сабмодуле (build-рецепт). Так добавление нового сервиса = новый блок в корневом compose + свой Dockerfile в его репозитории.

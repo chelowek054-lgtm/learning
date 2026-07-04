@@ -116,14 +116,17 @@
 
 ```
 /                         (D:\work\learning — суперпроект)
+├── docker-compose.yml    ← ОРКЕСТРАЦИЯ всех сервисов (backend + будущие микросервисы/внешние)
+├── .env.example          ← параметры стенда (креды/порты)
+├── .data/                ← данные контейнеров (bind-mount, вне git)
 ├── docs/                 ← этот раздел (источник правды)
 ├── learningFront/        ← САБМОДУЛЬ: клиент (Expo/RN), архитектура FSD
 │   └── src/
-│       ├── app/          FSD app-слой + expo-router роуты + composition root
+│       ├── app/          expo-router роуты + composition root (только роуты!)
 │       ├── pages/        экраны
 │       ├── widgets/      ActivityDispatcher, TodayQueue
 │       ├── features/     по типам Activity (vocab-review, ielts-writing, …)
-│       ├── entities/     activity, srs-card, response, module
+│       ├── entities/     activity, srs-card, response, module (метаданные+сборка)
 │       └── shared/
 │           ├── engine/   ← доменно-независимое ядро (Activity, реестр, FSRS, порты)
 │           ├── ui/       ui-kit
@@ -131,7 +134,9 @@
 │           ├── config/   env, константы
 │           └── lib/      утилиты
 └── learningBack/         ← САБМОДУЛЬ: backend (FastAPI, Python, uv)
-    ├── core/             sync, jobs, auth, ai_gateway
+    ├── Dockerfile        build-рецепт сервиса (у сервиса, не в корне)
+    ├── core/             app, config, db, models, routers, ai_gateway
+    ├── migrations/       Alembic
     └── modules/
         ├── languages/    рубрики, генераторы
         └── ml/
@@ -140,6 +145,8 @@
 Фронтенд организован по **Feature-Sliced Design** — детали и маппинг Praxis→FSD в [04 — Фронтенд (FSD)](./04-frontend-fsd.md). Ядро (ex «core-engine») живёт в `src/shared/engine`.
 
 Backend — отдельное Python-окружение на **uv**, связан с клиентом только по HTTP-контракту. Инструменты фронта — обычный **npm** (без workspaces: единое приложение, общий код — FSD-слои, а не пакеты).
+
+**DevOps-раскладка (важно для масштабирования):** оркестрация (`docker-compose.yml`, `.env`, том `./.data`) — в **корне суперпроекта**, потому что связывает несколько сервисов. `Dockerfile` каждого сервиса лежит **в его репозитории** (сабмодуле). Добавление микросервиса/внешнего сервиса = новый блок в корневом compose + свой `Dockerfile` (или готовый image). Так orchestration-слой не заперт внутри одного сабмодуля.
 
 ---
 

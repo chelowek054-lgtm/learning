@@ -1,0 +1,37 @@
+# Оркестрация Praxis (суперпроект). Здесь собираются ВСЕ сервисы —
+# backend и будущие микросервисы/внешние сервисы (Redis, S3, worker'ы и т.п.).
+# Dockerfile каждого сервиса лежит в его репозитории (сабмодуле); здесь — только сборка+связь.
+# Данные контейнеров персистятся в ./.data (bind-mount, вне git).
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-praxis}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-praxis}
+      POSTGRES_DB: ${POSTGRES_DB:-praxis}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - ./.data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-praxis} -d ${POSTGRES_DB:-praxis}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: ./learningBack
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-praxis}:${POSTGRES_PASSWORD:-praxis}@postgres:5432/${POSTGRES_DB:-praxis}
+    ports:
+      - "${API_PORT:-8000}:8000"
+    # Применяем миграции, затем поднимаем сервер.
+    command: >
+      sh -c "uv run --no-dev alembic upgrade head &&
+             uv run --no-dev uvicorn core.app:app --host 0.0.0.0 --port 8000"

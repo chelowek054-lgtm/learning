@@ -99,32 +99,32 @@ learningBack:   WS2 FastAPI-скелет ── WS3 Схема БД (Alembic)
 
 ---
 
-## WS2 — Backend-скелет (FastAPI) · learningBack
+## WS2 — Backend-скелет (FastAPI) · learningBack · ✅ done
 
 **Итог:** запускаемый FastAPI с health, структурой `core/` + `modules/`, конфигом окружения. Без бизнес-логики и вызовов LLM.
 
-- [ ] `P0-WS2-01` `learningBack` — Python-проект на **uv**, Python 3.12+: `fastapi`, `uvicorn`, `pydantic-settings`, `sqlalchemy`, `alembic`, `psycopg`.
-- [ ] `P0-WS2-02` Структура: `core/` (`app.py`, `config.py`, `db.py`, роутеры-заглушки `sync`/`jobs`/`content`/`auth`) и `modules/{languages,ml}/`.
-- [ ] `P0-WS2-03` `GET /health` → `{status: ok, version}`; OpenAPI на `/docs`.
-- [ ] `P0-WS2-04` Конфиг через `pydantic-settings` из `.env` (DATABASE_URL, later CLAUDE_API_KEY). Ключи — только из окружения. `.env.example` в `learningBack`.
-- [ ] `P0-WS2-05` Заготовка `ai_gateway/` (интерфейс, без вызова) — контракт [02 §6](../architecture/02-logical.md#6-ai-gateway-backend).
-- [ ] `P0-WS2-06` `Dockerfile` + `docker-compose.yml` (api + postgres) для локального запуска.
+- [x] `P0-WS2-01` `learningBack` — проект на **uv** (Python 3.12): `fastapi`, `uvicorn[standard]`, `pydantic-settings`, `sqlalchemy`, `alembic`, `psycopg[binary]`; `uv.lock` зафиксирован.
+- [x] `P0-WS2-02` Структура: `core/` (`app.py`, `config.py`, `db.py`, `models.py`, роутеры-заглушки `sync`/`jobs`/`content`/`auth`, `ai_gateway/`) и `modules/{languages,ml}/`.
+- [x] `P0-WS2-03` `GET /health` → `{status, version, env}` = ok; OpenAPI/`/docs` (пути: `/health`, `/sync`, `/jobs`, `/content`, `/auth`).
+- [x] `P0-WS2-04` Конфиг `pydantic-settings` из `.env` (DATABASE_URL, CLAUDE_API_KEY); ключи только из окружения; `.env.example`.
+- [x] `P0-WS2-05` `ai_gateway/` — Protocol `AIGateway` (`grade`/`generate`), без реализации ([02 §6](../architecture/02-logical.md#6-ai-gateway-backend)).
+- [x] `P0-WS2-06` `Dockerfile` (uv) — в `learningBack`; **оркестрация в корне суперпроекта**: `docker-compose.yml` (postgres + api, build-context `./learningBack`), `.env.example`, данные в корневом `./.data`. `docker compose config` из корня — валиден.
 
-**DoD WS2:** `docker compose up` (или uvicorn) поднимает API; `GET /health` = ok; `/docs` открывается.
+**DoD WS2:** ✅ **live-прогон:** `docker compose up` поднимает postgres (healthy) + api; `GET /health` = `{status: ok}`; роутеры зарегистрированы (OpenAPI); ruff чист.
 
 ---
 
-## WS3 — Схема БД (Postgres + Alembic) · learningBack
+## WS3 — Схема БД (Postgres + Alembic) · learningBack · ✅ done
 
 **Итог:** все таблицы из логического плана созданы миграцией.
 
-- [ ] `P0-WS3-01` Alembic в `learningBack`; подключение к Postgres из конфига.
-- [ ] `P0-WS3-02` SQLAlchemy-модели по [02 §2.1](../architecture/02-logical.md#21-основные-таблицы): `user`, `activity`, `response`, `srs_card`, `job`, `material`, `rubric`.
-- [ ] `P0-WS3-03` Индексы: `srs_card(user_id, due_at)`, `response(user_id, synced)`, `job(user_id, status)`, `activity(user_id, module, type)`.
-- [ ] `P0-WS3-04` Миграция `0001_init`; применить к локальной БД.
-- [ ] `P0-WS3-05` Seed-заглушка: один `user`, по одной пустой `rubric`-строке на модуль (FK).
+- [x] `P0-WS3-01` Alembic (`alembic.ini`, `migrations/env.py`); URL из `settings.database_url`; поддержка offline-режима.
+- [x] `P0-WS3-02` SQLAlchemy-модели ([02 §2.1](../architecture/02-logical.md#21-основные-таблицы)): `user`, `activity`, `response`, `srs_card`, `job`, `material`, `rubric`.
+- [x] `P0-WS3-03` Индексы: `srs_card(user_id, due_at)`, `response(user_id, synced)`, `job(user_id, status)`, `activity(user_id, module, type)`.
+- [x] `P0-WS3-04` Миграция `0001_init` (все 7 таблиц + 4 индекса).
+- [x] `P0-WS3-05` Seed-заглушка `scripts/seed.py`: один `user`, по одной пустой `rubric` на модуль.
 
-**DoD WS3:** `alembic upgrade head` создаёт все таблицы по [02 §2.1](../architecture/02-logical.md#21-основные-таблицы).
+**DoD WS3:** ✅ **live-прогон:** `alembic upgrade head` в контейнере создал все 7 таблиц + 4 индекса (`alembic_version = 0001_init`); seed записал `user` + 2 рубрики через ORM (FK/запись работают).
 
 ---
 

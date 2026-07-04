@@ -5,6 +5,10 @@
 .env.*
 !.env.example
 
+# Данные контейнеров (Postgres и др.) — общий том оркестрации, вне git.
+.data/*
+!.data/README.md
+
 # Editors / OS
 .DS_Store
 Thumbs.db
