@@ -29,6 +29,11 @@ services:
     environment:
       APP_ENV: ${APP_ENV:-development}
       DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-praxis}:${POSTGRES_PASSWORD:-praxis}@postgres:5432/${POSTGRES_DB:-praxis}
+      # Ключи LLM — только через окружение, никогда в образ (инвариант №2).
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL_GENERATION: ${OPENROUTER_MODEL_GENERATION:-google/gemini-3.7-flash}
+      OPENROUTER_MODEL_SCORING: ${OPENROUTER_MODEL_SCORING:-google/gemini-3.7-flash}
+      CLAUDE_API_KEY: ${CLAUDE_API_KEY:-}
     ports:
       - "${API_PORT:-8000}:8000"
     # Применяем миграции, затем поднимаем сервер.
