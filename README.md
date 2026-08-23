@@ -57,8 +57,17 @@ docker compose up --build     # Postgres + миграции + API + pgAdmin
 | API (Swagger) | http://localhost:8000/docs | |
 | Postgres | `localhost:5432` | креды из `.env` |
 | pgAdmin | http://localhost:5050 | без логина; подключение «Praxis (docker)» уже прописано, пароль спросит при первом коннекте |
+| Админка | http://localhost:8000/admin | вход только для администратора — завести его нужно самому (см. ниже) |
 
 pgAdmin — dev-инструмент, приложение с ним не связано. Поднять стенд без него: `docker compose up postgres api`.
+
+**Администратор** заводится из CLI, как `manage.py createsuperuser` в Django:
+
+```bash
+docker compose exec api uv run python -m scripts.createsuperuser
+```
+
+Спросит email и пароль. Существующий пользователь при этом повышается до администратора. Без интерактива — `--noinput --email … --password …` (или `PRAXIS_SUPERUSER_EMAIL`/`PRAXIS_SUPERUSER_PASSWORD`).
 
 Отдельные сервисы для разработки:
 

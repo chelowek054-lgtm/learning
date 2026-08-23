@@ -46,6 +46,7 @@ interface Activity {
 user (
   id            uuid pk,
   email         text,
+  is_superuser  bool,           -- доступ в /admin и курирование канона
   created_at    timestamptz,
   profile       jsonb           -- цели, целевой балл TOEFL/IELTS, уровень
 )
