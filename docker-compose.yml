@@ -35,3 +35,31 @@ services:
     command: >
       sh -c "uv run --no-dev alembic upgrade head &&
              uv run --no-dev uvicorn core.app:app --host 0.0.0.0 --port 8000"
+
+  # pgAdmin — веб-UI к Postgres стенда. Dev-инструмент, а не часть продукта:
+  # приложение с ним не связано, выключение ничего не ломает.
+  # http://localhost:5050 — подключение «Praxis (docker)» уже прописано,
+  # пароль спросит при первом коннекте (по умолчанию POSTGRES_PASSWORD).
+  pgadmin:
+    image: dpage/pgadmin4:9
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@praxis.dev}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-praxis}
+      # Однопользовательский режим: без экрана логина и мастер-пароля на каждый заход.
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    volumes:
+      # Named volume, а не ./.data (как у postgres): контейнер работает под uid 5050
+      # и на bind-mount спотыкается о права — «Failed to create the directory
+      # /var/lib/pgadmin/sessions». Здесь лежат только настройки UI, не данные проекта.
+      - pgadmin-data:/var/lib/pgadmin
+      # Преднастроенное подключение; читается один раз при инициализации pgAdmin.
+      - ./pgadmin/servers.json:/pgadmin4/servers.json:ro
+
+volumes:
+  pgadmin-data:

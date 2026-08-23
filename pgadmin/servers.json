@@ -1,0 +1,14 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Praxis (docker)",
+      "Group": "Praxis",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "praxis",
+      "Username": "praxis",
+      "SSLMode": "prefer",
+      "Comment": "Postgres стенда docker-compose. Значения совпадают с дефолтами .env.example (POSTGRES_DB / POSTGRES_USER) — если поменяли их в .env, поправьте и здесь."
+    }
+  }
+}

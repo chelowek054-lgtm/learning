@@ -49,8 +49,16 @@ git submodule update --init --recursive
 
 ```bash
 cp .env.example .env          # параметры стенда (креды/порты)
-docker compose up --build     # Postgres + миграции + API → http://localhost:8000/docs
+docker compose up --build     # Postgres + миграции + API + pgAdmin
 ```
+
+| Сервис | Адрес | Примечание |
+|---|---|---|
+| API (Swagger) | http://localhost:8000/docs | |
+| Postgres | `localhost:5432` | креды из `.env` |
+| pgAdmin | http://localhost:5050 | без логина; подключение «Praxis (docker)» уже прописано, пароль спросит при первом коннекте |
+
+pgAdmin — dev-инструмент, приложение с ним не связано. Поднять стенд без него: `docker compose up postgres api`.
 
 Отдельные сервисы для разработки:
 
