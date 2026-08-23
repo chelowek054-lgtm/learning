@@ -199,8 +199,8 @@ course (
 ## 9. Как ложится на существующую архитектуру
 
 - **Ядро (`shared/engine`)** — без изменений и без доменного кода; граф — данные модуля.
-- **Новые роли AI-gateway** (тот же интерфейс, `MockAIGateway` расширяется):
-  `build_graph(topic)` (с пометкой ядра) · `expand_node(concept, direction)` · `generate_assessment(content, bloom, kind)` · `estimate_mastery(probe, answer)` · `generate_course(gap)`.
+- **Backend: слой живёт в пакете `learningBack/modules/knowledge/`** — свои ORM-модели, схемы, COW-чтение (`cow.py`), centrality (`centrality.py`), AI-роли (`ai.py`) и роутер. `core/` подключает только роутер и про граф не знает; зависимость односторонняя (`knowledge → core`). Таблицы делят общую `core.db.Base` — миграционная линия одна.
+- **AI-роли слоя** — `build_graph(topic)` (с пометкой ядра) · `expand_node(concept, direction)` · `generate_assessment(content, bloom, kind)` · `estimate_mastery(probe, answer)` · `generate_course(gap)`. Живут в `modules/knowledge/ai.py` вместе со своей JSON-схемой и промптами; ядро даёт лишь доменно-нейтральный `AIGateway.structured(tool, schema, prompt)`. Детерминированные фикстуры «без ключа» — тоже в модуле.
 - **Новые типы Activity:** `placement_probe`, `concept_study` (+ переиспользуем `concept_recall`, `code_task`, `srs`).
 - **FSRS** — без изменений; держит удержание атомов внутри узлов.
 - **Клиент (FSD):** `features/graph-editor` + `entities/concept`, экраны плейсмента и курса (`pages/*`).
