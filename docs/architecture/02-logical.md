@@ -50,6 +50,18 @@ user (
   profile       jsonb           -- цели, целевой балл TOEFL/IELTS, уровень
 )
 
+-- Временный код восстановления пароля (8 цифр, одноразовый, с TTL из конфига).
+-- Доставка (почта/SMS) — Фаза 4; пока код читается из БД.
+password_reset_code (
+  id            uuid pk,
+  user_id       uuid fk,
+  code          varchar(8),     -- строкой: ведущие нули значимы
+  expires_at    timestamptz,    -- now() + password_reset_code_ttl_minutes
+  used_at       timestamptz null,
+  attempts      int,            -- счётчик неверных попыток, лимит в конфиге
+  created_at    timestamptz
+)
+
 -- Единица взаимодействия
 activity (
   id            uuid pk,
