@@ -114,49 +114,49 @@ EXPERIENCE
 
 ---
 
-## WS5 — Writing: `ielts_writing_task2` (главная гипотеза)
+## WS5 — Writing: `ielts_writing_task2` (главная гипотеза) · ✅ done (typecheck+bundle)
 
 **Клиент (feature-слайс `features/ielts-writing`):**
-- [ ] `P1-WS5-01` Рендерер: редактор эссе (промпт задания + ввод + счётчик слов).
-- [ ] `P1-WS5-02` **Офлайн-fallback** локальный грейдер (`LocalGrader`): объём, структура абзацев, покрытие AWL → мгновенный черновой сигнал.
-- [ ] `P1-WS5-03` Submit → `appendResponse` + `enqueueJob(grade_writing)` (работает офлайн).
-- [ ] `P1-WS5-04` Экран разбора: 4 критерия band, список ошибок, образец; обновление из pull (`response.grade`).
-- [ ] `P1-WS5-05` Error-log: `grade.errors` → карточки `vocab_srs` (генерация на backend + pull).
+- [x] `P1-WS5-01` Рендерер: редактор эссе (промпт задания + ввод + счётчик слов).
+- [x] `P1-WS5-02` **Офлайн-fallback** локальный грейдер (`LocalGrader`): объём, структура абзацев, покрытие AWL → мгновенный черновой сигнал.
+- [x] `P1-WS5-03` Submit → `appendResponse` + `enqueueJob(grade_writing)` (работает офлайн).
+- [x] `P1-WS5-04` Экран разбора: 4 критерия band, список ошибок, образец; обновление из pull (`response.grade`).
+- [x] `P1-WS5-05` Error-log: `grade.errors` → карточки `vocab_srs` (генерация на backend + pull).
 
 **DoD WS5:** эссе офлайн → черновой сигнал → sync → AI-скоринг по рубрике → ошибки стали карточками.
 
 ---
 
-## WS6 — Vocab SRS: `vocab_srs`
+## WS6 — Vocab SRS: `vocab_srs` · ✅ done (typecheck+bundle)
 
 **Клиент (feature-слайс `features/vocab-review`):**
-- [ ] `P1-WS6-01` Рендерер карточки: front/back, кнопки отзыва (again/hard/good/easy).
-- [ ] `P1-WS6-02` Планировщик: отзыв → `Scheduler.review` → обновление `fsrs_state`+`due_at` в `LocalStore`; `appendResponse`.
-- [ ] `P1-WS6-03` Очередь «на сегодня» из `LocalStore.listDueSrsCards`.
-- [ ] `P1-WS6-04` Колода питается из error-log (WS5) + стартовый AWL (WS4).
+- [x] `P1-WS6-01` Рендерер карточки: front/back, кнопки отзыва (again/hard/good/easy).
+- [x] `P1-WS6-02` Планировщик: отзыв → `Scheduler.review` → обновление `fsrs_state`+`due_at` в `LocalStore`; `appendResponse`.
+- [x] `P1-WS6-03` Очередь «на сегодня» из `LocalStore.listDueSrsCards`.
+- [x] `P1-WS6-04` Колода питается из error-log (WS5) + стартовый AWL (WS4).
 
 **DoD WS6:** due-карточки повторяются, интервалы обновляются офлайн, карточки из ошибок появляются в колоде.
 
 ---
 
-## WS7 — ML-трек: `material_read` + `concept_recall`
+## WS7 — ML-трек: `material_read` + `concept_recall` · ✅ done (typecheck+bundle)
 
 **Клиент (feature-слайсы `features/material-read`, `features/concept-recall`):**
-- [ ] `P1-WS7-01` `material-read`: чтение закэшированного `material`.
-- [ ] `P1-WS7-02` `concept-recall`: вопрос → открытый ответ → `enqueueJob(grade_concept)`.
-- [ ] `P1-WS7-03` Разбор AI-проверки (верно/частично + объяснение); ошибки → `concept_srs`.
+- [x] `P1-WS7-01` `material-read`: чтение закэшированного `material`.
+- [x] `P1-WS7-02` `concept-recall`: вопрос → открытый ответ → `enqueueJob(grade_concept)`.
+- [x] `P1-WS7-03` Разбор AI-проверки (верно/частично + объяснение); ошибки → `concept_srs`.
 
 **DoD WS7:** материал прочитан → вопрос на понимание → AI-фидбек → слабые концепты в SRS. Доказывает: тот же движок тянет ML.
 
 ---
 
-## WS8 — Онбординг + Home + навигация
+## WS8 — Онбординг + Home + навигация · ✅ done (typecheck+bundle)
 
 **Клиент:**
-- [ ] `P1-WS8-01` Онбординг: выбор целей (IELTS/TOEFL target band, ML-темы) → профиль (клиент + backend `user.profile`).
-- [ ] `P1-WS8-02` Home = «на сегодня»: due-SRS + активности, через `ActivityDispatcher` (виджет `TodayQueue`).
-- [ ] `P1-WS8-03` Навигация (табы Home/Review/Learn/Profile); интеграция route-guard из WS1.
-- [ ] `P1-WS8-04` Простой адаптивный план: слабейший критерий из `response`-лога → предложить фокус (правило, не ML).
+- [x] `P1-WS8-01` Онбординг: выбор целей (IELTS/TOEFL target band, ML-темы) → профиль (клиент + backend `user.profile`).
+- [x] `P1-WS8-02` Home = «на сегодня»: due-SRS + активности, через `ActivityDispatcher` (виджет `TodayQueue`).
+- [x] `P1-WS8-03` Навигация (табы Home/Review/Learn/Profile); интеграция route-guard из WS1.
+- [x] `P1-WS8-04` Простой адаптивный план: слабейший критерий из `response`-лога → предложить фокус (правило, не ML).
 
 **DoD WS8:** онбординг задаёт цели; Home показывает работу на сегодня; приложение проходимо end-to-end.
 

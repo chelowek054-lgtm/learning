@@ -7,7 +7,7 @@
 **Контекст репозитория:**
 - Корень `D:\work\learning` — **git-суперпроект** с сабмодулями `learningFront` (клиент) и `learningBack` (backend), каждый — отдельный репозиторий. `docs/` — в суперпроекте.
 - Клиент организован по **Feature-Sliced Design** — см. [04 — Фронтенд (FSD)](../architecture/04-frontend-fsd.md). Ядро — в `src/shared/engine`.
-- Стек: Expo SDK 57 / RN 0.86 / React 19.2 / TS 6 (клиент); FastAPI + uv (backend). ⚠️ Перед кодом под Expo читать доки SDK 57 (`AGENTS.md`: https://docs.expo.dev/versions/v57.0.0/).
+- Стек: Expo **SDK 54** / RN 0.81 / React 19.1 / TS 5.9 (клиент; понижен с 57 ради совместимости с публичным Expo Go, который на устройстве поддерживает SDK 54); FastAPI + uv (backend). ⚠️ Перед кодом под Expo читать доки SDK 54 (`AGENTS.md`: https://docs.expo.dev/versions/v54.0.0/).
 - Инструменты фронта — обычный **npm** (без workspaces).
 
 ---

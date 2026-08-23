@@ -28,6 +28,7 @@
 | [02 — Логический план](./architecture/02-logical.md) | Модель данных, движок Activity, модульная система, FSRS, sync и job-queue |
 | [03 — Функциональный план](./architecture/03-functional.md) | Модули (languages, ml), типы Activity, пользовательские сценарии, MVP и roadmap |
 | [04 — Фронтенд (FSD)](./architecture/04-frontend-fsd.md) | Feature-Sliced Design для клиента: слои, маппинг Praxis→FSD, размещение ядра |
+| [05 — Модель знаний](./architecture/05-knowledge-model.md) | Граф концепций (канон + персонал, COW), узел-контент, генерация оценок, плейсмент, курсы |
 
 ---
 

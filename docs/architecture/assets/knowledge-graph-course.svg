@@ -1,0 +1,40 @@
+<svg viewBox="0 0 780 470" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif" role="img">
+  <title>Модель знаний: целевой уровень → адаптивный тест → курс по графу до цели</title>
+  <desc>Граф концепций с prerequisite-связями; освоенные узлы, курс к цели и целевой узел.</desc>
+  <rect x="0" y="0" width="780" height="470" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <defs>
+    <marker id="kc-ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker>
+  </defs>
+  <g font-size="12.5" text-anchor="middle">
+    <rect x="40" y="20" width="200" height="46" rx="10" fill="#f8fafc" stroke="#94a3b8"/>
+    <text x="140" y="40" fill="#1f2937" font-weight="700">① Целевой уровень</text>
+    <text x="140" y="56" fill="#64748b" font-size="10.5">что хочу уметь (Bloom/band)</text>
+    <rect x="290" y="20" width="200" height="46" rx="10" fill="#f8fafc" stroke="#94a3b8"/>
+    <text x="390" y="40" fill="#1f2937" font-weight="700">② Адаптивный тест</text>
+    <text x="390" y="56" fill="#64748b" font-size="10.5">где граница знаний</text>
+    <rect x="540" y="20" width="200" height="46" rx="10" fill="#eff6ff" stroke="#2563eb"/>
+    <text x="640" y="40" fill="#1f2937" font-weight="700">③ Курс по графу</text>
+    <text x="640" y="56" fill="#64748b" font-size="10.5">путь до цели</text>
+    <path d="M242,43 L286,43" stroke="#94a3b8" fill="none" marker-end="url(#kc-ar)"/>
+    <path d="M492,43 L536,43" stroke="#94a3b8" fill="none" marker-end="url(#kc-ar)"/>
+  </g>
+  <text x="24" y="110" fill="#64748b" font-size="11" font-weight="600">Граф концепций темы (пример: путь к «Трансформерам»)</text>
+  <g stroke="#94a3b8" fill="none" marker-end="url(#kc-ar)">
+    <path d="M190,232 L216,232"/><path d="M340,232 L366,162"/><path d="M340,232 L366,302"/>
+    <path d="M490,162 L516,162"/><path d="M490,302 L516,182"/><path d="M640,162 L666,222"/><path d="M640,302 L666,242"/>
+  </g>
+  <g font-size="12.5" text-anchor="middle">
+    <g><rect x="70" y="210" width="120" height="44" rx="9" fill="#f8fafc" stroke="#94a3b8"/><circle cx="180" cy="220" r="5" fill="#64748b"/><text x="130" y="237" fill="#1f2937">Линал</text></g>
+    <g><rect x="220" y="210" width="120" height="44" rx="9" fill="#f8fafc" stroke="#94a3b8"/><circle cx="330" cy="220" r="5" fill="#64748b"/><text x="280" y="237" fill="#1f2937">Нейросети</text></g>
+    <g><rect x="370" y="140" width="120" height="44" rx="9" fill="#f8fafc" stroke="#2563eb" stroke-width="1.6"/><text x="430" y="167" fill="#1f2937">Backprop</text></g>
+    <g><rect x="370" y="280" width="120" height="44" rx="9" fill="#f8fafc" stroke="#2563eb" stroke-width="1.6"/><text x="430" y="307" fill="#1f2937">Softmax</text></g>
+    <g><rect x="520" y="140" width="120" height="44" rx="9" fill="#f8fafc" stroke="#2563eb" stroke-width="1.6"/><text x="580" y="167" fill="#1f2937">Attention</text></g>
+    <g><rect x="520" y="280" width="120" height="44" rx="9" fill="#f8fafc" stroke="#2563eb" stroke-width="1.6"/><text x="580" y="307" fill="#1f2937" font-size="11.5">Pos. encoding</text></g>
+    <g><rect x="655" y="200" width="120" height="52" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.6"/><text x="715" y="222" fill="#2563eb" font-size="13" font-weight="700">★ Трансформеры</text><text x="715" y="238" fill="#64748b" font-size="10">цель</text></g>
+  </g>
+  <g font-size="11" fill="#64748b">
+    <circle cx="34" cy="440" r="5" fill="#64748b"/><text x="46" y="444">освоено (тест подтвердил)</text>
+    <rect x="250" y="434" width="16" height="12" rx="3" fill="#f8fafc" stroke="#2563eb" stroke-width="1.6"/><text x="272" y="444">курс к цели (пробел)</text>
+    <text x="440" y="444" fill="#2563eb" font-weight="700">★</text><text x="454" y="444">целевой уровень</text>
+  </g>
+</svg>
