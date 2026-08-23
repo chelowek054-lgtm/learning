@@ -56,10 +56,10 @@ concept {
   tier: 'core' | 'derived',   // фундаментальное ядро / вытекающая ветвь
   centrality,                  // мера «фундаментальности» (для core-детекции)
   content: {                   // ТЕОРИЯ, формализованная в БЗ
-    summary,
+    summary,                   // 2–4 предложения
     sections: [{ heading, body, examples[], counter_examples[] }],
     references[]               // источники (заземление)
-  },
+  },                           // форма закреплена: modules/knowledge/content.py
   bloom_levels[], difficulty,
   source: 'curated' | 'llm' | 'material',
   confidence, version
@@ -93,13 +93,14 @@ concept_edge (
 -- ПЕРСОНАЛЬНЫЙ (поверх канона, COW)
 user_concept (
   id uuid pk, user_id uuid,
+  domain text,                 -- обязателен: иначе узлы протекают в чужие графы
   base_concept_id uuid null,   -- ссылка на canonical; null = свой узел
   content_override jsonb null,
   mastery jsonb,               -- {estimate, confidence, bloom_reached}
   status text,                 -- 'locked'|'frontier'|'learning'|'known'
   origin text                  -- 'inherited'|'edited'|'grown_llm'
 )
-user_edge ( id uuid pk, user_id uuid, from_id uuid, to_id uuid, type text )
+user_edge ( id uuid pk, user_id uuid, domain text, from_id uuid, to_id uuid, type text )
 
 -- ГЕНЕРАЦИЯ ОЦЕНОК (кэш, заземлён на версию узла)
 assessment (
