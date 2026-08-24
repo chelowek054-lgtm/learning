@@ -12,7 +12,7 @@ learning/                 ← суперпроект (docs — источник 
 ```
 
 - **learningFront** — фронтенд по **Feature-Sliced Design**. Доменно-независимое ядро — в `src/shared/engine`. См. [docs/architecture/04-frontend-fsd.md](./docs/architecture/04-frontend-fsd.md).
-- **learningBack** — backend, связан с клиентом только по HTTP. Ключ Claude — только здесь (инвариант №2).
+- **learningBack** — backend, связан с клиентом только по HTTP. Ключ LLM-провайдера — только здесь (инвариант №2).
 
 ## RoadMap — где проект сейчас
 
@@ -48,7 +48,7 @@ git submodule update --init --recursive
 **Весь стенд (Postgres + API) через docker-compose из корня** — оркестрация всех сервисов живёт здесь (масштабируется на будущие микросервисы/внешние сервисы). Данные контейнеров — в `./.data` (вне git).
 
 ```bash
-cp .env.example .env          # параметры стенда (креды/порты)
+cp .env.example .env          # ЕДИНСТВЕННЫЙ .env проекта: стенд, backend и клиент
 docker compose up --build     # Postgres + миграции + API + pgAdmin
 ```
 

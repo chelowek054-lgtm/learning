@@ -128,7 +128,7 @@ rubric (
   id            text,           -- 'ielts_writing_task2'
   version       int,
   module        text,
-  model         text,           -- 'claude-opus-4-8' | 'claude-sonnet-4-6'
+  model         text,           -- слаг модели; пусто → модель из конфига
   prompt        text,           -- шаблон промпта-оценщика
   schema        jsonb,          -- ожидаемая структура grade
   pk (id, version)
