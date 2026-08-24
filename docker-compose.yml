@@ -30,9 +30,12 @@ services:
       APP_ENV: ${APP_ENV:-development}
       DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-praxis}:${POSTGRES_PASSWORD:-praxis}@postgres:5432/${POSTGRES_DB:-praxis}
       # Ключи LLM — только через окружение, никогда в образ (инвариант №2).
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_BASE_URL: ${LLM_BASE_URL:-https://routerai.ru/api/v1}
+      LLM_MODEL_GENERATION: ${LLM_MODEL_GENERATION:-deepseek/deepseek-v4-flash-0731}
+      LLM_MODEL_SCORING: ${LLM_MODEL_SCORING:-deepseek/deepseek-v4-flash-0731}
+      # Прежняя переменная подхватывается, если LLM_API_KEY пуст.
       OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
-      OPENROUTER_MODEL_GENERATION: ${OPENROUTER_MODEL_GENERATION:-google/gemini-3.7-flash}
-      OPENROUTER_MODEL_SCORING: ${OPENROUTER_MODEL_SCORING:-google/gemini-3.7-flash}
       CLAUDE_API_KEY: ${CLAUDE_API_KEY:-}
     ports:
       - "${API_PORT:-8000}:8000"
