@@ -46,12 +46,16 @@ cd learningFront && npm run web
 Проверки:
 
 ```bash
-cd learningBack && uv run pytest && uv run ruff check .
+cd learningBack && uv run ruff format --check . && uv run ruff check . && uv run pytest
 ```
 
 ```bash
-cd learningFront && npm run typecheck && npm run test
+cd learningFront && npm run check
 ```
+
+`npm run check` — это typecheck + lint + format:check + тесты одной командой.
+Форматтер входит в проверку намеренно: пока он был только «доступен», но нигде
+не вызывался, к 2026-08-25 разъехался 21 файл из 69 на backend и 19 на клиенте.
 
 Администратор заводится из CLI:
 

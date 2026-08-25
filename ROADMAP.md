@@ -305,10 +305,16 @@ docker compose up --build
 cd learningFront && npm run typecheck && npm run test
 ```
 
-Backend — линтер:
+Backend — формат, линтер, тесты:
 
 ```bash
-cd learningBack && uv run ruff check .
+cd learningBack && uv run ruff format --check . && uv run ruff check . && uv run pytest
+```
+
+Клиент — всё сразу:
+
+```bash
+cd learningFront && npm run check
 ```
 
 Клиент на телефоне/в браузере ходит по `EXPO_PUBLIC_API_BASE_URL` из **корневого `.env`** (в `learningFront/.env` он переносится автоматически перед `npm start`/`web`). Там **IP машины**, который меняется при смене сети (Wi-Fi ↔ Ethernet ↔ хот-спот). Если вход «не проходит», сперва сверить адрес:
