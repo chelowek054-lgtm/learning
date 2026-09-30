@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Статус** | 🟡 идёт · 11/28 (ещё 4 ждут подтверждения на GitHub/устройстве) |
+| **Статус** | 🟡 идёт · 14/29 (ещё 1 ждёт устройства) |
 | **Цель** | Довести сделанное в Ф0–Ф2 до состояния, на котором можно строить речь: клиент проверен на устройстве, проверки автоматические, инварианты соблюдены, прогресс не теряется, стоимость LLM видна, долги графа закрыты |
 | **Выход** | 1) Сквозные сценарии Ф1 и Ф2 пройдены на iOS и Android. 2) CI зелёный во всех трёх репозиториях и блокирует merge. 3) Скрипт инвариантов проходит. 4) В спеках SPEC-01…05, 08, 11, 12 не осталось расхождений с задачами Ф3 |
 | **Спеки** | [SPEC-01](../20-specs/SPEC-01-activity-engine.md), [SPEC-03](../20-specs/SPEC-03-sync-and-jobs.md), [SPEC-04](../20-specs/SPEC-04-ai-gateway-and-rubrics.md), [SPEC-05](../20-specs/SPEC-05-srs-and-error-log.md), [SPEC-08](../20-specs/SPEC-08-knowledge-graph.md), [SPEC-11](../20-specs/SPEC-11-course-and-study.md), [SPEC-12](../20-specs/SPEC-12-learner-experience.md), [SPEC-17](../20-specs/SPEC-17-platform-and-release.md) |
@@ -48,9 +48,10 @@ UX, DOC
 
 | ID | Задача | Трассировка | Статус | Проверка |
 |---|---|---|---|---|
-| P3-CI-01 | CI `learningBack` (GitHub Actions): `ruff format --check`, `ruff check`, `pytest` с сервисом Postgres; ключ LLM не передаётся | NFR-13, NFR-17, AC-17.1 | 🟡 | workflow добавлен; те же команды проходят локально (260 тестов). Зелёный прогон на GitHub не подтверждён |
-| P3-CI-02 | CI `learningFront`: `npm run check` | NFR-13, AC-17.1 | 🟡 | workflow добавлен; `npm run check` проходит локально (24 теста). Зелёный прогон на GitHub не подтверждён |
-| P3-CI-03 | CI суперпроекта: `scripts/check-invariants.sh` (NFR-02, NFR-03, NFR-KG-1, цвета вне `design.ts`) и проверка относительных ссылок в `docs/` | NFR-19, AC-01.5..6 | 🟡 | `scripts/check-invariants.sh`, `scripts/check-docs.py` и workflow суперпроекта; скрипты проходят локально. Нужен секрет `SUBMODULES_TOKEN`; ссылки на файлы сабмодулей скрипт не проверяет |
+| P3-CI-01 | CI `learningBack` (GitHub Actions): `ruff format --check`, `ruff check`, `pytest` с сервисом Postgres; ключ LLM не передаётся | NFR-13, NFR-17, AC-17.1 | 🟢 | live: зелёный прогон на GitHub (learningBack PR#1, job `check`); тесты 260 |
+| P3-CI-02 | CI `learningFront`: `npm run check` | NFR-13, AC-17.1 | 🟢 | live: зелёный прогон на GitHub (learningFront PR#1, job `check`); 24 теста |
+| P3-CI-03 | CI суперпроекта: `scripts/check-invariants.sh` (NFR-02, NFR-03, NFR-KG-1, цвета вне `design.ts`) и проверка относительных ссылок в `docs/` | NFR-19, AC-01.5..6 | 🟢 | live: зелёный прогон на GitHub (PR#4, job `invariants-and-docs`); скрипты `check-invariants.sh`, `check-docs.py`. Ссылки на файлы сабмодулей скрипт не проверяет. Красный CI пока не блокирует merge — нужна защита ветки `main` (P3-CI-05) |
+| P3-CI-05 | Защита ветки `main` во всех трёх репозиториях: merge только при зелёном CI (настройка GitHub, не код) | NFR-13, AC-17.1 | ⚪ | настройка, проверка на PR с красным CI |
 | P3-CI-04 | Линтер границ FSD (`steiger` или `eslint-plugin-boundaries`) в `npm run check` | NFR-14 | ⚪ | CI красный на импорте вверх |
 
 ### TEST — Покрытие основы
