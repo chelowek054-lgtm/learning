@@ -2,7 +2,7 @@
 
 Формат и статусы описаны в [README](./README.md). Последняя сверка с кодом: 2026-09-30.
 
-Сводка: **87 требований**. Из них `implemented` 53, `partial` 5, `accepted` 29.
+Сводка: **91 требований**: `implemented` 51, `accepted` 34, `partial` 3, `proposed` 2, `deferred` 1.
 
 ---
 

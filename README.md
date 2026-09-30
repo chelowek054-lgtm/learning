@@ -6,34 +6,33 @@
 
 ```
 learning/                 ← суперпроект (docs — источник правды)
-├── docs/                 архитектура, планы, (позже) business и deploy
+├── docs/                 DocDD: продукт, требования, спеки, архитектура, ADR, планы
 ├── learningFront/        сабмодуль: клиент (Expo/React Native, FSD)
 └── learningBack/         сабмодуль: backend (FastAPI, Python, uv)
 ```
 
-- **learningFront** — фронтенд по **Feature-Sliced Design**. Доменно-независимое ядро — в `src/shared/engine`. См. [docs/architecture/04-frontend-fsd.md](./docs/architecture/04-frontend-fsd.md).
+- **learningFront** — фронтенд по **Feature-Sliced Design**. Доменно-независимое ядро — в `src/shared/engine`. См. [docs/architecture/04-frontend-fsd.md](./docs/30-architecture/04-frontend-fsd.md).
 - **learningBack** — backend, связан с клиентом только по HTTP. Ключ LLM-провайдера — только здесь (инвариант №2).
 
-## RoadMap — где проект сейчас
+## Где проект сейчас
 
-**[`ROADMAP.md`](./ROADMAP.md) — единая точка фиксации прогресса.** Отвечает на три вопроса: *где мы сейчас*, *что уже сделано (с доказательствами проверки)* и *что дальше*. Прогресс по проекту фиксируется всегда здесь — при каждом закрытом рабочем потоке.
+**[`ROADMAP.md`](./ROADMAP.md)** — дашборд и журнал вех. План реализации — **[`docs/50-plans/`](./docs/50-plans/README.md)**. Документация ведётся по **DocDD** ([правила](./docs/README.md#правила-docdd)).
 
-| Фаза | Статус | Прогресс |
-|---|---|---|
-| [Фаза 0 — Каркас](./docs/plans/phase-0-foundation.md) | ✅ done | 34/34 задач |
-| [Фаза 1 — MVP](./docs/plans/phase-1-mvp.md) | ✅ done (код) | 33/33 задач |
-| [Фаза 2 — Модель знаний](./docs/plans/phase-2-knowledge-model.md) | 🟡 **в работе** | 9/21 · KG1–KG2 ✅, дальше **KG3** |
-| Фаза 3 — Речь и рецепция | ⚪ ожидает | не декомпозирована |
-| Фаза 4 — Продукт | ⚪ ожидает | не декомпозирована |
-
-Что где лежит: **`ROADMAP.md`** — сводка, журнал вех, риски и реестр открытых вопросов; **[`docs/plans/`](./docs/plans/README.md)** — исполняемые чеклисты задач по фазам; **[`docs/architecture/`](./docs/architecture/README.md)** — как система устроена. Изменение архитектуры фиксируется сначала в `docs/architecture/`, затем в плане фазы, затем в роадмапе.
+| Фаза | Статус |
+|---|---|
+| [Ф0 — Каркас](./docs/50-plans/phase-0-foundation.md) | ✅ 34/34 |
+| [Ф1 — MVP](./docs/50-plans/phase-1-mvp.md) | 🟡 31/33 (2 переоткрыты → Ф3) |
+| [Ф2 — Модель знаний](./docs/50-plans/phase-2-knowledge-model.md) | ✅ 30/30 |
+| [Ф3 — Укрепление](./docs/50-plans/phase-3-hardening.md) | ⚪ **следующая** · 1/26 |
+| [Ф4 — Речь и рецепция](./docs/50-plans/phase-4-speech-reception.md) | ⚪ 0/27 |
+| [Ф5 — Расширение обучения](./docs/50-plans/phase-5-learning-expansion.md) | ⚪ 0/16 |
+| [Ф6 — Продукт и релиз](./docs/50-plans/phase-6-product-release.md) | ⚪ 0/18 |
 
 ## Документация — единый источник правды
 
-- 🗺️ [`ROADMAP.md`](./ROADMAP.md) — прогресс, фазы, журнал вех, риски
-- 📚 [`docs/`](./docs/README.md) — обзор, инварианты, глоссарий
-- 🏛️ [`docs/architecture/`](./docs/architecture/README.md) — архитектурный, логический, функциональный, FSD-планы, модель знаний
-- 🗂️ [`docs/plans/`](./docs/plans/README.md) — чеклисты фаз · текущая: [Фаза 2 — Модель знаний](./docs/plans/phase-2-knowledge-model.md)
+- 📚 [`docs/`](./docs/README.md) — карта и правила DocDD
+- 🎯 [`00-product`](./docs/00-product/README.md) · 📋 [`10-requirements`](./docs/10-requirements/README.md) · 📐 [`20-specs`](./docs/20-specs/README.md) · 🏛️ [`30-architecture`](./docs/30-architecture/README.md) · ⚖️ [`40-adr`](./docs/40-adr/README.md) · 🗂️ [`50-plans`](./docs/50-plans/README.md)
+- 🔁 [`docs/HANDOFF.md`](./docs/HANDOFF.md) — запуск и грабли среды
 
 ## Клонирование (с сабмодулями)
 
