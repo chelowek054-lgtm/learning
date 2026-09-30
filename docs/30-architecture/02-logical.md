@@ -1,6 +1,6 @@
 # 02 — Логический план
 
-Модель данных, движок Activity, модульная система, FSRS, синхронизация и очередь задач. Технический стек — в [01 — Архитектура](./01-architecture.md); конкретные фичи — в [03 — Функциональный план](./03-functional.md).
+Модель данных, движок Activity, модульная система, FSRS, синхронизация и очередь задач. Технический стек — в [01 — Архитектура](./01-architecture.md); модули и их типы — в [03 — Функциональная архитектура](./03-functional.md); поведение каждой возможности — в [спеках](../20-specs/README.md). Модель данных графа знаний — в [05 §4](./05-knowledge-model.md#4-модель-данных).
 
 ---
 
@@ -24,7 +24,7 @@ interface Activity {
 
 `payload` — JSONB на сервере, TEXT(JSON) в SQLite. Его схему валидирует **модуль**, а не ядро.
 
-### Классификация типов Activity (обоснование в [00 — Обзор](../README.md#ключевой-педагогический-вывод-обоснование-архитектуры))
+### Классификация типов Activity (обоснование — [видение](../00-product/vision.md#педагогическое-обоснование))
 
 | Категория | Тип навыка | Примеры типов |
 |---|---|---|
@@ -94,6 +94,7 @@ srs_card (
   front         jsonb,          -- вопрос/стимул
   back          jsonb,          -- ответ/объяснение
   source        text,           -- 'error_log' | 'awl' | 'imported' | 'generated'
+  concept_id    uuid null,      -- узел графа (миграция 0007); null у карточек вне графа
   fsrs_state    jsonb,          -- {stability, difficulty, reps, lapses, ...}
   due_at        timestamptz,
   created_at    timestamptz
@@ -146,6 +147,10 @@ rubric (
 | `material` | ✅ (кэш для чтения) | ✅ (источник) | синк вниз |
 | `rubric` | ❌ | ✅ | только сервер |
 | `user` | частично (профиль) | ✅ | синк профиля |
+| `password_reset_code` | ❌ | ✅ | только сервер |
+| граф знаний: `concept`, `concept_edge`, `user_concept`, `user_edge`, `assessment`, `course` | ❌ | ✅ | только сервер; клиент читает через `/graph` ([05 §4](./05-knowledge-model.md#4-модель-данных)) |
+
+> Расхождение с кодом: клиент пока не отправляет изменения `srs_card` наверх ([SPEC-03](../20-specs/SPEC-03-sync-and-jobs.md#расхождения), P3-SYNC-02).
 
 ---
 
@@ -167,7 +172,9 @@ interface ModuleManifest {
 }
 
 interface ActivityTypeDef {
-  type: string;                     // 'ielts_writing'
+  type: string;                     // 'ielts_writing_task2'
+  title: string;                    // название для человека — единственный источник (ADR-0017)
+  hint?: string;                    // одна строка о том, что человек здесь делает
   connectivity: Connectivity;       // требует ли сети по умолчанию
   payloadSchema: JSONSchema;        // валидация payload
   producesErrorLog?: boolean;       // питает ли SRS через error-log
@@ -179,13 +186,18 @@ type LocalGrader = (answer: unknown, payload: unknown) => Partial<Grade>;
 
 ### 3.2 Контракт модуля (backend)
 
+**Целевой контракт** (задача P3-INV-01, [SPEC-01](../20-specs/SPEC-01-activity-engine.md#контракт)). Сейчас модули подключаются прямыми импортами из `core/`, что нарушает NFR-03.
+
 ```python
 class ModuleBackend(Protocol):
     id: str
-    def rubrics(self) -> list[Rubric]: ...          # промпты-оценщики
-    def generators(self) -> dict[str, Generator]: ...# генерация контента
-    def grade(self, activity, answer) -> Grade: ...  # вызов LLM по рубрике
+    router: APIRouter | None                          # свои эндпоинты (knowledge → /graph)
+    def rubrics(self) -> list[dict]: ...              # сидятся в таблицу rubric
+    def job_handlers(self) -> dict[str, JobHandler]: ...  # job.type → обработчик
+    def provision(self, session, user, subject) -> None: ...  # стартовый контент под предмет
 ```
+
+Оценка по рубрике не входит в контракт модуля: её выполняет ядро (`AIGateway.grade`) по рубрике из БД.
 
 ### 3.3 Регистрация
 
@@ -260,16 +272,17 @@ PULL (сервер → клиент):
 - **Выбор модели** per-rubric (`rubric.model`).
 - **Подстановку в шаблон** промпта рубрики + payload + ответ пользователя.
 - **Структурированный вывод**: результат валидируется по `rubric.schema` (grade — строгий JSON: баллы по критериям, ошибки, образец).
-- **Кэш**: генерация детерминированного контента кэшируется по хэшу входа.
-- **Учёт расходов**: логирование токенов per-user/per-type.
+- **Доменно-нейтральный structured output** (`structured(tool, description, schema, prompt)`): схемы и промпты предметов живут в модулях.
+- **Кэш** *(цель, P3-AI-03)*: генерация детерминированного контента кэшируется по хэшу входа. Сейчас кэшируются только задания по узлу.
+- **Учёт расходов** *(цель, P3-AI-02)*: логирование токенов per-user/per-type. Сейчас не реализовано.
 - **Версионирование**: изменение рубрики → новая `version`, старые ответы сохраняют ссылку на версию, по которой оценивались.
 
 ```
-POST /jobs {type: grade_writing, input_ref}
-  → gateway.load_rubric('ielts_writing_task2', latest)
-  → gateway.call(model=rubric.model, prompt=render(rubric.prompt, activity, answer))
-  → validate(result, rubric.schema)
-  → сохранить в response.grade + сгенерировать error-log карточки
+POST /sync/push {jobs: [{type: grade_writing, inputRef: {responseId, rubricId}}]}
+  → process_job: get_rubric('ielts_writing_task2', latest)
+  → gateway.grade(rubric, activity.payload, answer)   # model = rubric.model or LLM_MODEL_SCORING
+  → вызов инструмента submit_grade по GRADE_JSON_SCHEMA (+ rubricId, rubricVersion)
+  → response.grade = grade; ошибки → srs_card(source='error_log'); job.status = done
 ```
 
 ---
