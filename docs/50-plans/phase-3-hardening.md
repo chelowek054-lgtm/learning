@@ -48,7 +48,7 @@ UX, DOC
 
 | ID | Задача | Трассировка | Статус | Проверка |
 |---|---|---|---|---|
-| P3-CI-01 | CI `learningBack` (GitHub Actions): `ruff format --check`, `ruff check`, `pytest` с сервисом Postgres; ключ LLM не передаётся | NFR-13, NFR-17, AC-17.1 | 🟡 | workflow добавлен; те же команды проходят локально (184→264 теста). Зелёный прогон на GitHub не подтверждён |
+| P3-CI-01 | CI `learningBack` (GitHub Actions): `ruff format --check`, `ruff check`, `pytest` с сервисом Postgres; ключ LLM не передаётся | NFR-13, NFR-17, AC-17.1 | 🟡 | workflow добавлен; те же команды проходят локально (260 тестов). Зелёный прогон на GitHub не подтверждён |
 | P3-CI-02 | CI `learningFront`: `npm run check` | NFR-13, AC-17.1 | 🟡 | workflow добавлен; `npm run check` проходит локально (24 теста). Зелёный прогон на GitHub не подтверждён |
 | P3-CI-03 | CI суперпроекта: `scripts/check-invariants.sh` (NFR-02, NFR-03, NFR-KG-1, цвета вне `design.ts`) и проверка относительных ссылок в `docs/` | NFR-19, AC-01.5..6 | 🟡 | `scripts/check-invariants.sh`, `scripts/check-docs.py` и workflow суперпроекта; скрипты проходят локально. Нужен секрет `SUBMODULES_TOKEN`; ссылки на файлы сабмодулей скрипт не проверяет |
 | P3-CI-04 | Линтер границ FSD (`steiger` или `eslint-plugin-boundaries`) в `npm run check` | NFR-14 | ⚪ | CI красный на импорте вверх |

@@ -8,7 +8,7 @@
 |---|---|---|---|
 | Backend: формат | `cd learningBack && uv run ruff format --check .` | Разъехавшийся формат | CI (P3-CI-01) |
 | Backend: линтер | `cd learningBack && uv run ruff check .` | Ошибки и неиспользуемое | CI |
-| Backend: тесты | `cd learningBack && uv run pytest` (нужен Postgres стенда; БД `<db>_test`) | Регрессии поведения (≈270 тестов на 2026-09-30) | CI |
+| Backend: тесты | `cd learningBack && uv run pytest` (нужен Postgres стенда; БД `<db>_test`) | Регрессии поведения (260 тестов на 2026-09-30) | CI |
 | Клиент: всё сразу | `cd learningFront && npm run check` (typecheck, lint, format, tests) | Типы, стиль, регрессии | CI (P3-CI-02) |
 | Инварианты | `bash scripts/check-invariants.sh` в суперпроекте | NFR-02, NFR-03, NFR-KG-1, цвета вне `design.ts` | CI (P3-CI-03) |
 | Ссылки документации | `python scripts/check-docs.py` | Битые относительные ссылки в `docs/` | CI (P3-CI-03) |
