@@ -83,7 +83,8 @@ concept (
   content jsonb,           -- теория (см. §3)
   bloom_levels text[], difficulty int,
   source text, confidence real, version int,
-  status text              -- 'draft' | 'approved'
+  status text,             -- 'draft' | 'approved' (модерация канона; в API — reviewStatus)
+  created_at timestamptz
 )
 concept_edge (
   id uuid pk, from_id uuid, to_id uuid,
@@ -95,6 +96,7 @@ user_concept (
   id uuid pk, user_id uuid,
   domain text,                 -- обязателен: иначе узлы протекают в чужие графы
   base_concept_id uuid null,   -- ссылка на canonical; null = свой узел
+  title text null,             -- только у своих узлов
   content_override jsonb null,
   mastery jsonb,               -- {estimate, confidence, bloom_reached}
   status text,                 -- 'locked'|'frontier'|'learning'|'known'
@@ -112,7 +114,7 @@ assessment (
 -- КУРС
 course (
   id uuid pk, user_id uuid, domain text,
-  target jsonb,            -- {concepts[], bloom}
+  target jsonb,            -- {bloom, concepts[]}: целевая ступень и узлы-интересы
   path jsonb, progress jsonb, created_at timestamptz
 )
 ```
@@ -191,7 +193,7 @@ course (
 - LLM-предложения узлов/связей — **draft с `confidence`** → пользователь **Approve / Edit / Reject**.
 - **Core-детекция:** при построении графа LLM помечает кандидатов в ядро (по centrality/частоте-как-предпосылки), куратор подтверждает `tier=core`.
 - Теория узла **заземлена на источник** (`source='material'`) либо помечена `source='llm'` (не верифицировано).
-- **Версионирование** узла; `assessment` помнит `concept_version` ([инвариант №6](../README.md)).
+- **Версионирование** узла; `assessment` помнит `concept_version` ([инвариант №6](../10-requirements/non-functional.md#инварианты-системы)).
 - Рост персонального графа: `expand_node(concept, direction)` → персональные `user_concept`/`user_edge` (COW).
 - **Промоция в канон** — качественные персональные узлы → кандидаты в канон (курирование, позже).
 
@@ -221,8 +223,14 @@ course (
 
 ## 11. Открытые вопросы
 
-1. **Core-детекция** — как определяем `tier=core`: centrality графа / частота-как-предпосылки / вручную при курировании (вероятно гибрид).
-2. **Гранулярность узла** — что считать одним концептом.
-3. **Модель освоенности** — скаляр на узел vs per-(узел, ступень Блума).
-4. **Старт калибровки зондов** — эвристика сложности до IRT.
-5. **Двухуровневый граф для языкового домена** — язык менее иерархичен; как ложатся канон+персонал и `tier=core`.
+| # | Вопрос | Состояние |
+|---|---|---|
+| 1 | **Core-детекция** — centrality / частота-как-предпосылки / вручную | 🟡 гибрид реализован: centrality ≥ 0.5 или пометка `core`, решает куратор. Калибровка порога открыта |
+| 2 | **Гранулярность узла** — что считать одним понятием | ⚪ уточнять на реальных графах; влияет на импорт (P5-IMP-03) |
+| 3 | **Модель освоенности** — скаляр на узел или на пару (узел, ступень) | ✅ скаляр + `bloom_reached` ([ADR-0012](../40-adr/0012-mastery-beta-not-irt.md)); пересмотреть на данных спирали |
+| 4 | **Калибровка зондов** до IRT | ⚪ сложность не учитывается; IRT — после накопления данных |
+| 5 | **Граф для языкового домена** — язык менее иерархичен | ⚪ исследование P5-LANG-01 ([SPEC-16](../20-specs/SPEC-16-learning-expansion.md)) |
+| 6 | **Версия персональных узлов** — без неё задания по ним не кэшировать | ⚪ P3-KG-01 |
+| 7 | **Устойчивый ключ узла** при перегенерации вместо заголовка | ⚪ P3-KG-02 |
+
+Поведение слоя с критериями приёмки — в спеках [SPEC-08](../20-specs/SPEC-08-knowledge-graph.md)…[SPEC-11](../20-specs/SPEC-11-course-and-study.md).

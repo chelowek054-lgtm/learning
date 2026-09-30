@@ -10,15 +10,15 @@
 |---|---|---|
 | **Клиент** | **Expo (React Native, TypeScript)** | Один код на iOS/Android; уже отскаффолжен в `learningFront`. Знаком команде. |
 | **Навигация** | expo-router | File-based routing, deep links. |
-| **Локальная БД** | **expo-sqlite + Drizzle ORM** | Offline-first источник правды для повторений и ответов. Типобезопасные миграции. |
-| **SRS** | **ts-fsrs** | FSRS на клиенте, работает офлайн. |
-| **Состояние** | Zustand + TanStack Query | Локальный стор + кэш серверных запросов с офлайн-персистом. |
-| **Backend** | **FastAPI (Python)** | AI-оркестрация, скоринг, генерация, sync. Сильная сторона команды (ML/Python). |
-| **Серверная БД** | **PostgreSQL** (managed, напр. Supabase Postgres) | Реляционные данные для аналитики прогресса; JSONB для гибких payload'ов. |
-| **Auth** | Supabase Auth (или собственный JWT) | Вынесено из бизнес-логики; клиент хранит токен в SecureStore. |
-| **AI** | **LLM по OpenAI-совместимому протоколу** через FastAPI-gateway (сейчас RouterAI) | Скоринг по рубрикам, генерация контента, ревью кода. Ключ только на сервере. |
-| **STT (фаза 2)** | Whisper (сервер) или on-device STT | Для Speaking. Отложено за пределы MVP. |
-| **TTS (фаза 2)** | Провайдер TTS | Для listening-материалов. |
+| **Локальная БД** | **expo-sqlite** (raw SQL) за портом `LocalStore`; на web — in-memory | Offline-first источник правды для повторений и ответов ([ADR-0005](../40-adr/0005-raw-expo-sqlite.md)) |
+| **SRS** | **ts-fsrs** | FSRS на клиенте, работает офлайн |
+| **Состояние** | React context (`entities/session`, провайдер реестра модулей) | Хватило без внешнего стора ([ADR-0003](../40-adr/0003-client-expo-fsd.md)) |
+| **Backend** | **FastAPI (Python 3.12, uv)**, SQLAlchemy 2, Alembic, sqladmin | AI-оркестрация, оценка, генерация, sync, граф знаний ([ADR-0008](../40-adr/0008-uv-python.md)) |
+| **Серверная БД** | **PostgreSQL** (dev — Docker; prod — managed, выбор в Ф6) | Реляционные данные для аналитики прогресса; JSONB для гибких payload'ов |
+| **Auth** | **Собственный JWT** в FastAPI (argon2, HS256) | Без внешнего провайдера; клиент хранит токен в SecureStore ([ADR-0007](../40-adr/0007-own-jwt-auth.md)) |
+| **AI** | **LLM по OpenAI-совместимому протоколу** через FastAPI-gateway (сейчас RouterAI) | Оценка по рубрикам, генерация графа и заданий. Ключ только на сервере ([ADR-0009](../40-adr/0009-llm-provider-as-config.md)) |
+| **STT (Ф4)** | Выбирается в P4-WS2-00: API / `faster-whisper` в контейнере / on-device | Для Speaking ([SPEC-14](../20-specs/SPEC-14-speaking.md)) |
+| **TTS (Ф4)** | Выбирается в P4-WS6-00 | Для listening-материалов ([SPEC-15](../20-specs/SPEC-15-reception-drills.md)) |
 
 **Выбор провайдера и модели:** провайдер задаётся адресом (`LLM_BASE_URL`), а не отдельной реализацией — подойдёт любой сервис с `/chat/completions` и tool calling. Модели для скоринга и генерации задаются слагами в конфиге; рубрика вправе закрепить свою модель (`rubric.model`), и тогда берётся она. Хардкода моделей в коде нет.
 
@@ -36,17 +36,19 @@
 │    Activity-движок · FSRS(ts-fsrs) · Event log             │
 │    Job Queue (local) · Sync client                         │
 │         │                                                  │
-│  expo-sqlite (Drizzle) ◄── ЛОКАЛЬНЫЙ ИСТОЧНИК ПРАВДЫ        │
+│  expo-sqlite (LocalStore) ◄── ЛОКАЛЬНЫЙ ИСТОЧНИК ПРАВДЫ     │
 └─────────┬──────────────────────────────────────────────────┘
           │  HTTPS (sync + AI-jobs), только при сети
           ▼
 ┌──────────────────────────────────────────────────────────┐
 │                    FastAPI BACKEND                         │
 │                                                            │
-│  /sync   · /jobs   · /content   · /auth                    │
+│  /sync · /jobs · /content · /auth · /graph · /admin        │
 │         │                                                  │
-│  core/ (доменно-независимо) + modules/{languages,ml}/      │
-│    AI-gateway · Rubric registry · Content generators       │
+│  core/ (доменно-независимо)                                │
+│    AI-gateway · Rubric registry · Jobs · Auth · Sync       │
+│  modules/{languages, ml, knowledge}/                       │
+│    рубрики · генераторы · граф знаний, курс, плейсмент     │
 │         │                                                  │
 │  PostgreSQL ◄── ИСТОЧНИК ПРАВДЫ ДЛЯ AI-КОНТЕНТА             │
 └─────────┬──────────────────────────────────────────────────┘
@@ -57,7 +59,7 @@
      └─────────────┘
 ```
 
-Зеркальность модулей: одни и те же предметные области (`languages`, `ml`) присутствуют и на клиенте (рендереры, локальная логика), и на бэке (рубрики, генераторы). Контракт модуля описан в [02 — Логический план](./02-logical.md#модульная-система).
+Зеркальность модулей: одни и те же предметные области (`languages`, `ml`, `knowledge`) есть и на клиенте (рендереры, локальная логика), и на бэке (рубрики, генераторы, граф). Контракт модуля описан в [02 — Логический план](./02-logical.md#3-модульная-система).
 
 ---
 
@@ -122,24 +124,28 @@
 ├── docs/                 ← этот раздел (источник правды)
 ├── learningFront/        ← САБМОДУЛЬ: клиент (Expo/RN), архитектура FSD
 │   └── src/
-│       ├── app/          expo-router роуты + composition root (только роуты!)
-│       ├── pages/        экраны
-│       ├── widgets/      ActivityDispatcher, TodayQueue
-│       ├── features/     по типам Activity (vocab-review, ielts-writing, …)
-│       ├── entities/     activity, srs-card, response, module (метаданные+сборка)
+│       ├── app/          expo-router роуты (только роуты!), провайдеры в _layout
+│       ├── pages/        экраны: home, onboarding, course, graph, placement, review, profile, auth
+│       ├── widgets/      activity-dispatcher, module-registry (сборка манифестов)
+│       ├── features/     ielts-writing, concept-recall, material-read, concept-study,
+│       │                 placement, course, graph-editor
+│       ├── entities/     module (метаданные типов), session (сессия, предмет), concept
 │       └── shared/
 │           ├── engine/   ← доменно-независимое ядро (Activity, реестр, FSRS, порты)
-│           ├── ui/       ui-kit
-│           ├── api/      http-клиент, sync-адаптер, SQLite LocalStore
-│           ├── config/   env, константы
-│           └── lib/      утилиты
+│           ├── ui/       ui-kit, тема, grade-view
+│           ├── api/      http-клиент, sync, SQLite LocalStore, graph-api
+│           ├── config/   design.ts (оформление), env
+│           └── lib/      утилиты, контекст реестра
 └── learningBack/         ← САБМОДУЛЬ: backend (FastAPI, Python, uv)
     ├── Dockerfile        build-рецепт сервиса (у сервиса, не в корне)
-    ├── core/             app, config, db, models, routers, ai_gateway
-    ├── migrations/       Alembic
+    ├── core/             app, config, db, models, routers, ai_gateway, jobs, srs, admin
+    ├── migrations/       Alembic (0001–0008)
+    ├── scripts/          seed, createsuperuser
+    ├── tests/            pytest, своя БД <db>_test
     └── modules/
-        ├── languages/    рубрики, генераторы
-        └── ml/
+        ├── languages/    рубрики, генераторы (AWL)
+        ├── ml/           рубрики, генераторы
+        └── knowledge/    граф, задания, освоенность, плейсмент, курс, роутер /graph
 ```
 
 Фронтенд организован по **Feature-Sliced Design** — детали и маппинг Praxis→FSD в [04 — Фронтенд (FSD)](./04-frontend-fsd.md). Ядро (ex «core-engine») живёт в `src/shared/engine`.
@@ -156,24 +162,31 @@ Backend — отдельное Python-окружение на **uv**, связа
 |---|---|---|
 | Мобильный клиент | iOS/Android | **EAS Build** (Expo Application Services); OTA-обновления через EAS Update |
 | Backend | Контейнер | Docker → любой хостинг (Fly.io / Railway / VPS) |
-| БД | Managed Postgres | Supabase / Neon |
+| БД | Managed Postgres | Supabase / Neon — выбор в P6-OPS-01 |
 | Секреты | Env | Ключ LLM-провайдера, DB URL — только в окружении backend |
 
-**Версионирование контракта:** клиент и backend согласуют версию API (`/v1/...`). Рубрики версионируются независимо (см. инвариант №6) — их можно менять без релиза приложения.
+Сейчас развёрнут только dev-стенд (`docker compose`). Окружения staging/prod и процесс релиза описаны в [SPEC-17](../20-specs/SPEC-17-platform-and-release.md) и реализуются в [Ф6](../50-plans/phase-6-product-release.md).
+
+**Версионирование контракта:** клиент и backend должны согласовывать версию API (`/v1/...`). Пока пути без префикса версии — префикс вводится до первого публичного релиза (P6-OPS-04). Рубрики версионируются независимо (NFR-06): их можно менять без релиза приложения.
 
 ---
 
 ## 7. Нефункциональные требования
 
-- **Приватность:** пользовательские тексты (эссе, ответы) уходят провайдеру LLM только для скоринга; политику хранения на бэке зафиксировать в отдельном документе перед публичным релизом.
-- **Стоимость LLM:** кэш результатов генерации; выбор дешёвой модели где возможно; батчинг. Контроль через AI-gateway.
-- **Производительность повторений:** офлайн, мгновенно (< 16 мс на планирование карточки), без сети.
-- **Устойчивость sync:** идемпотентность jobs, last-write-wins на уровне записи (детали — [02](./02-logical.md#job-queue-и-синхронизация)).
+Перечень, формулировки и способы проверки — в [10-requirements/non-functional.md](../10-requirements/non-functional.md). Архитектурно значимые:
+
+- **Приватность** (NFR-11): тексты и голос уходят провайдеру только для оценки; политика хранения — до публичного релиза и до первой записи голоса.
+- **Стоимость LLM** (NFR-09): `max_tokens` в каждом запросе, кэш генерации, учёт токенов, модели из конфига.
+- **Производительность повторений** (NFR-08): < 16 мс на планирование карточки, офлайн.
+- **Устойчивость sync** (NFR-10, [SPEC-03](../20-specs/SPEC-03-sync-and-jobs.md)): идемпотентность по `id`, LWW на уровне записи.
 
 ---
 
 ## Открытые архитектурные вопросы
 
-1. Собственный Auth (JWT в FastAPI) или Supabase Auth — решить до старта backend.
-2. Whisper на сервере vs on-device STT для Speaking (фаза 2).
-3. Стратегия конфликтов sync при мульти-девайсе (пока: один пользователь = один активный девайс, LWW).
+| Вопрос | Где решается |
+|---|---|
+| ~~Собственный Auth или Supabase Auth~~ | Решено: [ADR-0007](../40-adr/0007-own-jwt-auth.md) |
+| Где STT для Speaking | P4-WS2-00 ([SPEC-14](../20-specs/SPEC-14-speaking.md)) |
+| Фоновой воркер вместо обработки задач на `/sync/push` | P4-WS2-03 ([ADR-0014](../40-adr/0014-jobs-processed-on-push.md)) |
+| Стратегия конфликтов sync при нескольких устройствах (пока один девайс, LWW) | P6-SYNC-01 |

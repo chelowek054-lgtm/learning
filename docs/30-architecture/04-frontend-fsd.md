@@ -10,7 +10,7 @@
 
 FSD делит фронтенд на **слои** (по ответственности) → **слайсы** (по бизнес-области) → **сегменты** (`ui`/`model`/`lib`/`api`/`config`). Слои импортируют строго вниз.
 
-Ключевое совпадение с архитектурой Praxis: **доменно-независимое ядро** ([инвариант №3](../README.md#инварианты-системы-не-нарушать-при-реализации)) — это в точности нижний слой FSD **`shared`**, который по определению не содержит бизнес-специфики. Модули-домены (languages, ml) распределяются по верхним слоям как слайсы.
+Ключевое совпадение с архитектурой Praxis: **доменно-независимое ядро** ([инвариант №3](../10-requirements/non-functional.md#инварианты-системы)) — это в точности нижний слой FSD **`shared`**, который по определению не содержит бизнес-специфики. Модули-домены (languages, ml) распределяются по верхним слоям как слайсы.
 
 ---
 
@@ -52,21 +52,23 @@ Praxis-«модуль» — это бандл: типы Activity + рендер�
 
 - **Рендерер типа Activity** → слайс в `features` (напр. `features/ielts-writing`, `features/vocab-review`, `features/concept-recall`).
 - **Сущности** (`activity`, `srs-card`, `response`) → `entities`.
-- **Манифест модуля** (какие типы Activity в него входят, их `connectivity`, `producesErrorLog`) → **композиционный корень** `src/app/modules/{languages,ml}.ts`: манифест импортирует рендереры-features и регистрирует их в реестре ядра.
+- **Метаданные модуля** (какие типы Activity в него входят, их `title`, `connectivity`, `producesErrorLog`) → `src/entities/module/{languages,ml,knowledge}.ts` — чистые данные без React Native.
+- **Сборка манифеста** (метаданные + рендереры из `features` + локальные грейдеры) → `src/widgets/module-registry`: только слой `widgets` может импортировать и `features`, и `entities`.
 
 > ⚠️ **Важно (expo-router):** каталог `src/app` сканируется expo-router через `require.context` и **исполняет** все файлы внутри. Поэтому не-роутовый код (метаданные модулей, их сборка, тесты) НЕ должен лежать под `src/app` — иначе expo-router ругается на «missing default export», а тест-файл падает (`vitest` вне раннера). Метаданные и сборка манифестов вынесены в `entities/module`; вызов регистрации — в роут-обёртке `_layout.tsx`.
 
 ```
-src/entities/module/       // НЕ сканируется роутером
-  languages.ts   // чистые метаданные типов Activity (без RN)
-  ml.ts
-  registry.ts    // buildManifest (метаданные + рендерер) + initModuleRegistry/getModuleRegistry
+src/entities/module/          // НЕ сканируется роутером; только метаданные
+  languages.ts   ml.ts   knowledge.ts
   index.ts
 
-src/app/_layout.tsx        // composition root: getModuleRegistry() → <ModuleRegistryProvider>
+src/widgets/module-registry/  // сборка: метаданные + рендереры + грейдеры
+  index.ts       // RENDERERS, LOCAL_GRADERS, buildManifest, initModuleRegistry, getModuleRegistry
+
+src/app/_layout.tsx           // composition root: getModuleRegistry() → <ModuleRegistryProvider>
 ```
 
-Реестр читается вниз через контекст `shared/lib` (pages/widgets НЕ импортируют app и entities напрямую для этого). Так «плагинность» модулей выражена явно, а ядро остаётся доменно-независимым.
+Реестр читается через контекст `shared/lib/module-registry-context.tsx` (pages/widgets НЕ импортируют app и entities напрямую для этого). Так «плагинность» модулей выражена явно, а ядро остаётся доменно-независимым.
 
 ---
 
@@ -90,7 +92,7 @@ src/app/index.tsx
 
 - Алиас `@/*` → `src/*` (уже настроен в `tsconfig.json`). Импорты: `@/shared/engine`, `@/entities/activity`, `@/features/vocab-review`.
 - Публичный API слайса — через его `index.ts` (barrel). Импорт «вглубь» слайса запрещён правилами FSD.
-- Контроль границ: линт (кандидат — `steiger` / `eslint-plugin-boundaries`) добавляется отдельной задачей; на старте — grep-проверка ядра + код-ревью.
+- Контроль границ: линтер (кандидат — `steiger` или `eslint-plugin-boundaries`) подключается задачей P3-CI-04 (NFR-14). До этого — grep-проверка ядра и код-ревью.
 
 ---
 
@@ -99,27 +101,26 @@ src/app/index.tsx
 ```
 learningFront/
   src/
-    app/            FSD app-слой + expo-router роуты + composition root (регистрация модулей)
-    pages/          экраны
-    widgets/        ActivityDispatcher, TodayQueue
-    features/       по типам Activity (vocab-review, ielts-writing, concept-recall, …)
-    entities/       activity, srs-card, response, module
+    app/            expo-router: (tabs)/{index,course,graph,profile}, review, placement, activities; _layout — провайдеры
+    pages/          auth, onboarding, home, course, graph, placement, review, profile
+    widgets/        activity-dispatcher, module-registry
+    features/       ielts-writing, concept-recall, material-read, concept-study, placement, course, graph-editor
+    entities/       module (метаданные типов), session (сессия, предмет, уровни), concept
     shared/
-      engine/       доменно-независимое ядро (ex core-engine)
-      ui/           ui-kit
-      api/          http-клиент, sync-адаптер
-      config/       env, константы
-      lib/          утилиты
-    components/      ← существующие компоненты шаблона (постепенно раскладываются по shared/ui, widgets)
-    constants/, hooks/  ← аналогично мигрируют в shared
-  app.json, tsconfig.json, package.json
+      engine/       доменно-независимое ядро: types, module, ports, scheduler
+      ui/           kit, theme, grade-view, not-implemented-activity
+      api/          http, token, auth-api, sync-client, sync-service, job-queue, grading, graph-api, db/ (SQLite LocalStore)
+      config/       design.ts — единственное место оформления
+      lib/          connectivity, id, module-registry-context
+  scripts/          sync-env.js — перенос EXPO_PUBLIC_* из корневого .env
+  app.json, eas.json, tsconfig.json, package.json
 ```
 
-Существующий scaffold (`components/`, `constants/`, `hooks/`) мигрирует в FSD-слои постепенно, не ломая приложение.
+Шаблонные каталоги Expo (`components/`, `constants/`, `hooks/`) полностью разобраны по слоям FSD и удалены.
 
 ---
 
 ## Связанные документы
 
 - [01 — Архитектура](./01-architecture.md) · [02 — Логический план](./02-logical.md) · [03 — Функциональный план](./03-functional.md)
-- План работ — [Фаза 0](../plans/phase-0-foundation.md)
+- План работ — [Фаза 0](../50-plans/phase-0-foundation.md), линтер границ — P3-CI-04

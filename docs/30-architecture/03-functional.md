@@ -1,151 +1,126 @@
-# 03 — Функциональный план
+# 03 — Функциональная архитектура: модули и сценарии
 
-Что система делает с точки зрения пользователя: модули, конкретные типы Activity, сценарии, объём MVP и roadmap. Абстракции — в [02 — Логический план](./02-logical.md); стек — в [01 — Архитектура](./01-architecture.md).
+Какие модули есть в системе, какие типы Activity и рубрики они объявляют и как из них складываются сквозные сценарии. Абстракции (Activity, манифест, sync) — в [02 — Логический план](./02-logical.md); поведение каждой возможности с критериями приёмки — в [спеках](../20-specs/README.md); границы продукта и этапы — в [00-product/scope](../00-product/scope.md) и [50-plans](../50-plans/README.md).
+
+> До 2026-09-30 здесь также лежали объём MVP, роадмап и метрики. Они перенесены: объём — в [scope](../00-product/scope.md), роадмап — в [план](../50-plans/README.md), метрики — в [metrics](../00-product/metrics.md).
 
 ---
 
-## 1. Модуль `languages` (первичная цель: TOEFL / IELTS)
+## 1. Модуль `languages` (первичная цель: IELTS / TOEFL)
 
-Экзамены проверяют 4 навыка. Механика эффективности **разная** для рецепции и продукции — см. [обоснование](../README.md#ключевой-педагогический-вывод-обоснование-архитектуры).
+Экзамены проверяют четыре навыка. Механика эффективности у рецепции и продукции **разная** ([обоснование](../00-product/vision.md#педагогическое-обоснование)).
 
 ### 1.1 Типы Activity
 
-| Тип | Навык | Connectivity | Механика |
-|---|---|---|---|
-| `ielts_writing_task2` | Writing (продукция) | online (offline-fallback) | Эссе → скоринг по band descriptors → правки → образец |
-| `ielts_writing_task1` | Writing | online | Описание графика/письма → скоринг |
-| `reading_drill` | Reading (рецепция) | offline* | Passage + вопросы в формате экзамена, на время |
-| `listening_drill` | Listening | offline* (аудио закэшировано) | Аудио + MCQ, на время |
-| `speaking_response` | Speaking (продукция) | online — **фаза 2** | Устный ответ → STT → скоринг |
-| `vocab_srs` | Vocabulary | offline | FSRS: коллокации + Academic Word List + error-log |
+| Тип | Навык | Connectivity | Механика | Спека | Состояние |
+|---|---|---|---|---|---|
+| `ielts_writing_task2` | Writing (продукция) | online + офлайн-fallback | Эссе → оценка по band descriptors → ошибки → образец | [SPEC-06](../20-specs/SPEC-06-writing.md) | ✅ |
+| `ielts_writing_task1` | Writing | online | Описание графика/таблицы → оценка | [SPEC-16](../20-specs/SPEC-16-learning-expansion.md) | Ф5 |
+| `reading_drill` | Reading (рецепция) | offline* | Passage + вопросы в формате экзамена, на время | [SPEC-15](../20-specs/SPEC-15-reception-drills.md) | Ф4 |
+| `listening_drill` | Listening | offline* (аудио в кэше) | Аудио + вопросы, на время | [SPEC-15](../20-specs/SPEC-15-reception-drills.md) | Ф4 |
+| `speaking_response` | Speaking (продукция) | online | Устный ответ → STT → оценка | [SPEC-14](../20-specs/SPEC-14-speaking.md) | Ф4 |
+| `vocab_srs` | Vocabulary | offline | FSRS: AWL + error-log | [SPEC-05](../20-specs/SPEC-05-srs-and-error-log.md) | ✅ экраном повторения; тип — под вопросом ([ADR-0015](../40-adr/0015-srs-is-a-card-queue.md)) |
 
-\* Детерминированные дриллы (MCQ) проверяются офлайн локально; разбор «почему дистрактор неверен» — online-обогащение при сети.
+\* Детерминированные дриллы проверяются офлайн локально; разбор «почему дистрактор неверен» приходит online-обогащением при сети.
 
-### 1.2 Рубрики (backend)
+### 1.2 Рубрики
 
-- `ielts_writing_task2` — критерии: Task Response, Coherence & Cohesion, Lexical Resource, Grammatical Range & Accuracy → band 0–9.
-- `toefl_writing_integrated` / `toefl_writing_independent` — рубрики TOEFL.
-- `ielts_speaking` (фаза 2) — Fluency, Lexical Resource, Grammar, Pronunciation.
+| Рубрика | Критерии | Состояние |
+|---|---|---|
+| `ielts_writing_task2` v1 | Task Response, Coherence and Cohesion, Lexical Resource, Grammatical Range and Accuracy → band 0–9 | ✅ |
+| `ielts_writing_task1` | Task Achievement, Coherence and Cohesion, Lexical Resource, Grammatical Range and Accuracy | Ф5 |
+| `toefl_writing_integrated`, `toefl_writing_independent` | по официальным рубрикам TOEFL | Ф5 |
+| `ielts_speaking` | Fluency & Coherence, Lexical Resource, Grammatical Range & Accuracy, Pronunciation | Ф4 |
 
-### 1.3 Vocabulary через error-log
+### 1.3 Лексика через error-log
 
-Ошибки из Writing (и позже Speaking) → `srs_card {source: 'error_log'}`. Плюс стартовая колода **Academic Word List**. Так словарь учится не в отрыве, а по реальным слабым местам продукции.
+Ошибки из письма, а позже и из речи, становятся карточками `srs_card {source: 'error_log'}`. Плюс стартовая колода **Academic Word List** (пока демо-выборка из 10 слов). Словарь учится не в отрыве, а по реальным слабым местам продукции.
 
 ---
 
 ## 2. Модуль `ml` (первичная цель: программирование / ML)
 
-Другая механика: «сборник информации + практические задачи» → цикл **прочитал → активно вспомнил → сделал → получил ревью**.
+Механика: *прочитал → активно вспомнил → сделал → получил ревью*.
 
-### 2.1 Типы Activity
+| Тип | Назначение | Connectivity | Спека | Состояние |
+|---|---|---|---|---|
+| `material_read` | Чтение материала | offline | [SPEC-07](../20-specs/SPEC-07-ml-track.md) | ✅ |
+| `concept_recall` | Объяснить понятие своими словами → AI-проверка | online (с очередью) | [SPEC-07](../20-specs/SPEC-07-ml-track.md) | ✅ (переиспользуется шагом курса) |
+| `concept_srs` | Удержание понятий | offline | [SPEC-05](../20-specs/SPEC-05-srs-and-error-log.md) | тип под вопросом ([ADR-0015](../40-adr/0015-srs-is-a-card-queue.md)) |
+| `code_task` | Задача на код → ревью по критериям | online | [SPEC-16](../20-specs/SPEC-16-learning-expansion.md) | Ф5 |
 
-| Тип | Назначение | Connectivity | Механика |
-|---|---|---|---|
-| `material_read` | Персональная база знаний | offline | Чтение заметок/конспектов/PDF (закэшировано) |
-| `concept_recall` | Active recall концепций | online (offline-fallback) | Вопрос на понимание → открытый ответ → AI-проверка |
-| `concept_srs` | Удержание концепций | offline | FSRS: концепт ↔ объяснение |
-| `code_task` | Практическая задача | online | Задача (код/вывод) → AI-ревью по критериям |
+Рубрики: `concept_check` v1 (Correctness, Completeness, Explanation, 0–5) — ✅; `ml_code_review` (Correctness, Numerical stability / Efficiency, Idiomatic style, Explanation) — Ф5.
 
-### 2.2 Импорт контента
-
-- **PDF/Markdown/заметка** → пайплайн импорта (`importers` в манифесте) → `material`.
-- Из материала AI генерирует `concept_recall`-вопросы и `concept_srs`-карточки (job `generate_cards`).
-- `code_task` ревьюится по доменным критериям (корректность, эффективность, стиль).
-
-### 2.3 Пример рубрики
-
-- `ml_code_review` — критерии: Correctness, Numerical stability / Efficiency, Idiomatic style, Explanation. Пример задачи: «реализуй numerically stable softmax» → ревью.
+**Импорт** (Ф5): PDF/Markdown → `material` → персональные узлы графа `source='material'` и вопросы `concept_recall` ([SPEC-16](../20-specs/SPEC-16-learning-expansion.md)).
 
 ---
 
-## 3. Ключевые пользовательские сценарии
+## 3. Модуль `knowledge` (модель знаний)
 
-### 3.1 Онбординг + диагностика (online)
-```
-Выбор целей (TOEFL/IELTS target band, ML-темы)
-  → короткая диагностика (несколько Activity разных типов)
-  → AI оценивает уровень → строит стартовый адаптивный план
-```
+Лежит над движком Activity и не зависит от предмета. Граф понятий, задания из теории узла, плейсмент и курс ([05](./05-knowledge-model.md)). Активности шага курса регистрируются этим модулем; `concept_recall` переиспользуется из `ml`: реестр запрещает объявлять один тип дважды.
 
-### 3.2 Ежедневная сессия (offline-first)
-```
-Открыл приложение (может быть офлайн)
-  → «К повторению сегодня»: vocab_srs / concept_srs (FSRS, локально)
-  → 1–2 задания продукции (ielts_writing / code_task):
-       офлайн → пишешь, получаешь черновой локальный сигнал, job в очереди
-       online → полный скоринг по рубрике сразу
-  → reading_drill / concept_recall
-```
+| Тип | Назначение | Connectivity | Спека | Состояние |
+|---|---|---|---|---|
+| `concept_study` | Разобрать теорию узла с примерами | offline | [SPEC-11](../20-specs/SPEC-11-course-and-study.md) | ✅ |
+| `concept_contrast` | Отличить понятие от типичного заблуждения | online | SPEC-11 | ✅ |
+| `concept_apply` | Задача на применение понятия | online | SPEC-11 | ✅ |
+| `srs` | Удержание понятия узла | offline | SPEC-11 | ⚠️ объявлен, не исполняется (P3-SRS-01) |
+| *(`placement_probe`)* | Зонд плейсмента | online | [SPEC-10](../20-specs/SPEC-10-placement.md) | ✅ отдельным экраном, не как Activity |
 
-### 3.3 Скоринг продукции (мост offline→online)
-```
-Написал эссе офлайн → локальный fallback (объём, структура, AWL-покрытие)
-  → сеть появилась → job grade_writing → Claude по рубрике
-  → разбор: баллы по 4 критериям + ошибки + образец
-  → ошибки → error-log → новые vocab_srs карточки
-```
-
-### 3.4 Импорт материала (ML, online для генерации)
-```
-Закинул PDF статьи → material
-  → job generate_cards → concept_recall + concept_srs
-  → материал доступен офлайн для чтения; карточки — в FSRS-цикле
-```
-
-### 3.5 Адаптация плана (online)
-```
-Периодически: AI читает event log (response) + error-log
-  → определяет слабые критерии (напр. Coherence < target)
-  → предлагает сместить фокус следующих сессий
-```
+AI-роли модуля: `build_graph`, `expand_node`, `generate_assessment`, `estimate_mastery`. Все используют доменно-нейтральный `AIGateway.structured`.
 
 ---
 
-## 4. Объём MVP
+## 4. Сквозные сценарии
 
-Цель MVP — проверить **главную гипотезу**: «AI-скоринг продукции по рубрикам эффективнее изолированных карточек». Вертикальный срез через оба модуля (доказать универсальность движка).
+### 4.1 Начало работы
 
-### Входит в MVP
-1. **`ielts_writing_task2`** — полный цикл: эссе → скоринг по 4 критериям → правки → образец. С офлайн-fallback.
-2. **`vocab_srs`** — FSRS-колода, автоматически питаемая из error-log + Academic Word List.
-3. **Один ML-трек**: `material_read` → `concept_recall` → AI-проверка (доказывает, что тот же движок Activity тянет и технологии).
-4. **Offline-first инфраструктура**: SQLite-источник, job-queue, sync.
-5. **Онбординг** с выбором целей (без сложной диагностики — упрощённо).
+```
+регистрация → онбординг: «что изучаете» + целевой уровень → profile.subject
+  → граф предмета пуст? → построить черновик (любой пользователь, узлы draft)
+  → плейсмент: зонды на границе знаний → карта освоенности
+  → курс до цели → «Сегодня» показывает первый шаг с причиной
+```
 
-### НЕ входит в MVP (roadmap)
-- Speaking (STT/аудио) — **фаза 2**.
-- Listening-дриллы с аудио.
-- Полная адаптация плана (в MVP — простое правило по слабому критерию).
-- Мульти-девайс CRDT (в MVP — LWW, один активный девайс).
-- Продуктовые фичи (монетизация, соцфункции).
+Спеки: [SPEC-12](../20-specs/SPEC-12-learner-experience.md), [SPEC-08](../20-specs/SPEC-08-knowledge-graph.md), [SPEC-10](../20-specs/SPEC-10-placement.md), [SPEC-11](../20-specs/SPEC-11-course-and-study.md).
 
----
+### 4.2 Ежедневная сессия (offline-first)
 
-## 5. Roadmap
+```
+открыл приложение (может быть офлайн)
+  → «Сегодня»: одно действие по приоритету — шаг курса / повторение / плейсмент
+  → шаг курса: теория офлайн → вопросы при сети → освоенность → шаг закрыт или узел в повторение
+  → повторение: карточки due (FSRS, локально)
+  → продукция (эссе): офлайн — черновой сигнал и job в очереди; при сети — полная оценка
+```
 
-| Фаза | Содержание |
-|---|---|
-| **Фаза 0 — Каркас** | Монорепо, миграция Expo в `apps/mobile`, FastAPI-скелет, схема БД, core-engine, регистрация модулей |
-| **Фаза 1 — MVP** | `ielts_writing_task2` + `vocab_srs` + ML `concept_recall`; offline-first + job-queue + sync; онбординг |
-| **Фаза 2 — Речь и рецепция** | Speaking (STT + рубрика), listening/reading-дриллы с материалами, генерация passages |
-| **Фаза 3 — Адаптивность** | Полный адаптивный план по event log, импорт PDF-пайплайн, `code_task` с ревью |
-| **Фаза 4 — Продукт** | Мульти-девайс, аккаунты, монетизация, публикация в сторах (EAS) |
+### 4.3 Оценка продукции (мост offline → online)
 
----
+```
+эссе офлайн → локальный черновой сигнал (объём, абзацы, AWL)
+  → сеть → sync push → job grade_writing → LLM по рубрике
+  → разбор: 4 критерия + ошибки + образец
+  → ошибки → error-log → карточки повторения → pull на клиент
+```
 
-## 6. Метрики эффективности (как поймём, что работает)
+Спеки: [SPEC-03](../20-specs/SPEC-03-sync-and-jobs.md), [SPEC-04](../20-specs/SPEC-04-ai-gateway-and-rubrics.md), [SPEC-06](../20-specs/SPEC-06-writing.md).
 
-- **Удержание** (SRS): доля карточек, вспоминаемых с первого раза со временем.
-- **Рост по рубрикам**: динамика баллов продукции (band/score) по критериям.
-- **Закрытие error-log**: как быстро ошибки перестают повторяться после попадания в SRS.
-- **Регулярность**: длина серий (streak) ежедневных сессий — прокси вовлечённости.
+### 4.4 Петля освоения узла
 
-Эти метрики читаются из единого `response`-лога (инвариант №4) — отдельная инфраструктура аналитики не нужна.
+```
+узел графа → задание из его теории → ответ → response (единый лог) → освоенность → граница
+          ↘ слабый ответ (score < 0.6) → карточка FSRS по узлу ↗
+```
+
+### 4.5 Рост графа
+
+```
+«Углубиться» в узел по направлению интереса → LLM → персональные узлы grown_llm
+куратор: draft-узлы → вычитка → approve / tier=core → (Ф6) промоция персональных узлов в канон
+```
 
 ---
 
 ## Связанные документы
 
-- [00 — Обзор и принципы](../README.md)
-- [01 — Архитектурный план](./01-architecture.md)
-- [02 — Логический план](./02-logical.md)
+[01 — Архитектура](./01-architecture.md) · [02 — Логический план](./02-logical.md) · [05 — Модель знаний](./05-knowledge-model.md) · [требования](../10-requirements/functional.md)

@@ -51,7 +51,7 @@ concept_study (remember) → concept_recall (understand) → [concept_contrast, 
 
 Шаг: `{conceptId, title, tier, reason: rooting|differentiation|branch|spiral, bloom, activities: [{type, bloom}], done}`.
 
-`course(id, user_id, domain, target {bloom, interests}, path jsonb, progress {completed: []}, created_at)`.
+`course(id, user_id, domain, target {bloom, concepts: [id интересов]}, path jsonb, progress {completed: []}, created_at)`.
 
 ## Критерии приёмки
 
