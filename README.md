@@ -23,7 +23,7 @@ learning/                 ← суперпроект (docs — источник 
 | [Ф0 — Каркас](./docs/50-plans/phase-0-foundation.md) | ✅ 34/34 |
 | [Ф1 — MVP](./docs/50-plans/phase-1-mvp.md) | 🟡 31/33 (2 переоткрыты → Ф3) |
 | [Ф2 — Модель знаний](./docs/50-plans/phase-2-knowledge-model.md) | ✅ 30/30 |
-| [Ф3 — Укрепление](./docs/50-plans/phase-3-hardening.md) | ⚪ **следующая** · 1/26 |
+| [Ф3 — Укрепление](./docs/50-plans/phase-3-hardening.md) | 🟡 **идёт** · 11/28 |
 | [Ф4 — Речь и рецепция](./docs/50-plans/phase-4-speech-reception.md) | ⚪ 0/27 |
 | [Ф5 — Расширение обучения](./docs/50-plans/phase-5-learning-expansion.md) | ⚪ 0/16 |
 | [Ф6 — Продукт и релиз](./docs/50-plans/phase-6-product-release.md) | ⚪ 0/18 |

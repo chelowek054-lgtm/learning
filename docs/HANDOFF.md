@@ -43,6 +43,8 @@ docker compose up -d --build      # Postgres + миграции + API + pgAdmin
 cd learningFront && npm run web
 ```
 
+> **Стенд.** Docker-проект `learning` уже существует на машине (postgres `learning-postgres-1`, порт 5432). Для тестов backend достаточно `docker start learning-postgres-1`; второй compose-проект из worktree поднимать не нужно.
+
 Проверки:
 
 ```bash

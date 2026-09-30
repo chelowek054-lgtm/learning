@@ -4,7 +4,7 @@
 |---|---|
 | **Статус** | `draft` · `approved` · `partial` · `implemented` · `superseded` |
 | **Требования** | FR-…, NFR-… |
-| **Фаза** | [Фаза N](../50-plans/phase-N-….md) |
+| **Фаза** | Фаза N (`50-plans/phase-N-….md`) |
 | **Решения** | ADR-…  |
 | **Обновлено** | ГГГГ-ММ-ДД |
 
