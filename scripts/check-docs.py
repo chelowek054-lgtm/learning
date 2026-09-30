@@ -1,7 +1,9 @@
 """Проверка относительных ссылок в markdown документации (P3-CI-03).
 
 Запуск из корня суперпроекта: python scripts/check-docs.py
-Проверяет README.md, ROADMAP.md и docs/** (кроме archive/). Внешние ссылки и
+Проверяет README.md, ROADMAP.md и docs/** (кроме archive/ и inbox/: входящее — склад
+сырого текста, его ссылки не поддерживаются, а после разбора заметка переезжает
+в inbox/принятое на уровень глубже). Внешние ссылки и
 якоря пропускаются; ссылки внутрь сабмодулей не проверяются, если сабмодуль пуст.
 """
 
@@ -18,7 +20,7 @@ LINK = re.compile(r"\]\(([^)#\s]+)(?:#[^)]*)?\)")
 
 def files() -> list[Path]:
     out = [ROOT / "README.md", ROOT / "ROADMAP.md"]
-    out += [p for p in (ROOT / "docs").rglob("*.md") if "archive" not in p.parts]
+    out += [p for p in (ROOT / "docs").rglob("*.md") if "archive" not in p.parts and "inbox" not in p.parts]
     return out
 
 
