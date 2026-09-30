@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  invariants-and-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          # Сабмодули приватные: нужен токен с доступом к learningFront и learningBack.
+          token: ${{ secrets.SUBMODULES_TOKEN || github.token }}
+      - name: Инварианты (NFR-02, NFR-03, NFR-KG-1, цвета)
+        run: bash scripts/check-invariants.sh
+      - name: Ссылки в документации
+        run: python3 scripts/check-docs.py

@@ -8,7 +8,7 @@
 
 | Спека | Возможность | Требования | Фаза | Статус |
 |---|---|---|---|---|
-| [SPEC-01](./SPEC-01-activity-engine.md) | Движок Activity и модульная система | FR-ENG-01..06 | Ф0 · Ф3 | `partial` |
+| [SPEC-01](./SPEC-01-activity-engine.md) | Движок Activity и модульная система | FR-ENG-01..06 | Ф0 · Ф3 | `implemented` |
 | [SPEC-02](./SPEC-02-auth-and-roles.md) | Аккаунт, вход, восстановление, роли | FR-AUTH-01..07 | Ф1 · Ф6 | `partial` |
 | [SPEC-03](./SPEC-03-sync-and-jobs.md) | Offline-first, синхронизация, очередь задач | FR-SYNC-01..06, 08 | Ф1 · Ф3 | `partial` |
 | [SPEC-04](./SPEC-04-ai-gateway-and-rubrics.md) | AI-gateway, рубрики, стоимость | FR-AI-01..07 | Ф1 · Ф3 | `partial` |

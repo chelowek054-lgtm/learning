@@ -35,7 +35,7 @@ concept_study (remember) → concept_recall (understand) → [concept_contrast, 
 
 1. `start` разворачивает шаг в Activity модуля `knowledge` (идемпотентно): `concept_study` и `srs` — offline, остальные — online. Payload берёт задание из кэша [SPEC-09](./SPEC-09-assessment.md). Активность, для которой задание не строится, пропускается. Заодно создаётся карточка удержания узла.
 2. `answer` оценивает ответ, пишет `response` (единый лог), обновляет освоенность ([SPEC-10](./SPEC-10-placement.md)).
-3. `score < 0.6` → карточка `error_log` по узлу; узел попадает в `weak`.
+3. Оценка пишется в `response.grade` как `{score, explanation, conceptId, conceptVersion, bloom}`. `score < 0.6` → карточка `error_log` по узлу; узел попадает в `weak`.
 4. Шаг закрывается, **только** когда узел освоен: `estimate ≥ 0.75` и `confidence ≥ 0.6`. Кнопка «готово» (`complete`) — служебная.
 
 ## Контракт
@@ -64,7 +64,7 @@ concept_study (remember) → concept_recall (understand) → [concept_contrast, 
 | AC-11.5 | Шаг разворачивается в 4 активности с верной `connectivity`; повторный `start` не дублирует | test `test_study.py`, live | 🟢 |
 | AC-11.6 | Ответ пишет строку `response` | test | 🟢 |
 | AC-11.7 | Слабый ответ → карточка по узлу, узел в `weak`; верные ответы закрывают шаг | test, live | 🟢 |
-| AC-11.8 | Оценка ответа на шаге хранит версию узла и id задания | test | ⚪ |
+| AC-11.8 | Оценка ответа на шаге хранит версию узла и ступень (id задания — в `response.activity_id`) | test `test_study.py` | 🟢 |
 | AC-11.9 | Активность `srs` шага исполняется на клиенте (карточка узла) | live | ⚪ |
 | AC-11.10 | Сквозной сценарий граф → плейсмент → курс → шаг → ответ проходит на устройстве | device | ⚪ |
 
@@ -76,7 +76,6 @@ concept_study (remember) → concept_recall (understand) → [concept_contrast, 
 
 | Расхождение | Задача |
 |---|---|
-| `response.grade` шага = `{score, explanation, conceptId}` — без `conceptVersion` и id задания (NFR-06) | [P3-KG-03](../50-plans/phase-3-hardening.md) |
 | Тип `srs` объявлен клиентом, рендерера нет; шаг `srs` не исполняется | P3-SRS-01 |
 | Ответы на шагах идут напрямую в API и офлайн не работают, хотя `concept_study` помечен offline только для чтения теории | принято: проверка ответа требует сети; зафиксировать в ADR-0015 |
 | Сквозной сценарий не проходился на устройстве | P3-DEV-03 |

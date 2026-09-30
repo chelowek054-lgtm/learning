@@ -20,16 +20,16 @@ ADR 0001–0017 восстановлены 2026-09-30 из журнала ROADMA
 | [0012](./0012-mastery-beta-not-irt.md) | Освоенность — бета-модель с приором из предпосылок, не IRT | accepted | SPEC-10 |
 | [0013](./0013-course-as-developmental-simulation.md) | Курс — симуляция развития (4 стадии), а не топосорт | accepted | SPEC-11 |
 | [0014](./0014-jobs-processed-on-push.md) | AI-задачи исполняются синхронно на `/sync/push` (до появления воркера) | accepted | SPEC-03 |
-| [0015](./0015-srs-is-a-card-queue.md) | Повторение — очередь карточек, а не тип Activity | **proposed** | SPEC-05, SPEC-11 |
+| [0015](./0015-srs-is-a-card-queue.md) | Повторение — очередь карточек, а не тип Activity | accepted (реализация — P3-SRS-01) | SPEC-05, SPEC-11 |
 | [0016](./0016-empty-domain-built-by-learner.md) | Пустую область строит выбравший предмет; узлы — draft до вычитки | accepted | SPEC-08 |
 | [0017](./0017-ui-vocabularies-single-source.md) | Словари интерфейса — единые источники в реестре и `entities`, не в экранах | accepted | SPEC-12 |
 | [0018](./0018-phase-renumbering.md) | Перенумерация фаз: укрепление фундамента перед речью | accepted | 50-plans |
+| [0019](./0019-backend-module-registry.md) | Реестр модулей backend: ядро не знает модулей; рубрики и стартовый контент через модули | accepted | SPEC-01, NFR-03 |
 
 ## Решения, которые предстоит принять
 
 | Вопрос | Когда | Задача |
 |---|---|---|
-| Контракт модулей backend и их регистрация | Ф3 | P3-INV-01 |
 | Где STT (API / контейнер / on-device), формат аудио | до Ф4 WS2 | P4-WS2-00 |
 | Фоновой воркер вместо обработки на push | до Ф4 WS2 | P4-WS2-03 |
 | Где TTS | до Ф4 WS6 | P4-WS6-00 |
