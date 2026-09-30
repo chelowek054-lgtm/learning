@@ -1,15 +1,17 @@
 """Прогон автоматических проверок DocDD и запись отчёта (docs/02-workspace-contract.md, «Отчёты»).
 
-Запуск из корня проекта: python scripts/docdd-report.py [--dry-run]
+Запуск: python scripts/docdd-report.py [--dry-run] [--root ПУТЬ_К_ПРОЕКТУ]
 
-Берёт записи типа verification из docs/development/tests, у каждой читает поле
-`command`, выполняет его и пишет `docs/development/tests/reports/<дата>-local.json`:
+Берёт записи типа verification из docs/development/tests. Команду читает из поля
+`command`, а если его нет — из текста записи: первая команда в обратных кавычках
+(так её сохраняет разбор входящего). Выполняет её и пишет `docs/development/tests/reports/<дата>-local.json`:
 `V-xxxx → passed | failed`. Результат — факт, его нельзя поставить руками: по нему
 консоль отличает «подтверждено прогоном» от «только объявлено».
 
-Пропускаются проверки без `command`, ручные (kind: manual, review) и те, чья
-команда начинается со слова «будет» — теста ещё нет, и выдавать его за упавший
-нечестно: такая проверка остаётся без результата (`verification_never_run`).
+Пропускаются проверки без команды, с пометкой «ещё нет» / «будет» (теста нет, и
+выдавать его за упавший нечестно) и review. Поле `kind` не смотрим: разбор входящего
+ставит `manual` всем записям, а признак автоматической проверки — наличие команды.
+Такая проверка остаётся без результата (`verification_never_run`).
 """
 
 from __future__ import annotations
@@ -21,10 +23,28 @@ import subprocess
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+def _root() -> Path:
+    if "--root" in sys.argv:
+        return Path(sys.argv[sys.argv.index("--root") + 1]).resolve()
+    return Path(__file__).resolve().parent.parent
+
+
+ROOT = _root()
 TESTS = ROOT / "docs" / "development" / "tests"
 REPORTS = TESTS / "reports"
 TIMEOUT_SECONDS = 900
+COMMAND_START = re.compile(r"^(cd |bash |python |npm |npx |uv |pytest )")
+
+
+def command_from_body(text: str) -> str:
+    """Первая команда в обратных кавычках; пусто, если тест ещё не написан."""
+    body = text.split("---", 2)[-1].split("## Журнал")[0]
+    if re.search(r"ещё нет|будет:|появится вместе", body):
+        return ""
+    for m in re.finditer(r"`([^`]+)`", body):
+        if COMMAND_START.match(m.group(1)):
+            return m.group(1)
+    return ""
 
 
 def front_matter(text: str) -> dict[str, str]:
@@ -47,11 +67,13 @@ def runnable() -> tuple[list[tuple[str, str]], list[str]]:
     todo: list[tuple[str, str]] = []
     skipped: list[str] = []
     for f in sorted(TESTS.glob("V-*.md")):
-        fm = front_matter(f.read_text(encoding="utf-8"))
-        vid, command = fm.get("id", ""), fm.get("command", "")
+        text = f.read_text(encoding="utf-8")
+        fm = front_matter(text)
+        vid = fm.get("id", "")
+        command = fm.get("command", "") or command_from_body(text)
         if not vid:
             continue
-        if fm.get("kind") in ("manual", "review") or not command or command.startswith("будет"):
+        if fm.get("kind") == "review" or not command or command.startswith("будет"):
             skipped.append(vid)
         else:
             todo.append((vid, command))
@@ -65,6 +87,10 @@ def main() -> int:
     if dry:
         for vid, cmd in todo:
             print(f"  {vid}: {cmd}")
+        return 0
+
+    if not todo:
+        print("запускать нечего: отчёт не пишу")
         return 0
 
     started = dt.datetime.now(dt.timezone.utc)
