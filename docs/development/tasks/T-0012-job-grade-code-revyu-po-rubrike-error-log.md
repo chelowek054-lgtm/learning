@@ -5,10 +5,11 @@ title: 'Job grade_code: ревью по рубрике → error-log'
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0010]
   depends_on: [T-0010]
+  affects: [M-0003]
 ---
 
 # Job grade_code: ревью по рубрике → error-log

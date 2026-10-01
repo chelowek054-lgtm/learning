@@ -5,10 +5,11 @@ title: 'Инкрементальный sync: push изменённого, GET /s
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0025]
   decided_by: [A-0014]
+  affects: [M-0003]
 ---
 
 # Инкрементальный sync: push изменённого, GET /sync/pull?since=

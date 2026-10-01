@@ -5,9 +5,10 @@ title: '70-business/: модель, аудитория, монетизация, 
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0021]
+  affects: [M-0003]
 ---
 
 # 70-business/: модель, аудитория, монетизация, юнит-экономика

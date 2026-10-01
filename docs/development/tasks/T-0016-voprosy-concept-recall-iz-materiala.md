@@ -5,10 +5,11 @@ title: Вопросы concept_recall из материала
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0011, R-0014]
   depends_on: [T-0015]
+  affects: [M-0003]
 ---
 
 # Вопросы concept_recall из материала

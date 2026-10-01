@@ -5,10 +5,11 @@ title: Реализация языкового графа по ADR; встраи
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0013]
   depends_on: [T-0019]
+  affects: [M-0003]
 ---
 
 # Реализация языкового графа по ADR; встраивание дриллов в курс

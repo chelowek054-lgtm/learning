@@ -5,9 +5,10 @@ title: 'listening_drill: кэш аудио, лимит прослушивани�
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0022]
+  affects: [M-0003]
 ---
 
 # listening_drill: кэш аудио, лимит прослушиваний

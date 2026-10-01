@@ -5,10 +5,11 @@ title: 'Запуск клиента в Expo Go: старт, миграции, р
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0017]
   decided_by: [A-0006]
+  affects: [M-0003]
 ---
 
 # Запуск клиента в Expo Go: старт, миграции, регистрация модулей

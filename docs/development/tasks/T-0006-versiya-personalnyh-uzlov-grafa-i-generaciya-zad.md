@@ -2,10 +2,10 @@
 id: T-0006
 type: task
 title: Версия персональных узлов графа и генерация заданий по ним
-status: backlog
+status: ready
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0008]
   decided_by: [A-0008]
@@ -20,3 +20,4 @@ links:
 
 - 2026-09-30 · заведена из docs/inbox/knowledge-graph.md · приложение
 - 2026-10-01 · добавлены связи вне приложения: decided_by A-0008, affects M-0001 · claude
+- 2026-10-01 · готова к работе · architect

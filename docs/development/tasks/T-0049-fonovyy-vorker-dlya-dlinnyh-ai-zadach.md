@@ -5,10 +5,11 @@ title: Фоновый воркер для длинных AI-задач
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0025, R-0023]
   decided_by: [A-0007]
+  affects: [M-0003]
 ---
 
 # Фоновый воркер для длинных AI-задач

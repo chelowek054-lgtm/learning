@@ -5,9 +5,10 @@ title: Префикс версии API /v1 и проверка совмести�
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0020]
+  affects: [M-0003]
 ---
 
 # Префикс версии API /v1 и проверка совместимости клиента

@@ -5,11 +5,12 @@ title: Рубрика ielts_speaking v1 и оценка по таймингам
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0023]
-  depends_on: [T-0041]
   decided_by: [A-0009]
+  depends_on: [T-0041]
+  affects: [M-0003]
 ---
 
 # Рубрика ielts_speaking v1 и оценка по таймингам

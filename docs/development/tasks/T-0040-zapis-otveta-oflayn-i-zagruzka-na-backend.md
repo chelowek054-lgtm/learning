@@ -5,9 +5,10 @@ title: Запись ответа офлайн и загрузка на backend
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0023]
+  affects: [M-0003]
 ---
 
 # Запись ответа офлайн и загрузка на backend

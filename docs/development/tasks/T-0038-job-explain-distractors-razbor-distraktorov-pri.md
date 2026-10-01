@@ -5,9 +5,10 @@ title: 'Job explain_distractors: разбор дистракторов при с
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0022]
+  affects: [M-0003]
 ---
 
 # Job explain_distractors: разбор дистракторов при сети

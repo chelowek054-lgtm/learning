@@ -5,11 +5,12 @@ title: Порт SpeechToText и job transcribe в фоновом воркере
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0023]
-  depends_on: [T-0040]
   decided_by: [A-0007]
+  depends_on: [T-0040]
+  affects: [M-0003]
 ---
 
 # Порт SpeechToText и job transcribe в фоновом воркере

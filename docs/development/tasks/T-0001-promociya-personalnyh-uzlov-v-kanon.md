@@ -5,10 +5,11 @@ title: Промоция персональных узлов в канон
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0003]
   decided_by: [A-0008]
+  affects: [M-0003]
 ---
 
 # Промоция персональных узлов в канон

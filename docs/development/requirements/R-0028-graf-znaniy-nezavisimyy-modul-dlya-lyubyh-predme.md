@@ -2,7 +2,7 @@
 id: R-0028
 type: requirement
 title: Граф знаний — независимый модуль для любых предметов
-status: draft
+status: approved
 created: 2026-10-01
 updated: 2026-10-01
 ---
@@ -23,3 +23,5 @@ updated: 2026-10-01
 
 - 2026-10-01 · заведена из docs/inbox/platform-knowledge-graph-module.md · приложение
 - 2026-10-01 · убраны связи неверного типа вне приложения: refines [R-0008]; decided_by [A-0020] · claude
+- 2026-10-01 · на подтверждение · architect
+- 2026-10-01 · подтверждён · architect

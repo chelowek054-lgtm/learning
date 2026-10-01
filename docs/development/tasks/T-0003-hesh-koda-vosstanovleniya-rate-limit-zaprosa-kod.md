@@ -2,10 +2,10 @@
 id: T-0003
 type: task
 title: Хеш кода восстановления, rate-limit запроса кода, отзыв сессий после смены пароля
-status: backlog
+status: ready
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0006]
   decided_by: [A-0012]
@@ -20,3 +20,4 @@ links:
 
 - 2026-09-30 · заведена из docs/inbox/auth-and-roles.md · приложение
 - 2026-10-01 · добавлены связи вне приложения: decided_by A-0012, affects M-0001 · claude
+- 2026-10-01 · готова к работе · architect

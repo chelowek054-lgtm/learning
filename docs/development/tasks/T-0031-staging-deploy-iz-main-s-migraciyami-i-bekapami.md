@@ -5,11 +5,12 @@ title: 'Staging: деплой из main с миграциями и бэкапа�
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0020]
-  depends_on: [T-0030]
   decided_by: [A-0015, A-0017, A-0019]
+  depends_on: [T-0030]
+  affects: [M-0003]
 ---
 
 # Staging: деплой из main с миграциями и бэкапами

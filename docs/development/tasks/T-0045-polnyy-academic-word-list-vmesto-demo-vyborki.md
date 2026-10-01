@@ -5,9 +5,10 @@ title: Полный Academic Word List вместо демо-выборки
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0024]
+  affects: [M-0003]
 ---
 
 # Полный Academic Word List вместо демо-выборки

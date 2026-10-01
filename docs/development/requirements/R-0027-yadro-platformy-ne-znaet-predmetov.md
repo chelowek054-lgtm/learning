@@ -2,7 +2,7 @@
 id: R-0027
 type: requirement
 title: Ядро платформы не знает предметов
-status: draft
+status: approved
 created: 2026-10-01
 updated: 2026-10-01
 ---
@@ -21,3 +21,5 @@ updated: 2026-10-01
 
 - 2026-10-01 · заведена из docs/inbox/platform-core-and-plugins.md · приложение
 - 2026-10-01 · убраны связи неверного типа вне приложения: refines [R-0002]; decided_by [A-0020] · claude
+- 2026-10-01 · на подтверждение · architect
+- 2026-10-01 · подтверждён · architect

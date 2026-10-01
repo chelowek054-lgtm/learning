@@ -5,9 +5,10 @@ title: Генерация passage/вопросов, озвучка и курир
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0022]
+  affects: [M-0003]
 ---
 
 # Генерация passage/вопросов, озвучка и курирование материалов

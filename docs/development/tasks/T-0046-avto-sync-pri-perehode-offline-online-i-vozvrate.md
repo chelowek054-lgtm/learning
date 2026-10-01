@@ -5,10 +5,11 @@ title: Авто-sync при переходе offline→online и возврат�
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0025]
   decided_by: [A-0011]
+  affects: [M-0003]
 ---
 
 # Авто-sync при переходе offline→online и возврате из фона

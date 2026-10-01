@@ -5,9 +5,10 @@ title: Мониторинг ошибок и алерты на failed-jobs, ра�
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0025]
+  affects: [M-0003]
 ---
 
 # Мониторинг ошибок и алерты на failed-jobs, расход токенов

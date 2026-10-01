@@ -5,9 +5,10 @@ title: ADR и реализация стратегии конфликтов дл�
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0019]
+  affects: [M-0003]
 ---
 
 # ADR и реализация стратегии конфликтов для нескольких устройств

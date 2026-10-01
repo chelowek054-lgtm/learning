@@ -5,9 +5,10 @@ title: Сквозной прогон письма и ML-трека офлайн 
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0017, R-0026, R-0014]
+  affects: [M-0003]
 ---
 
 # Сквозной прогон письма и ML-трека офлайн на устройстве

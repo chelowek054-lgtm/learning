@@ -2,7 +2,7 @@
 id: R-0031
 type: requirement
 title: 'Данные пользователя: единое хранилище с доступом по разрешениям'
-status: draft
+status: approved
 created: 2026-10-01
 updated: 2026-10-01
 ---
@@ -23,3 +23,5 @@ updated: 2026-10-01
 
 - 2026-10-01 · заведена из docs/inbox/platform-user-data-module.md · приложение
 - 2026-10-01 · убраны связи неверного типа вне приложения: affects [R-0018, R-0019, R-0006]; decided_by [A-0020] · claude
+- 2026-10-01 · на подтверждение · architect
+- 2026-10-01 · подтверждён · architect

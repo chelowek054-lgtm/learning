@@ -5,9 +5,10 @@ title: Сквозной прогон графа, плейсмента, курс�
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0007, R-0017]
+  affects: [M-0003]
 ---
 
 # Сквозной прогон графа, плейсмента, курса и шага на устройстве

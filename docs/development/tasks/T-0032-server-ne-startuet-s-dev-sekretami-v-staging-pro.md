@@ -5,10 +5,11 @@ title: Сервер не стартует с dev-секретами в staging/p
 status: backlog
 change: feature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 links:
   implements: [R-0020]
   decided_by: [A-0015]
+  affects: [M-0003]
 ---
 
 # Сервер не стартует с dev-секретами в staging/prod
