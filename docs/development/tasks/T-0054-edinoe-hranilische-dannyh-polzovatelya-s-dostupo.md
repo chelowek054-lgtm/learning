@@ -8,7 +8,6 @@ created: 2026-10-01
 updated: 2026-10-01
 links:
   implements: [R-0031]
-  affects: [P-0015]
   depends_on: [T-0027]
 ---
 
@@ -22,3 +21,4 @@ links:
 ## Журнал
 
 - 2026-10-01 · заведена из docs/inbox/platform-task-user-data-module.md · приложение
+- 2026-10-01 · убраны связи неверного типа вне приложения: affects [P-0015] · claude

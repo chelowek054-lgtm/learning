@@ -8,7 +8,6 @@ created: 2026-10-01
 updated: 2026-10-01
 links:
   implements: [R-0027]
-  affects: [C-0001, P-0015]
   decided_by: [A-0020]
 ---
 
@@ -22,3 +21,4 @@ links:
 ## Журнал
 
 - 2026-10-01 · заведена из docs/inbox/platform-task-module-contract.md · приложение
+- 2026-10-01 · убраны связи неверного типа вне приложения: affects [C-0001, P-0015] · claude

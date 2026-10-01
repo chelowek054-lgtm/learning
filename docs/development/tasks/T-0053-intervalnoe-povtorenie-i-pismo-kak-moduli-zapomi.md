@@ -8,7 +8,6 @@ created: 2026-10-01
 updated: 2026-10-01
 links:
   implements: [R-0029]
-  affects: [P-0015]
   depends_on: [T-0051, T-0052]
   decided_by: [A-0016]
 ---
@@ -23,3 +22,4 @@ links:
 ## Журнал
 
 - 2026-10-01 · заведена из docs/inbox/platform-task-memorization-modules.md · приложение
+- 2026-10-01 · убраны связи неверного типа вне приложения: affects [P-0015] · claude

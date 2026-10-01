@@ -2,7 +2,7 @@
 id: T-0008
 type: task
 title: Облегчённый список узлов графа без полной теории
-status: ready
+status: done
 change: feature
 created: 2026-09-30
 updated: 2026-10-01
@@ -20,3 +20,6 @@ GET /graph/{domain} отдаёт теорию всех узлов домена �
 - 2026-09-30 · заведена из docs/inbox/knowledge-graph.md · приложение
 - 2026-10-01 · добавлены связи вне приложения: affects M-0001 · claude
 - 2026-10-01 · готова к работе · architect
+- 2026-10-01 · взята в работу · claude
+- 2026-10-01 · на проверку · claude
+- 2026-10-01 · выполнена · тесты test_graph_nodes: лёгкий список и GET /graph/nodes/{id} · claude

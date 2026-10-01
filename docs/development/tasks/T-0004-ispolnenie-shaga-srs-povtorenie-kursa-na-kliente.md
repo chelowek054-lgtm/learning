@@ -2,7 +2,7 @@
 id: T-0004
 type: task
 title: Исполнение шага срс (повторение) курса на клиенте
-status: ready
+status: in_review
 change: feature
 created: 2026-09-30
 updated: 2026-10-01
@@ -21,3 +21,5 @@ links:
 - 2026-09-30 · заведена из docs/inbox/course-and-study.md, docs/inbox/srs-and-error-log.md · приложение
 - 2026-10-01 · добавлены связи вне приложения: decided_by A-0003, affects M-0001 · claude
 - 2026-10-01 · готова к работе · architect
+- 2026-10-01 · взята в работу · claude
+- 2026-10-01 · на проверку · тесты test_study; проверка на устройстве (live, AC-11.9) не пройдена · claude
