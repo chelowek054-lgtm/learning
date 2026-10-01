@@ -14,11 +14,18 @@ paths:
   maps: maps
 sources:
   # Где лежит код: по нему проверяются ссылки из документов.
-  code: []
+  code:
+    - learningBack/core
+    - learningBack/modules
+    - learningBack/migrations
+    - learningBack/tests
+    - learningFront/src
+    - scripts
   # Где лежит старая документация: с неё начинается импорт.
   docs: []
   # Где живёт клиентская часть: по ней строится карта пользовательских путей.
-  client: []
+  client:
+    - learningFront/src
   # Где лежат сырые заметки: из них заводятся записи (docs/10-inbox.md).
   inbox: [docs/inbox]
 roles:
