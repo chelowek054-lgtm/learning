@@ -15,10 +15,9 @@ paths:
 sources:
   # Где лежит код: по нему проверяются ссылки из документов.
   code:
-    - learningBack/core
-    - learningBack/modules
-    - learningBack/migrations
-    - learningBack/tests
+    # Корень бэкенда целиком: его .gitignore (__pycache__, .venv) действует только
+    # в указанной папке и глубже, поэтому подпапки по отдельности подмешивали бы *.pyc.
+    - learningBack
     - learningFront/src
     - scripts
   # Где лежит старая документация: с неё начинается импорт.
