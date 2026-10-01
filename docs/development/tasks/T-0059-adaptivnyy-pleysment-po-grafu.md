@@ -2,7 +2,7 @@
 id: T-0059
 type: task
 title: Адаптивный плейсмент по графу
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-01
 updated: 2026-10-01
@@ -22,3 +22,6 @@ links:
 ## Журнал
 
 - 2026-10-01 · заведена из docs/inbox/retro-placement.md · приложение
+- 2026-10-01 · готова к работе · claude
+- 2026-10-01 · взята в работу · claude
+- 2026-10-01 · на проверку · сделана ранее; V-0056 прошла, живая проверка V-0057 не запускалась · claude
