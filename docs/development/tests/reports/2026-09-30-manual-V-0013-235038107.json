@@ -1,0 +1,10 @@
+{
+  "contract": "docdd.workspace/1",
+  "runner": "manual:architect",
+  "started_at": "2026-09-30T23:50:38.107Z",
+  "total": 1,
+  "failed": 0,
+  "verifications": {
+    "V-0013": "skipped"
+  }
+}

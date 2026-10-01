@@ -1,0 +1,31 @@
+contract: docdd.workspace/1
+project:
+  id: learning
+  name: learning
+paths:
+  requirements: requirements
+  design: design
+  decisions: decisions
+  contracts: contracts
+  tasks: tasks
+  phases: phases
+  tests: tests
+  diagrams: diagrams
+  maps: maps
+sources:
+  # Где лежит код: по нему проверяются ссылки из документов.
+  code: []
+  # Где лежит старая документация: с неё начинается импорт.
+  docs: []
+  # Где живёт клиентская часть: по ней строится карта пользовательских путей.
+  client: []
+  # Где лежат сырые заметки: из них заводятся записи (docs/10-inbox.md).
+  inbox: [docs/inbox]
+roles:
+  - id: architect
+    name: Архитектор
+policy:
+  require_approved_docs_before_dev: true
+  require_verification_before_done: true
+  stale_in_progress_days: 14
+  map_portion_files: 40
