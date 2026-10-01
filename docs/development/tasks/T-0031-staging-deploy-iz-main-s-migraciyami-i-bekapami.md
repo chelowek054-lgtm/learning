@@ -9,6 +9,7 @@ updated: 2026-09-30
 links:
   implements: [R-0020]
   depends_on: [T-0030]
+  decided_by: [A-0015, A-0017, A-0019]
 ---
 
 # Staging: деплой из main с миграциями и бэкапами
@@ -18,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/platform-and-release.md · приложение
+- 2026-10-01 · добавлены связи вне приложения: decided_by A-0015, decided_by A-0017, decided_by A-0019 · claude

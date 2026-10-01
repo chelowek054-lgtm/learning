@@ -8,7 +8,8 @@ created: 2026-09-30
 updated: 2026-09-30
 links:
   implements: [R-0007, R-0024]
-  decided_by: [A-0016]
+  decided_by: [A-0016, A-0003]
+  affects: [M-0001]
 ---
 
 # Исполнение шага срс (повторение) курса на клиенте
@@ -18,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/course-and-study.md, docs/inbox/srs-and-error-log.md · приложение
+- 2026-10-01 · добавлены связи вне приложения: decided_by A-0003, affects M-0001 · claude

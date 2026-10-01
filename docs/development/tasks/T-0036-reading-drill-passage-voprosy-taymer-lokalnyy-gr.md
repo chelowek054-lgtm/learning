@@ -8,6 +8,7 @@ created: 2026-09-30
 updated: 2026-09-30
 links:
   implements: [R-0022]
+  decided_by: [A-0011]
 ---
 
 # reading_drill: passage, вопросы, таймер, локальный грейдер
@@ -17,3 +18,4 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/reception-drills.md · приложение
+- 2026-10-01 · добавлены связи вне приложения: decided_by A-0011 · claude

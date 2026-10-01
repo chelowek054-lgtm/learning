@@ -9,6 +9,7 @@ updated: 2026-09-30
 links:
   implements: [R-0023]
   depends_on: [T-0041]
+  decided_by: [A-0009]
 ---
 
 # Рубрика ielts_speaking v1 и оценка по таймингам
@@ -18,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/speaking.md · приложение
+- 2026-10-01 · добавлены связи вне приложения: decided_by A-0009 · claude

@@ -8,6 +8,7 @@ created: 2026-09-30
 updated: 2026-09-30
 links:
   implements: [R-0016]
+  decided_by: [A-0017]
 ---
 
 # Защита ветки main во всех трёх репозиториях
@@ -17,3 +18,4 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/platform-and-release.md · приложение
+- 2026-10-01 · добавлены связи вне приложения: decided_by A-0017 · claude

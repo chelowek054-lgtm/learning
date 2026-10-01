@@ -8,6 +8,7 @@ created: 2026-09-30
 updated: 2026-09-30
 links:
   implements: [R-0010]
+  decided_by: [A-0009]
 ---
 
 # Рубрика ml_code_review v1
@@ -17,3 +18,4 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/learning-expansion.md, docs/inbox/ai-gateway-and-rubrics.md · приложение
+- 2026-10-01 · добавлены связи вне приложения: decided_by A-0009 · claude

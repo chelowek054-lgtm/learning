@@ -7,7 +7,7 @@ created: 2026-09-30
 updated: 2026-10-01
 kind: manual
 links:
-  verifies: [R-0002, R-0009]
+  verifies: [R-0002, R-0009, R-0027]
 ---
 
 # Инварианты: ядро и оформление без предметного/доменного кода
@@ -22,3 +22,4 @@ Integration, bash: `bash scripts/check-invariants.sh`. Доказывает: в 
 - 2026-10-01 · возвращён в черновик · architect
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
+- 2026-10-01 · добавлены связи вне приложения: verifies R-0027 · claude

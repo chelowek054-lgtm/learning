@@ -8,6 +8,8 @@ created: 2026-09-30
 updated: 2026-09-30
 links:
   implements: [R-0006]
+  decided_by: [A-0012]
+  affects: [M-0001]
 ---
 
 # Хеш кода восстановления, rate-limit запроса кода, отзыв сессий после смены пароля
@@ -17,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/auth-and-roles.md · приложение
+- 2026-10-01 · добавлены связи вне приложения: decided_by A-0012, affects M-0001 · claude

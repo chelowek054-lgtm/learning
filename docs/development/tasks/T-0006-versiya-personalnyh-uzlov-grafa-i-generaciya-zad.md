@@ -8,6 +8,8 @@ created: 2026-09-30
 updated: 2026-09-30
 links:
   implements: [R-0008]
+  decided_by: [A-0008]
+  affects: [M-0001]
 ---
 
 # Версия персональных узлов графа и генерация заданий по ним
@@ -17,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/knowledge-graph.md · приложение
+- 2026-10-01 · добавлены связи вне приложения: decided_by A-0008, affects M-0001 · claude

@@ -8,6 +8,7 @@ created: 2026-09-30
 updated: 2026-09-30
 links:
   implements: [R-0025]
+  decided_by: [A-0011]
 ---
 
 # Авто-sync при переходе offline→online и возврате из фона
@@ -17,3 +18,4 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/sync-and-jobs.md · приложение
+- 2026-10-01 · добавлены связи вне приложения: decided_by A-0011 · claude

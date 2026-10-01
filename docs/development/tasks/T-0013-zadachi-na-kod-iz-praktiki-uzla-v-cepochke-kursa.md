@@ -9,6 +9,7 @@ updated: 2026-09-30
 links:
   implements: [R-0010, R-0007]
   depends_on: [T-0011, T-0012]
+  decided_by: [A-0003]
 ---
 
 # Задачи на код из практики узла в цепочке курса
@@ -18,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/learning-expansion.md, docs/inbox/course-and-study.md · приложение
+- 2026-10-01 · добавлены связи вне приложения: decided_by A-0003 · claude

@@ -8,6 +8,7 @@ created: 2026-09-30
 updated: 2026-09-30
 links:
   implements: [R-0009]
+  decided_by: [A-0018]
 ---
 
 # Экран прогресса учащегося
@@ -17,3 +18,4 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/learner-experience.md, docs/inbox/product-metrics.md · приложение
+- 2026-10-01 · добавлены связи вне приложения: decided_by A-0018 · claude
