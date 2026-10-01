@@ -2,7 +2,7 @@
 id: T-0011
 type: task
 title: 'features/code-task: условие, редактор, офлайн-сохранение решения'
-status: backlog
+status: in_review
 change: feature
 created: 2026-09-30
 updated: 2026-10-01
@@ -18,3 +18,6 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/learning-expansion.md · приложение
+- 2026-10-01 · готова к работе · claude
+- 2026-10-01 · взята в работу · экран задачи на код на клиенте · claude
+- 2026-10-01 · на проверку · тесты code-draft.test; экран на устройстве не проверялся · claude

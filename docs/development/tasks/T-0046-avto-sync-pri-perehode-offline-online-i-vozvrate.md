@@ -2,7 +2,7 @@
 id: T-0046
 type: task
 title: Авто-sync при переходе offline→online и возврате из фона
-status: backlog
+status: in_review
 change: feature
 created: 2026-09-30
 updated: 2026-10-01
@@ -20,3 +20,6 @@ links:
 
 - 2026-09-30 · заведена из docs/inbox/sync-and-jobs.md · приложение
 - 2026-10-01 · добавлены связи вне приложения: decided_by A-0011 · claude
+- 2026-10-01 · готова к работе · claude
+- 2026-10-01 · взята в работу · claude
+- 2026-10-01 · на проверку · тесты auto-sync.test; проверка на устройстве не пройдена · claude

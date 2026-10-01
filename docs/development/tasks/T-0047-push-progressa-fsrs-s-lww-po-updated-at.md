@@ -2,7 +2,7 @@
 id: T-0047
 type: task
 title: Push прогресса FSRS с LWW по updated_at
-status: backlog
+status: done
 change: feature
 created: 2026-09-30
 updated: 2026-10-01
@@ -18,3 +18,7 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/sync-and-jobs.md · приложение
+- 2026-10-01 · готова к работе · claude
+- 2026-10-01 · взята в работу · claude
+- 2026-10-01 · на проверку · claude
+- 2026-10-01 · выполнена · реализовано в миграции 0011, тесты test_sync и sync-service.test · claude

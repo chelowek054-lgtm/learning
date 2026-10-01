@@ -2,7 +2,7 @@
 id: T-0032
 type: task
 title: Сервер не стартует с dev-секретами в staging/prod
-status: backlog
+status: done
 change: feature
 created: 2026-09-30
 updated: 2026-10-01
@@ -20,3 +20,7 @@ links:
 
 - 2026-09-30 · заведена из docs/inbox/platform-and-release.md · приложение
 - 2026-10-01 · добавлены связи вне приложения: decided_by A-0015 · claude
+- 2026-10-01 · готова к работе · claude
+- 2026-10-01 · взята в работу · claude
+- 2026-10-01 · на проверку · claude
+- 2026-10-01 · выполнена · тесты test_config_secrets · claude

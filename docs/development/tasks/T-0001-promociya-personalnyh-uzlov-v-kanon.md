@@ -2,7 +2,7 @@
 id: T-0001
 type: task
 title: Промоция персональных узлов в канон
-status: backlog
+status: done
 change: feature
 created: 2026-09-30
 updated: 2026-10-01
@@ -20,3 +20,7 @@ links:
 
 - 2026-09-30 · заведена из docs/inbox/admin-and-curation.md · приложение
 - 2026-10-01 · добавлены связи вне приложения: decided_by A-0008 · claude
+- 2026-10-01 · готова к работе · claude
+- 2026-10-01 · взята в работу · claude
+- 2026-10-01 · на проверку · claude
+- 2026-10-01 · выполнена · тесты test_promotion (AC-13.5) · claude

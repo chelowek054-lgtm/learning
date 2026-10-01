@@ -2,7 +2,7 @@
 id: M-0003
 type: map
 title: 'Карта изменений: пачка от 2026-10-01'
-status: draft
+status: approved
 created: 2026-10-01
 updated: 2026-10-01
 intent: true
@@ -67,3 +67,5 @@ intent: true
 ## Журнал
 
 - 2026-10-01 · заведена · приложение
+- 2026-10-01 · на подтверждение · architect
+- 2026-10-01 · подтверждён · architect

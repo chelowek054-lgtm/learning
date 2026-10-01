@@ -2,7 +2,7 @@
 id: T-0048
 type: task
 title: 'Инкрементальный sync: push изменённого, GET /sync/pull?since='
-status: backlog
+status: in_review
 change: feature
 created: 2026-09-30
 updated: 2026-10-01
@@ -20,3 +20,6 @@ Push сейчас каждый раз отправляет все локальн
 
 - 2026-09-30 · заведена из docs/inbox/sync-and-jobs.md · приложение
 - 2026-10-01 · добавлены связи вне приложения: decided_by A-0014 · claude
+- 2026-10-01 · готова к работе · claude
+- 2026-10-01 · взята в работу · claude
+- 2026-10-01 · на проверку · тесты test_sync и sync-service.test; проверка на устройстве не пройдена · claude
