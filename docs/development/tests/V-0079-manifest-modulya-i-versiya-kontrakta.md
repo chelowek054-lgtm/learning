@@ -4,8 +4,9 @@ type: verification
 title: Манифест модуля и версия контракта
 status: approved
 created: 2026-10-01
-updated: 2026-10-01
+updated: 2026-10-02
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_module_manifest.py -q && cd ../learningFront && npx vitest run src/shared/engine/module'
 links:
   verifies: [R-0027]
 ---
@@ -22,3 +23,4 @@ links:
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
 - 2026-10-01 · убраны связи неверного типа вне приложения: verifies [C-0001]; covers [T-0051] · claude
+- 2026-10-02 · подключена команда прогона: test_module_manifest (сервер) и manifest-check.test (клиент) · claude
