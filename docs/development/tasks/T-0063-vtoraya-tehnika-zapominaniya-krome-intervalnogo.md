@@ -2,7 +2,7 @@
 id: T-0063
 type: task
 title: Вторая техника запоминания, кроме интервального повторения
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-02
 updated: 2026-10-02
@@ -10,7 +10,7 @@ links:
   implements: [R-0034]
   depends_on: [T-0062]
   verified_by: [V-0086]
-  affects: [M-0017]
+  affects: [M-0016, M-0017]
 ---
 
 # Вторая техника запоминания, кроме интервального повторения
@@ -20,3 +20,5 @@ links:
 ## Журнал
 
 - 2026-10-02 · заведена из docs/inbox/method-switch-and-memorize-techniques.md · приложение
+- 2026-10-02 · связь с картой M-0016; взята в работу: вторая техника «вспомнить по первым буквам», выбор способа в профиле · claude
+- 2026-10-02 · на проверку: модуль mnemonic («вспомнить по первым буквам»), выбор способа в профиле, пересборка курса при смене; тесты test_second_technique (V-0086), клиент: rating/options/evidence-api/sync-service; V-0086 ещё не подтверждена человеком, на устройстве не проверялось · claude

@@ -6,6 +6,7 @@ status: draft
 created: 2026-10-02
 updated: 2026-10-02
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_second_technique.py tests/test_memorization_module.py -q'
 links:
   verifies: [R-0034]
 ---
@@ -17,3 +18,4 @@ links:
 ## Журнал
 
 - 2026-10-02 · заведена из docs/inbox/method-switch-and-memorize-techniques.md · приложение
+- 2026-10-02 · подключена команда прогона: test_second_technique (вторая техника проходит контракт, смена способа сохраняет освоенность и прогресс, отключённый модуль возвращает способ по умолчанию); ручной прогон на устройстве не выполнялся · claude
