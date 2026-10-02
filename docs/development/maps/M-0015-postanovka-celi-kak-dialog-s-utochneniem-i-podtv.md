@@ -2,7 +2,7 @@
 id: M-0015
 type: map
 title: Постановка цели как диалог с уточнением и подтверждением
-status: draft
+status: approved
 created: 2026-10-02
 updated: 2026-10-02
 ---
@@ -56,3 +56,5 @@ updated: 2026-10-02
 ## Журнал
 
 - 2026-10-02 · заведена из docs/inbox/goal-intake-dialog.md · приложение
+- 2026-10-02 · на подтверждение · architect
+- 2026-10-02 · подтверждён · architect

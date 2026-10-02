@@ -2,7 +2,7 @@
 id: M-0014
 type: map
 title: Построение графа цели из субдоменов
-status: draft
+status: approved
 created: 2026-10-02
 updated: 2026-10-02
 ---
@@ -50,3 +50,5 @@ updated: 2026-10-02
 ## Журнал
 
 - 2026-10-02 · заведена из docs/inbox/base-graph-subdomains.md · приложение
+- 2026-10-02 · на подтверждение · architect
+- 2026-10-02 · подтверждён · architect
