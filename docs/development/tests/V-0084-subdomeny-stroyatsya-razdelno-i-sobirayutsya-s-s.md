@@ -6,6 +6,7 @@ status: draft
 created: 2026-10-02
 updated: 2026-10-02
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_subdomains.py -q && cd ../learningFront && npx vitest run src/features/graph-editor/model'
 links:
   verifies: [R-0032]
 ---
@@ -17,3 +18,4 @@ links:
 ## Журнал
 
 - 2026-10-02 · заведена из docs/inbox/base-graph-subdomains.md · приложение
+- 2026-10-02 · подключена команда прогона: test_subdomains и split-edit.test — разбиение, сборка, права, бюджет; живой прогон с реальной моделью не делался · claude

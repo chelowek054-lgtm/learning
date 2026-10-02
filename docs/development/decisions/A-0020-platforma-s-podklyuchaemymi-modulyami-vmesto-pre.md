@@ -2,9 +2,9 @@
 id: A-0020
 type: decision
 title: Платформа с подключаемыми модулями вместо предметных модулей
-status: draft
+status: approved
 created: 2026-10-01
-updated: 2026-10-01
+updated: 2026-10-02
 ---
 
 # Платформа с подключаемыми модулями вместо предметных модулей
@@ -20,3 +20,5 @@ updated: 2026-10-01
 ## Журнал
 
 - 2026-10-01 · заведена из docs/inbox/decision-platform-over-subject-modules.md · приложение
+- 2026-10-02 · на подтверждение · architect
+- 2026-10-02 · подтверждён · architect

@@ -2,10 +2,10 @@
 id: T-0060
 type: task
 title: Разбиение цели на субдомены и сборка графа из поддеревьев
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-02
-updated: 2026-10-02
+updated: 2026-10-01
 links:
   implements: [R-0032]
   verified_by: [V-0084]
@@ -19,3 +19,6 @@ links:
 ## Журнал
 
 - 2026-10-02 · заведена из docs/inbox/base-graph-subdomains.md · приложение
+- 2026-10-01 · готова к работе · claude
+- 2026-10-01 · взята в работу · субдомены: разбиение цели и сборка графа · claude
+- 2026-10-01 · на проверку · тесты test_subdomains и split-edit.test (разбиение, цикл предпосылок, сборка, права, бюджет); живой прогон с реальной моделью и экран на устройстве не проверялись · claude

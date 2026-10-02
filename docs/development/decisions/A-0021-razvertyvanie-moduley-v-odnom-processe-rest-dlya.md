@@ -2,7 +2,7 @@
 id: A-0021
 type: decision
 title: Развёртывание модулей в одном процессе, REST для графа, вектора в Postgres, владелец данных пользователя, исполнение на устройстве
-status: draft
+status: approved
 created: 2026-10-02
 updated: 2026-10-02
 ---
@@ -22,3 +22,5 @@ updated: 2026-10-02
 
 - 2026-10-02 · заведена из docs/inbox/decision-platform-forks.md · приложение
 - 2026-10-02 · убраны связи неверного типа вне приложения: refines [D-0001]; affects [A-0001, A-0002, R-0031, T-0054, C-0001] · claude
+- 2026-10-02 · на подтверждение · architect
+- 2026-10-02 · подтверждён · architect

@@ -2,9 +2,9 @@
 id: C-0001
 type: contract
 title: 'Контракт модуля: манифест, жизненный цикл, версии'
-status: draft
+status: approved
 created: 2026-10-01
-updated: 2026-10-01
+updated: 2026-10-02
 ---
 
 # Контракт модуля: манифест, жизненный цикл, версии
@@ -21,3 +21,5 @@ updated: 2026-10-01
 
 - 2026-10-01 · заведена из docs/inbox/platform-module-contract.md · приложение
 - 2026-10-01 · убраны связи неверного типа вне приложения: affects [R-0027]; decided_by [A-0020] · claude
+- 2026-10-02 · на подтверждение · architect
+- 2026-10-02 · подтверждён · architect
