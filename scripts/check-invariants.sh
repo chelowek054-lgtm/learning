@@ -42,6 +42,9 @@ check "NFR-03 core/ без имён модулей" \
 check "NFR-KG-1 core/ без логики графа" \
   grep -rnE "concept_edge|UserConcept|effective_graph|ConceptEdge" "$BACK/core" --include=*.py
 
+# NFR-KG-2 (T-0052): модуль графа не знает предметов — ни слов, ни веток по названию
+check "NFR-KG-2 модуль графа без предметных слов"   grep -rniE "ielts|toefl|english|английск|машинн|нейро|backprop|softmax|трансформер|python|программир" "$BACK/modules/knowledge" --include=*.py
+
 # AC-12.4: цвета только в design.ts
 check "AC-12.4 цвета только в design.ts" \
   bash -c "grep -rnE '#[0-9a-fA-F]{3,8}\b' '$FRONT' --include=*.ts --include=*.tsx | grep -v 'shared/config/design.ts' | grep -v '\.test\.'"

@@ -2,7 +2,7 @@
 id: T-0052
 type: task
 title: Граф знаний без предметов — один модуль для любых областей
-status: backlog
+status: done
 change: feature
 created: 2026-10-01
 updated: 2026-10-01
@@ -24,3 +24,7 @@ links:
 - 2026-10-01 · заведена из docs/inbox/platform-task-graph-module.md · приложение
 - 2026-10-01 · убраны связи неверного типа вне приложения: affects [P-0015] · claude
 - 2026-10-02 · добавлена связь вне приложения: affects M-0010 (функциональная карта: платформа и подключение мини-приложений) · claude
+- 2026-10-01 · готова к работе · claude
+- 2026-10-01 · взята в работу · граф знаний без предметов · claude
+- 2026-10-01 · на проверку · claude
+- 2026-10-01 · выполнена · тесты test_graph_subject_agnostic и test_graph_interface; инвариант NFR-KG-2 в scripts/check-invariants.sh; не сделано: курс и плейсмент всё ещё знают типы заданий своего способа — это T-0053 · claude
