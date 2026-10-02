@@ -2,7 +2,7 @@
 id: T-0036
 type: task
 title: 'reading_drill: passage, вопросы, таймер, локальный грейдер'
-status: backlog
+status: in_review
 change: feature
 created: 2026-09-30
 updated: 2026-10-01
@@ -20,3 +20,6 @@ links:
 
 - 2026-09-30 · заведена из docs/inbox/reception-drills.md · приложение
 - 2026-10-01 · добавлены связи вне приложения: decided_by A-0011 · claude
+- 2026-10-01 · готова к работе · claude
+- 2026-10-01 · взята в работу · reading_drill: текст, вопросы, таймер, локальная проверка · claude
+- 2026-10-01 · на проверку · тесты reading-model.test (13) и test_reading; офлайн-кэш задания — через локальное хранилище активностей; проверка FR-RCP на устройстве не пройдена; фоновый таймер и вопросы без текста не проверялись · claude
