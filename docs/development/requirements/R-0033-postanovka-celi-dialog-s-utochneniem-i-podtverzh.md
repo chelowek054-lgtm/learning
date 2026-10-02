@@ -2,7 +2,7 @@
 id: R-0033
 type: requirement
 title: Постановка цели — диалог с уточнением и подтверждением перед построением графа
-status: draft
+status: approved
 created: 2026-10-02
 updated: 2026-10-02
 ---
@@ -17,3 +17,5 @@ updated: 2026-10-02
 
 - 2026-10-02 · заведена из docs/inbox/goal-intake-dialog.md · приложение
 - 2026-10-02 · убраны связи неверного типа вне приложения: affects [M-0015] · claude
+- 2026-10-02 · на подтверждение · architect
+- 2026-10-02 · подтверждён · architect

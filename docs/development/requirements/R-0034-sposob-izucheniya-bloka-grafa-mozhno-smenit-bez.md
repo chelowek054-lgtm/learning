@@ -2,7 +2,7 @@
 id: R-0034
 type: requirement
 title: Способ изучения блока графа можно сменить без потери прогресса
-status: draft
+status: approved
 created: 2026-10-02
 updated: 2026-10-02
 ---
@@ -17,3 +17,5 @@ updated: 2026-10-02
 
 - 2026-10-02 · заведена из docs/inbox/method-switch-and-memorize-techniques.md · приложение
 - 2026-10-02 · убраны связи неверного типа вне приложения: affects [M-0016] · claude
+- 2026-10-02 · на подтверждение · architect
+- 2026-10-02 · подтверждён · architect
