@@ -2,7 +2,7 @@
 id: T-0050
 type: task
 title: Мониторинг ошибок и алерты на failed-jobs, расход токенов
-status: backlog
+status: in_review
 change: feature
 created: 2026-09-30
 updated: 2026-10-01
@@ -18,3 +18,6 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/sync-and-jobs.md · приложение
+- 2026-10-01 · готова к работе · claude
+- 2026-10-01 · взята в работу · мониторинг: ошибки клиента, алерты на failed-jobs и расход токенов · claude
+- 2026-10-01 · на проверку · тесты test_monitoring (доля failed, токены, ошибки клиента, лимит потока) и error-reporter.test; алерты — состояние в GET /v1/monitoring для внешнего монитора, отправки писем/в мессенджер нет; живой монитор не подключён · claude
