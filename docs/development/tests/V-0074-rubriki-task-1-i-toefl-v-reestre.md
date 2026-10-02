@@ -4,8 +4,9 @@ type: verification
 title: Рубрики Task 1 и TOEFL в реестре
 status: approved
 created: 2026-09-30
-updated: 2026-10-01
+updated: 2026-10-02
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_toefl.py -k "rubric" -q'
 links:
   verifies: [R-0012, T-0017, T-0018]
 ---
@@ -22,3 +23,4 @@ Unit, pytest: `будет: cd learningBack && uv run pytest tests/test_writing_r
 - 2026-10-01 · возвращён в черновик · architect
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
+- 2026-10-02 · подключена команда прогона: test_toefl: рубрики TOEFL и Task 1 (T-0017, T-0018) · claude

@@ -4,8 +4,9 @@ type: verification
 title: Dev-секреты запрещены вне dev
 status: approved
 created: 2026-09-30
-updated: 2026-10-01
+updated: 2026-10-02
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_config_secrets.py -q'
 links:
   verifies: [R-0020, T-0030, T-0031, T-0032, T-0033, T-0034]
 ---
@@ -22,3 +23,4 @@ Unit, pytest: `будет: cd learningBack && uv run pytest tests/test_secrets_g
 - 2026-10-01 · возвращён в черновик · architect
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
+- 2026-10-02 · подключена команда прогона: test_config_secrets (T-0032) · claude

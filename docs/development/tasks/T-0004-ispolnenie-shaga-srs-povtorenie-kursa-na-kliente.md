@@ -2,7 +2,7 @@
 id: T-0004
 type: task
 title: Исполнение шага срс (повторение) курса на клиенте
-status: in_review
+status: done
 change: feature
 created: 2026-09-30
 updated: 2026-10-01
@@ -23,3 +23,4 @@ links:
 - 2026-10-01 · готова к работе · architect
 - 2026-10-01 · взята в работу · claude
 - 2026-10-01 · на проверку · тесты test_study; проверка на устройстве (live, AC-11.9) не пройдена · claude
+- 2026-10-01 · выполнена · тесты test_study; проверка на устройстве (live, AC-11.9) не пройдена · claude

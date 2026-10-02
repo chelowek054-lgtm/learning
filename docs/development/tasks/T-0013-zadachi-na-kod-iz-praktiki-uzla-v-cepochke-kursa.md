@@ -2,7 +2,7 @@
 id: T-0013
 type: task
 title: Задачи на код из практики узла в цепочке курса
-status: in_review
+status: done
 change: feature
 created: 2026-09-30
 updated: 2026-10-01
@@ -24,3 +24,4 @@ links:
 - 2026-10-01 · готова к работе · claude
 - 2026-10-01 · взята в работу · хук модуля для практики, не ломающий независимость ядра (A-0001) · claude
 - 2026-10-01 · на проверку · тесты test_course и test_study: хук apply_activity, ядро без имён модулей; на устройстве не проверялось · claude
+- 2026-10-01 · выполнена · тесты test_course и test_study: хук apply_activity, ядро без имён модулей; на устройстве не проверялось · claude

@@ -4,8 +4,9 @@ type: verification
 title: Рубрика ml_code_review
 status: approved
 created: 2026-09-30
-updated: 2026-10-01
+updated: 2026-10-02
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_code_review.py -k "rubric or prompt" -q'
 links:
   verifies: [R-0010, T-0010, T-0011, T-0012, T-0013]
 ---
@@ -22,3 +23,4 @@ Unit, pytest: `будет: cd learningBack && uv run pytest tests/test_code_revi
 - 2026-10-01 · возвращён в черновик · architect
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
+- 2026-10-02 · подключена команда прогона: test_code_review: рубрика (T-0010) · claude

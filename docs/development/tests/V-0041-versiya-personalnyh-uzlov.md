@@ -4,8 +4,9 @@ type: verification
 title: Версия персональных узлов
 status: approved
 created: 2026-09-30
-updated: 2026-10-01
+updated: 2026-10-02
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_graph_nodes.py -k "version or assessment or graph_reports" -q'
 links:
   verifies: [R-0008, T-0006, T-0007, T-0008]
 ---
@@ -22,3 +23,4 @@ Unit, pytest: `будет: cd learningBack && uv run pytest tests/test_user_node
 - 2026-10-01 · возвращён в черновик · architect
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
+- 2026-10-02 · подключена команда прогона: test_graph_nodes: версия личных узлов (T-0006) · claude

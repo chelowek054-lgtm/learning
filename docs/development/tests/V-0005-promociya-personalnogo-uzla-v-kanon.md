@@ -4,8 +4,9 @@ type: verification
 title: Промоция персонального узла в канон
 status: approved
 created: 2026-09-30
-updated: 2026-10-01
+updated: 2026-10-02
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_promotion.py -q'
 links:
   verifies: [R-0003, T-0001]
 ---
@@ -22,3 +23,4 @@ Unit, pytest: `будет: cd learningBack && uv run pytest tests/test_promotion
 - 2026-10-01 · возвращён в черновик · architect
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
+- 2026-10-02 · подключена команда прогона: test_promotion (T-0001) · claude

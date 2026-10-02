@@ -4,8 +4,9 @@ type: verification
 title: Облегчённый список узлов
 status: approved
 created: 2026-09-30
-updated: 2026-10-01
+updated: 2026-10-02
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_graph_nodes.py -k "no_full_theory or node_endpoint" -q'
 links:
   verifies: [R-0008, T-0006, T-0007, T-0008]
 ---
@@ -22,3 +23,4 @@ Unit, pytest: `будет: cd learningBack && uv run pytest tests/test_graph_lig
 - 2026-10-01 · возвращён в черновик · architect
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
+- 2026-10-02 · подключена команда прогона: test_graph_nodes: лёгкий список (T-0008) · claude

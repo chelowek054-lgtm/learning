@@ -4,8 +4,9 @@ type: verification
 title: Извлечение текста и лимиты
 status: approved
 created: 2026-09-30
-updated: 2026-10-01
+updated: 2026-10-02
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_materials.py -q'
 links:
   verifies: [R-0011, T-0014, T-0015, T-0016]
 ---
@@ -22,3 +23,4 @@ Unit, pytest: `будет: cd learningBack && uv run pytest tests/test_material_
 - 2026-10-01 · возвращён в черновик · architect
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
+- 2026-10-02 · подключена команда прогона: test_materials: извлечение и лимиты (T-0014) · claude
