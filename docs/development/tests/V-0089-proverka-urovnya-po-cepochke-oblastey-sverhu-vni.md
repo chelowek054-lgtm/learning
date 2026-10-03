@@ -6,6 +6,7 @@ status: draft
 created: 2026-10-03
 updated: 2026-10-03
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_chain_placement.py -q'
 links:
   verifies: [R-0037]
 ---
@@ -17,3 +18,4 @@ links:
 ## Журнал
 
 - 2026-10-03 · заведена из docs/inbox/foundation-levels.md · приложение
+- 2026-10-03 · подключена команда прогона: test_chain_placement (порядок сверху вниз, освоенное верхнее снимает нижнее, приор не знание, незнание отправляет проверку вниз, путь с самой нижней неосвоенной области) · claude
