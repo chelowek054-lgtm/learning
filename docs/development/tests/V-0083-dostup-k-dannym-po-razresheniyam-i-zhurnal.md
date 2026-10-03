@@ -6,6 +6,7 @@ status: approved
 created: 2026-10-01
 updated: 2026-10-01
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_user_data_access.py -q'
 links:
   verifies: [R-0031]
 ---
@@ -22,3 +23,4 @@ links:
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
 - 2026-10-01 · убраны связи неверного типа вне приложения: covers [T-0054] · claude
+- 2026-10-03 · подключена команда прогона: test_user_data_access (отказ без разрешения и без объявления, чтение и запись отдельно, отзыв, журнал, выгрузка и удаление по реестру, только данные своего человека) · claude
