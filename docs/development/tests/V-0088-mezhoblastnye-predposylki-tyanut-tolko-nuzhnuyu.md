@@ -6,6 +6,7 @@ status: draft
 created: 2026-10-03
 updated: 2026-10-03
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_cross_links.py -q'
 links:
   verifies: [R-0036]
 ---
@@ -17,3 +18,4 @@ links:
 ## Журнал
 
 - 2026-10-03 · заведена из docs/inbox/foundation-levels.md · приложение
+- 2026-10-03 · подключена команда прогона: test_cross_links (связи между областями со ступенью, порядок областей и циклы, подтягивание только нужных предков по ступени цели, пропуск освоенного, порядок от примитивной области) · claude
