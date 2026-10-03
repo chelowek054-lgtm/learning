@@ -6,6 +6,7 @@ status: approved
 created: 2026-09-30
 updated: 2026-10-01
 kind: manual
+command: 'python scripts/live_checks.py rubrics'
 links:
   verifies: [R-0012, T-0017, T-0018]
 ---
@@ -22,3 +23,4 @@ Manual. Доказывает: эссе Task 1 и TOEFL оцениваются п
 - 2026-10-01 · возвращён в черновик · architect
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
+- 2026-10-03 · подключена команда прогона scripts/live_checks.py rubrics: Task 1 и TOEFL оценены реальной моделью по своим рубрикам; прогон идёт по локальному API с настоящим ключом, заводит одноразового пользователя livecheck-…@example.com · claude

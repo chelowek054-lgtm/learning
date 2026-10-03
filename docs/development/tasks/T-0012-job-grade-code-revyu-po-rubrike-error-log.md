@@ -9,7 +9,7 @@ updated: 2026-10-01
 links:
   implements: [R-0010]
   depends_on: [T-0010]
-  affects: [M-0003]
+  affects: [M-0003, M-0011]
 ---
 
 # Job grade_code: ревью по рубрике → error-log
@@ -23,3 +23,4 @@ Job оценивает решение по ml_code_review, пишет ошибк
 - 2026-10-01 · взята в работу · claude
 - 2026-10-01 · на проверку · тесты test_code_review: grade_code, пометка о статическом ревью, error-log · claude
 - 2026-10-01 · выполнена · тесты test_code_review: grade_code, пометка о статическом ревью, error-log · claude
+- 2026-10-03 · связь с картой M-0011: она объявляет возможность, которую меняет задача (сверка map_capability_missing) · claude

@@ -6,6 +6,7 @@ status: approved
 created: 2026-09-30
 updated: 2026-10-01
 kind: manual
+command: 'python scripts/live_checks.py llm'
 links:
   verifies: [R-0004]
 ---
@@ -22,3 +23,4 @@ Manual. Доказывает: с настоящим LLM_API_KEY сборка г�
 - 2026-10-01 · возвращён в черновик · architect
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
+- 2026-10-03 · подключена команда прогона scripts/live_checks.py llm: граф по теме строит реальная модель, расход токенов записан в llm_usage; прогон идёт по локальному API с настоящим ключом, заводит одноразового пользователя livecheck-…@example.com · claude

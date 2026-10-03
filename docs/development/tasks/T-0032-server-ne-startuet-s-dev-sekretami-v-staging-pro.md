@@ -9,7 +9,7 @@ updated: 2026-10-01
 links:
   implements: [R-0020]
   decided_by: [A-0015]
-  affects: [M-0003]
+  affects: [M-0003, M-0011]
 ---
 
 # Сервер не стартует с dev-секретами в staging/prod
@@ -24,3 +24,4 @@ links:
 - 2026-10-01 · взята в работу · claude
 - 2026-10-01 · на проверку · claude
 - 2026-10-01 · выполнена · тесты test_config_secrets · claude
+- 2026-10-03 · связь с картой M-0011: она объявляет возможность, которую меняет задача (сверка map_capability_missing) · claude

@@ -9,7 +9,7 @@ updated: 2026-10-01
 links:
   implements: [R-0025]
   decided_by: [A-0014]
-  affects: [M-0003]
+  affects: [M-0003, M-0011]
 ---
 
 # Инкрементальный sync: push изменённого, GET /sync/pull?since=
@@ -24,3 +24,4 @@ Push сейчас каждый раз отправляет все локальн
 - 2026-10-01 · взята в работу · claude
 - 2026-10-01 · на проверку · тесты test_sync и sync-service.test; проверка на устройстве не пройдена · claude
 - 2026-10-01 · выполнена · тесты test_sync и sync-service.test; проверка на устройстве не пройдена · claude
+- 2026-10-03 · связь с картой M-0011: она объявляет возможность, которую меняет задача (сверка map_capability_missing) · claude
