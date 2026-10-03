@@ -6,6 +6,7 @@ status: approved
 created: 2026-09-30
 updated: 2026-10-01
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_account_delete.py -q'
 links:
   verifies: [R-0018, T-0027, T-0028, T-0044]
 ---
@@ -22,3 +23,4 @@ Unit, pytest: `будет: cd learningBack && uv run pytest tests/test_account_d
 - 2026-10-01 · возвращён в черновик · architect
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
+- 2026-10-03 · подключена команда прогона: test_account_delete (после удаления ссылок на человека нет ни в одной таблице, статистика обезличена, чужие данные целы, пароль и подтверждение, согласие с политикой при регистрации) · claude

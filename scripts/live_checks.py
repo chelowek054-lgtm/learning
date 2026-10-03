@@ -75,7 +75,7 @@ def call(method: str, path: str, body: dict | None = None, token: str | None = N
 
 def new_user() -> tuple[str, str]:
     email = f"livecheck-{uuid.uuid4().hex[:10]}@example.com"
-    token = call("POST", "/auth/register", {"email": email, "password": uuid.uuid4().hex})[
+    token = call("POST", "/auth/register", {"email": email, "password": uuid.uuid4().hex, "acceptPolicy": True})[
         "access_token"
     ]
     payload = token.split(".")[1]
