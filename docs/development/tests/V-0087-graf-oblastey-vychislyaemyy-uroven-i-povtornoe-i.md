@@ -6,6 +6,7 @@ status: draft
 created: 2026-10-03
 updated: 2026-10-03
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_domains.py -q'
 links:
   verifies: [R-0035]
 ---
@@ -17,3 +18,4 @@ links:
 ## Журнал
 
 - 2026-10-03 · заведена из docs/inbox/foundation-levels.md · приложение
+- 2026-10-03 · подключена команда прогона: test_domains (уровень как глубина, самый длинный путь, цепочка, циклы, опора, реестр и алиасы, права куратора) · claude
