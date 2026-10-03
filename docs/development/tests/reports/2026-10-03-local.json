@@ -1,9 +1,9 @@
 {
   "contract": "docdd.workspace/1",
   "runner": "local",
-  "started_at": "2026-10-03T11:08:58Z",
+  "started_at": "2026-10-03T11:24:54Z",
   "total": 54,
-  "failed": 1,
+  "failed": 0,
   "verifications": {
     "V-0001": "passed",
     "V-0002": "passed",
@@ -44,7 +44,7 @@
     "V-0070": "passed",
     "V-0071": "passed",
     "V-0074": "passed",
-    "V-0075": "failed",
+    "V-0075": "passed",
     "V-0076": "passed",
     "V-0077": "passed",
     "V-0079": "passed",

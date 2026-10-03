@@ -64,13 +64,19 @@ def call(method: str, path: str, body: dict | None = None, token: str | None = N
     )
     if token:
         req.add_header("Authorization", f"Bearer {token}")
-    try:
-        with OPENER.open(req, timeout=300) as resp:
-            return json.loads(resp.read() or b"{}")
-    except urllib.error.HTTPError as e:
-        raise Failed(f"{method} {path} → {e.code}: {e.read().decode()[:300]}") from e
-    except urllib.error.URLError as e:
-        raise Failed(f"API недоступен ({BASE}): {e.reason}") from e
+    # Провайдер модели иногда недоступен (API отвечает 502): это не провал проверки, повторяем.
+    for attempt in range(3):
+        try:
+            with OPENER.open(req, timeout=300) as resp:
+                return json.loads(resp.read() or b"{}")
+        except urllib.error.HTTPError as e:
+            if e.code == 502 and attempt < 2:
+                time.sleep(3)
+                continue
+            raise Failed(f"{method} {path} → {e.code}: {e.read().decode()[:300]}") from e
+        except urllib.error.URLError as e:
+            raise Failed(f"API недоступен ({BASE}): {e.reason}") from e
+    raise Failed(f"{method} {path}: провайдер модели недоступен")
 
 
 def new_user() -> tuple[str, str]:
