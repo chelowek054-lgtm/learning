@@ -150,6 +150,9 @@ def real_grade(g: dict, names: list[str]) -> None:
 def run_llm() -> str:
     token, uid = new_user()
     domain = f"livecheck-{uuid.uuid4().hex[:6]}"
+    # Граф строится только по подтверждённой цели (T-0061): сначала диалог, потом построение.
+    summary = call("POST", "/graph/goal/summarize", {"text": "Основы шахматных дебютов", "answers": []}, token)
+    check(call("POST", "/graph/goal/confirm", {"domain": domain, **summary}, token)["confirmed"], "цель не подтверждена")
     graph = call(
         "POST",
         "/graph/canon/build",

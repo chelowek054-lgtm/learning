@@ -6,6 +6,7 @@ status: draft
 created: 2026-10-02
 updated: 2026-10-02
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_goal_intake.py -q && cd ../learningFront && npx vitest run src/features/goal-intake'
 links:
   verifies: [R-0033]
 ---
@@ -17,3 +18,4 @@ links:
 ## Журнал
 
 - 2026-10-02 · заведена из docs/inbox/goal-intake-dialog.md · приложение
+- 2026-10-03 · подключена команда прогона: test_goal_intake (вопросы 2–4, пропуск, пересказ, блокировка split/build/canon-build до подтверждения, итог как вход построения) и dialog.test; проверено вживую с реальной моделью; ручной прогон на устройстве, включая офлайн-форму, не выполнялся · claude

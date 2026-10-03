@@ -1,8 +1,8 @@
 {
   "contract": "docdd.workspace/1",
   "runner": "local",
-  "started_at": "2026-10-03T07:14:57Z",
-  "total": 42,
+  "started_at": "2026-10-03T08:20:36Z",
+  "total": 46,
   "failed": 0,
   "verifications": {
     "V-0001": "passed",
@@ -14,6 +14,7 @@
     "V-0008": "passed",
     "V-0009": "passed",
     "V-0010": "passed",
+    "V-0011": "passed",
     "V-0012": "passed",
     "V-0014": "passed",
     "V-0015": "passed",
@@ -41,11 +42,14 @@
     "V-0070": "passed",
     "V-0071": "passed",
     "V-0074": "passed",
+    "V-0075": "passed",
     "V-0076": "passed",
+    "V-0077": "passed",
     "V-0079": "passed",
     "V-0080": "passed",
     "V-0081": "passed",
     "V-0084": "passed",
+    "V-0085": "passed",
     "V-0086": "passed"
   }
 }
