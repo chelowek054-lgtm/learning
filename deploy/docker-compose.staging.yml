@@ -1,0 +1,42 @@
+# Staging поверх основного compose (T-0031, R-0020): секреты обязательны, порты БД закрыты,
+# воркер включён, всё перезапускается само. Запуск:
+#
+#   docker compose -f docker-compose.yml -f deploy/docker-compose.staging.yml up -d
+#
+# Или целиком со всеми проверками: scripts/deploy-staging.sh
+#
+# Без JWT_SECRET и POSTGRES_PASSWORD compose не стартует (`:?`), а сервер сам отказывается
+# работать с dev-значениями при APP_ENV=staging (core/config.py, T-0032).
+
+services:
+  postgres:
+    ports: !reset []        # снаружи база недоступна, только из сети compose
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?задайте POSTGRES_PASSWORD}
+
+  api:
+    restart: unless-stopped
+    environment:
+      APP_ENV: staging
+      JWT_SECRET: ${JWT_SECRET:?задайте JWT_SECRET (не короче 32 символов)}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?задайте POSTGRES_PASSWORD}
+      CORS_ORIGINS: ${CORS_ORIGINS:?задайте CORS_ORIGINS, например https://app.example.com}
+      JOBS_MODE: worker
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8000/health', timeout=3).status == 200 else 1)"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 20s
+
+  worker:
+    profiles: []            # на staging воркер запускается всегда
+    restart: unless-stopped
+    environment:
+      APP_ENV: staging
+      JWT_SECRET: ${JWT_SECRET:?задайте JWT_SECRET (не короче 32 символов)}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?задайте POSTGRES_PASSWORD}
+
+  pgadmin:
+    profiles: ["never"]     # инструмент разработки на staging не поднимаем
