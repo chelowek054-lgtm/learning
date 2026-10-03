@@ -40,6 +40,8 @@ services:
       POSTGRES_PORT: 5432
       # Ключ LLM — только через окружение, никогда в образ (инвариант №2).
       LLM_API_KEY: ${LLM_API_KEY:-}
+      # inline — задачи на /sync/push; worker — их берёт сервис worker (docker compose --profile worker up).
+      JOBS_MODE: ${JOBS_MODE:-inline}
       LLM_BASE_URL: ${LLM_BASE_URL:-https://routerai.ru/api/v1}
       LLM_MODEL_GENERATION: ${LLM_MODEL_GENERATION:-deepseek/deepseek-v4-flash-0731}
       LLM_MODEL_SCORING: ${LLM_MODEL_SCORING:-deepseek/deepseek-v4-flash-0731}
@@ -49,6 +51,31 @@ services:
     command: >
       sh -c "uv run --no-dev alembic upgrade head &&
              uv run --no-dev uvicorn core.app:app --host 0.0.0.0 --port 8000"
+
+  # Фоновый воркер долгих AI-задач (T-0049). Включается профилем и JOBS_MODE=worker у api:
+  #   JOBS_MODE=worker docker compose --profile worker up -d
+  worker:
+    profiles: ["worker"]
+    build:
+      context: ./learningBack
+    depends_on:
+      postgres:
+        condition: service_healthy
+      api:
+        condition: service_started
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      POSTGRES_USER: ${POSTGRES_USER:-praxis}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-praxis}
+      POSTGRES_DB: ${POSTGRES_DB:-praxis}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_BASE_URL: ${LLM_BASE_URL:-https://routerai.ru/api/v1}
+      LLM_MODEL_GENERATION: ${LLM_MODEL_GENERATION:-deepseek/deepseek-v4-flash-0731}
+      LLM_MODEL_SCORING: ${LLM_MODEL_SCORING:-deepseek/deepseek-v4-flash-0731}
+    command: uv run --no-dev python -m scripts.worker
+    restart: unless-stopped
 
   # pgAdmin — веб-UI к Postgres стенда. Dev-инструмент, а не часть продукта:
   # приложение с ним не связано, выключение ничего не ломает.

@@ -6,6 +6,7 @@ status: approved
 created: 2026-09-30
 updated: 2026-10-01
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_worker.py -q'
 links:
   verifies: [R-0023, T-0040, T-0041, T-0042, T-0043, T-0044, T-0049]
 ---
@@ -22,3 +23,4 @@ Integration, pytest: `будет: cd learningBack && uv run pytest tests/test_wo
 - 2026-10-01 · возвращён в черновик · architect
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
+- 2026-10-03 · подключена команда прогона: test_worker (push в режиме worker только ставит задачу, воркер доводит её до done, порядок, нет двойного захвата, отсрочка повтора, временный и постоянный сбой, возврат брошенных, токены на владельца) · claude
