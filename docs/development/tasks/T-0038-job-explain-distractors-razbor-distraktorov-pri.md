@@ -2,7 +2,7 @@
 id: T-0038
 type: task
 title: 'Job explain_distractors: разбор дистракторов при сети'
-status: in_review
+status: done
 change: feature
 created: 2026-09-30
 updated: 2026-10-04
@@ -21,3 +21,4 @@ links:
 - 2026-09-30 · заведена из docs/inbox/reception-drills.md · приложение
 - 2026-10-04 · взята в работу, сделана: хук job_handlers в контракте модуля, job explain_distractors (learningBack PR 31), клиент ставит job на ошибки с выбором (learningFront PR 20) · claude
 - 2026-10-04 · на проверку: тесты проходят; показ разбора на экране дрилла не сделан — клиенту нужен метод чтения job-результата из локального хранилища · claude
+- 2026-10-04 · готова · проверки подтверждены и прошли в отчёте 2026-10-04 · claude

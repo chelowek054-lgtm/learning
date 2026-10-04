@@ -2,7 +2,7 @@
 id: T-0042
 type: task
 title: Рубрика ielts_speaking v1 и оценка по таймингам
-status: in_review
+status: done
 change: feature
 created: 2026-09-30
 updated: 2026-10-04
@@ -25,3 +25,4 @@ links:
 - 2026-10-04 · взята в работу: рубрика ielts_speaking v1, метрики темпа и пауз, оценка jobом grade_speaking с пометкой о произношении (learningBack PR 34); экран features/speaking в клиенте не сделан · claude
 - 2026-10-04 · сделан экран speaking_response в клиенте (learningFront PR 22); рубрика и оценка — learningBack PR 34 · claude
 - 2026-10-04 · на проверку: тесты проходят; оценка настоящей моделью и разбор на экране не проверялись; разбор пока виден как оценка в журнале ответов, отдельного вида нет · claude
+- 2026-10-04 · готова · проверки подтверждены и прошли в отчёте 2026-10-04 · claude

@@ -2,10 +2,10 @@
 id: T-0067
 type: task
 title: Экран предпросмотра объёма пути и выбора варианта
-status: in_review
+status: done
 change: feature
 created: 2026-10-03
-updated: 2026-10-03
+updated: 2026-10-04
 links:
   implements: [R-0038]
   depends_on: [T-0064]
@@ -21,3 +21,4 @@ links:
 
 - 2026-10-03 · заведена из docs/inbox/foundation-levels.md · приложение
 - 2026-10-03 · связь с картой M-0018; на проверку, learningBack#21 и learningFront#17 слиты: GET /graph/goal/{domain}/volume и шаг выбора пути в диалоге цели (показывается, когда под целью есть базовые области); V-0090 не подтверждена человеком; на устройстве не проверялось · claude
+- 2026-10-04 · готова · проверки подтверждены и прошли в отчёте 2026-10-04 · claude

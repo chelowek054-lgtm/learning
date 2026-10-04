@@ -2,7 +2,7 @@
 id: T-0041
 type: task
 title: Порт SpeechToText и job transcribe в фоновом воркере
-status: in_review
+status: done
 change: feature
 created: 2026-09-30
 updated: 2026-10-04
@@ -24,3 +24,4 @@ ADR: где STT (API / faster-whisper в контейнере / on-device) и ф
 - 2026-10-01 · добавлены связи вне приложения: decided_by A-0007 · claude
 - 2026-10-04 · взята в работу, сделана: порт SpeechToText с заглушкой, job transcribe через хук job_handlers, понятные ошибки; запись удаляется после расшифровки (learningBack PR 34) · claude
 - 2026-10-04 · на проверку: тесты проходят; настоящий провайдер STT не подключён (нужны STT_MODEL и ключ) · claude
+- 2026-10-04 · готова · проверки подтверждены и прошли в отчёте 2026-10-04 · claude

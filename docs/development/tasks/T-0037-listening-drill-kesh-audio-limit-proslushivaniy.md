@@ -2,7 +2,7 @@
 id: T-0037
 type: task
 title: 'listening_drill: кэш аудио, лимит прослушиваний'
-status: in_review
+status: done
 change: feature
 created: 2026-09-30
 updated: 2026-10-04
@@ -21,3 +21,4 @@ links:
 - 2026-09-30 · заведена из docs/inbox/reception-drills.md · приложение
 - 2026-10-04 · взята в работу, сделана: клиент listening_drill (кэш записи через expo-file-system, лимит прослушиваний с сохранением между открытиями, объяснение при отсутствии записи; learningFront PR 21), выдача approved-материалов заданиями (learningBack PR 33) · claude
 - 2026-10-04 · на проверку: тесты проходят; воспроизведение и кэш не проверены на устройстве (expo-audio, expo-file-system) — нужен прогон V-0059 в режиме полёта · claude
+- 2026-10-04 · готова · проверки подтверждены и прошли в отчёте 2026-10-04 · claude
