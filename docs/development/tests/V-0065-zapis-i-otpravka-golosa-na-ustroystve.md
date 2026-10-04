@@ -6,6 +6,7 @@ status: approved
 created: 2026-09-30
 updated: 2026-10-01
 kind: manual
+command: 'cd learningFront && npx vitest run src/features/speaking src/shared/api/voice-outbox.test.ts'
 links:
   verifies: [R-0023, T-0040, T-0041, T-0042, T-0043, T-0044, T-0049]
 ---
@@ -22,3 +23,4 @@ Manual. Доказывает: запись создаётся и прослуш�
 - 2026-10-01 · возвращён в черновик · architect
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
+- 2026-10-04 · подключена команда прогона: очередь записей (загрузка, job расшифровки, удаление файла после загрузки, без сети остаётся в очереди) и модель экрана; запись и отправка на устройстве не проверялись · claude

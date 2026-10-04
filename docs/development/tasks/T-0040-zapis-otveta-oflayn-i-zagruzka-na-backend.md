@@ -2,13 +2,14 @@
 id: T-0040
 type: task
 title: Запись ответа офлайн и загрузка на backend
-status: in_progress
+status: in_review
 change: feature
 created: 2026-09-30
 updated: 2026-10-04
 links:
   implements: [R-0023]
-  affects: [M-0003]
+  verified_by: [V-0065]
+  affects: [M-0003, M-0011]
 ---
 
 # Запись ответа офлайн и загрузка на backend
@@ -19,3 +20,5 @@ links:
 
 - 2026-09-30 · заведена из docs/inbox/speaking.md · приложение
 - 2026-10-04 · взята в работу: серверная часть — приём записи POST /languages/speaking/audio (learningBack PR 34); запись на устройстве и отправка не сделаны · claude
+- 2026-10-04 · сделана: экран записи ответа (expo-audio), очередь записей на устройстве, загрузка при синхронизации с постановкой job расшифровки, удаление файла после загрузки; сервер выдаёт задание IELTS-предмету (learningFront PR 22, learningBack PR 35) · claude
+- 2026-10-04 · на проверку: тесты проходят; запись и отправка на устройстве не проверялись (V-0065) · claude
