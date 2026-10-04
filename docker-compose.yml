@@ -40,6 +40,11 @@ services:
       POSTGRES_PORT: 5432
       # Ключ LLM — только через окружение, никогда в образ (инвариант №2).
       LLM_API_KEY: ${LLM_API_KEY:-}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-}
       # inline — задачи на /sync/push; worker — их берёт сервис worker (docker compose --profile worker up).
       JOBS_MODE: ${JOBS_MODE:-inline}
       LLM_BASE_URL: ${LLM_BASE_URL:-https://routerai.ru/api/v1}

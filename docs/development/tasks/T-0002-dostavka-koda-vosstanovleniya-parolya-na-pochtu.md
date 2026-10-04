@@ -2,14 +2,15 @@
 id: T-0002
 type: task
 title: Доставка кода восстановления пароля на почту
-status: backlog
+status: in_review
 change: feature
 created: 2026-09-30
-updated: 2026-10-01
+updated: 2026-10-04
 links:
   implements: [R-0006]
   decided_by: [A-0012]
-  affects: [M-0003]
+  verified_by: [V-0016]
+  affects: [M-0003, M-0011]
 ---
 
 # Доставка кода восстановления пароля на почту
@@ -20,3 +21,5 @@ links:
 
 - 2026-09-30 · заведена из docs/inbox/auth-and-roles.md · приложение
 - 2026-10-01 · добавлены связи вне приложения: decided_by A-0012 · claude
+- 2026-10-04 · взята в работу, сделана: core.mail — отправка по SMTP (SMTP_*), консольный отправитель без SMTP; письмо уходит в фоне, сбой не меняет ответ API; код в БД по-прежнему хешем с TTL (learningBack PR 36) · claude
+- 2026-10-04 · на проверку: тесты проходят; провайдер почты не выбран (подойдёт любой SMTP), живой прогон не делался — нужен SMTP · claude
