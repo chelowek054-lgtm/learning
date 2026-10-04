@@ -2,14 +2,14 @@
 id: T-0020
 type: task
 title: Реализация языкового графа по ADR; встраивание дриллов в курс
-status: backlog
+status: in_review
 change: feature
 created: 2026-09-30
-updated: 2026-10-01
+updated: 2026-10-04
 links:
   implements: [R-0013]
   depends_on: [T-0019]
-  affects: [M-0003]
+  affects: [M-0003, M-0011]
 ---
 
 # Реализация языкового графа по ADR; встраивание дриллов в курс
@@ -19,3 +19,5 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/learning-expansion.md · приложение
+- 2026-10-04 · взята в работу, сделана: прототип графа на «Английский B2» (общая модель, без отдельного кода) + практика узла языкового предмета — reading_drill из теории узла (learningBack PR 30) · claude
+- 2026-10-04 · на проверку: тесты test_language_course и test_graph_subject_agnostic проходят; проверка на устройстве V-0045 не выполнялась · claude
