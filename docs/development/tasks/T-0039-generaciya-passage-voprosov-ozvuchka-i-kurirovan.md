@@ -2,13 +2,14 @@
 id: T-0039
 type: task
 title: Генерация passage/вопросов, озвучка и курирование материалов
-status: backlog
+status: in_review
 change: feature
 created: 2026-09-30
-updated: 2026-10-01
+updated: 2026-10-04
 links:
   implements: [R-0022]
-  affects: [M-0003]
+  verified_by: [V-0061]
+  affects: [M-0003, M-0011]
 ---
 
 # Генерация passage/вопросов, озвучка и курирование материалов
@@ -18,3 +19,5 @@ Passage + вопросы с дистракторами через AIGateway.stru
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/reception-drills.md · приложение
+- 2026-10-04 · взята в работу, сделана: генерация passage/вопросов через structured, порт TextToSpeech с заглушкой, материал draft с confidence, выдача только approved и без текста (learningBack PR 32) · claude
+- 2026-10-04 · на проверку: тесты проходят; настоящий провайдер озвучки не подключён (нужен TTS_MODEL и ключ), экрана куратора в клиенте нет — только API · claude

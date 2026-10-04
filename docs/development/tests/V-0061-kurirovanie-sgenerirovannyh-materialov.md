@@ -6,6 +6,7 @@ status: approved
 created: 2026-09-30
 updated: 2026-10-01
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_listening_materials.py -q'
 links:
   verifies: [R-0022, T-0036, T-0037, T-0038, T-0039]
 ---
@@ -22,3 +23,4 @@ Unit, pytest: `будет: cd learningBack && uv run pytest tests/test_material_
 - 2026-10-01 · возвращён в черновик · architect
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
+- 2026-10-04 · подключена команда прогона: test_listening_materials (черновик не выдаётся учащемуся и без текста, approved выдаётся, негодные вопросы отбрасываются и снижают уверенность). Кэш повторной генерации не сделан: генерация намеренно не кэшируется, переиспользуется только файл озвучки по хэшу текста · claude
