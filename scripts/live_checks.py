@@ -228,6 +228,9 @@ def correct_answer(item: dict):
 def run_placement() -> str:
     token, uid = new_user()
     domain = f"livecheck-{uuid.uuid4().hex[:6]}"
+    # Граф обычному пользователю не строится, пока цель не подтверждена (T-0061).
+    summary = call("POST", "/graph/goal/summarize", {"text": "Основы шахматных дебютов", "answers": []}, token)
+    check(call("POST", "/graph/goal/confirm", {"domain": domain, **summary}, token)["confirmed"], "цель не подтверждена")
     call(
         "POST",
         "/graph/canon/build",
