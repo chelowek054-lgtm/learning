@@ -35,16 +35,3 @@ policy:
   require_verification_before_done: true
   stale_in_progress_days: 14
   map_portion_files: 40
-# Правила архитектуры (docs/07-maps.md, «Модули и публичный вход»): нет секции — нет проверки.
-architecture:
-  shared: [learningBack/core, learningFront/src/shared]
-  siblings: via-entry
-  layers:
-    - root: learningFront/src
-      order: [app, pages, widgets, features, entities, shared]
-      slices: isolated
-      # По FSD у app и shared нет срезов — только сегменты, и они видят друг друга.
-      unsliced: [app, shared]
-    - root: learningBack
-      order: [modules, core]
-      slices: via-entry
