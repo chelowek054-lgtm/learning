@@ -206,10 +206,10 @@ updated: 2026-10-05
         ]
       },
       {
-        "id": "learningBack/core/routers/methods.py",
+        "id": "learningBack/api/routers/methods.py",
         "title": "API способов изучения и свидетельств",
         "layer": "маршруты",
-        "path": "learningBack/core/routers/methods.py",
+        "path": "learningBack/api/routers/methods.py",
         "summary": "Эндпоинты для выбора способа изучения на шаг курса и приёма свидетельств об освоении от любого способа. Освоенность, ошибки и карточки при смене способа не трогаются.",
         "api": [
           {
@@ -239,10 +239,10 @@ updated: 2026-10-05
         ]
       },
       {
-        "id": "learningBack/core/routers/modules_admin.py",
+        "id": "learningBack/api/routers/modules_admin.py",
         "title": "API управления модулями",
         "layer": "маршруты",
-        "path": "learningBack/core/routers/modules_admin.py",
+        "path": "learningBack/api/routers/modules_admin.py",
         "summary": "Жизненный цикл подключённого модуля для администратора: список, включение, согласие на расширенные разрешения, отключение, необратимое удаление данных.",
         "api": [
           {
@@ -278,10 +278,10 @@ updated: 2026-10-05
         ]
       },
       {
-        "id": "learningBack/core/routers/monitoring.py",
+        "id": "learningBack/api/routers/monitoring.py",
         "title": "API мониторинга и ошибок клиента",
         "layer": "маршруты",
-        "path": "learningBack/core/routers/monitoring.py",
+        "path": "learningBack/api/routers/monitoring.py",
         "summary": "Приём необработанных ошибок клиента (с лимитом на человека) и выдача сводки здоровья системы администратору.",
         "api": [
           {
@@ -299,10 +299,10 @@ updated: 2026-10-05
         ]
       },
       {
-        "id": "learningBack/core/routers/userdata.py",
+        "id": "learningBack/api/routers/userdata.py",
         "title": "API «Мои данные»",
         "layer": "маршруты",
-        "path": "learningBack/core/routers/userdata.py",
+        "path": "learningBack/api/routers/userdata.py",
         "summary": "Экран «Мои данные»: какие типы данных хранятся, разрешения модулям по типу и режиму, журнал обращений, выгрузка и удаление всех данных или аккаунта целиком. Отдельно — запуск удаления по сроку хранения.",
         "api": [
           {
@@ -1044,127 +1044,127 @@ updated: 2026-10-05
         }
       },
       {
-        "from": "learningBack/core/routers/methods.py",
+        "from": "learningBack/api/routers/methods.py",
         "to": "learningBack/core/modules.py",
         "evidence": {
-          "path": "learningBack/core/routers/methods.py",
+          "path": "learningBack/api/routers/methods.py",
           "line": 8,
           "fragment": "from core import modules"
         }
       },
       {
-        "from": "learningBack/core/routers/methods.py",
+        "from": "learningBack/api/routers/methods.py",
         "to": "learningBack/core/deps.py",
         "evidence": {
-          "path": "learningBack/core/routers/methods.py",
+          "path": "learningBack/api/routers/methods.py",
           "line": 9,
           "fragment": "from core.deps import CurrentUser, SessionDep"
         }
       },
       {
-        "from": "learningBack/core/routers/methods.py",
+        "from": "learningBack/api/routers/methods.py",
         "to": "learningBack/core/evidence.py",
         "evidence": {
-          "path": "learningBack/core/routers/methods.py",
+          "path": "learningBack/api/routers/methods.py",
           "line": 10,
           "fragment": "from core.evidence import Evidence, dispatch"
         }
       },
       {
-        "from": "learningBack/core/routers/methods.py",
+        "from": "learningBack/api/routers/methods.py",
         "to": "learningBack/core/methods.py",
         "evidence": {
-          "path": "learningBack/core/routers/methods.py",
+          "path": "learningBack/api/routers/methods.py",
           "line": 11,
           "fragment": "from core.methods import PREFERENCE_KEY, PURPOSES, preferences"
         }
       },
       {
-        "from": "learningBack/core/routers/modules_admin.py",
+        "from": "learningBack/api/routers/modules_admin.py",
         "to": "learningBack/core/modules.py",
         "evidence": {
-          "path": "learningBack/core/routers/modules_admin.py",
+          "path": "learningBack/api/routers/modules_admin.py",
           "line": 6,
           "fragment": "from core import modules"
         }
       },
       {
-        "from": "learningBack/core/routers/modules_admin.py",
+        "from": "learningBack/api/routers/modules_admin.py",
         "to": "learningBack/core/deps.py",
         "evidence": {
-          "path": "learningBack/core/routers/modules_admin.py",
+          "path": "learningBack/api/routers/modules_admin.py",
           "line": 7,
           "fragment": "from core.deps import CurrentSuperuser, SessionDep"
         }
       },
       {
-        "from": "learningBack/core/routers/monitoring.py",
+        "from": "learningBack/api/routers/monitoring.py",
         "to": "learningBack/core/monitoring.py",
         "evidence": {
-          "path": "learningBack/core/routers/monitoring.py",
+          "path": "learningBack/api/routers/monitoring.py",
           "line": 8,
           "fragment": "from core import monitoring"
         }
       },
       {
-        "from": "learningBack/core/routers/monitoring.py",
+        "from": "learningBack/api/routers/monitoring.py",
         "to": "learningBack/core/deps.py",
         "evidence": {
-          "path": "learningBack/core/routers/monitoring.py",
+          "path": "learningBack/api/routers/monitoring.py",
           "line": 9,
           "fragment": "from core.deps import CurrentSuperuser, CurrentUser, SessionDep"
         }
       },
       {
-        "from": "learningBack/core/routers/monitoring.py",
+        "from": "learningBack/api/routers/monitoring.py",
         "to": "learningBack/core/models.py",
         "evidence": {
-          "path": "learningBack/core/routers/monitoring.py",
+          "path": "learningBack/api/routers/monitoring.py",
           "line": 10,
           "fragment": "from core.models import ClientError"
         }
       },
       {
-        "from": "learningBack/core/routers/monitoring.py",
+        "from": "learningBack/api/routers/monitoring.py",
         "to": "learningBack/core/ratelimit.py",
         "evidence": {
-          "path": "learningBack/core/routers/monitoring.py",
+          "path": "learningBack/api/routers/monitoring.py",
           "line": 11,
           "fragment": "from core.ratelimit import SlidingWindowLimiter"
         }
       },
       {
-        "from": "learningBack/core/routers/userdata.py",
+        "from": "learningBack/api/routers/userdata.py",
         "to": "learningBack/core/modules.py",
         "evidence": {
-          "path": "learningBack/core/routers/userdata.py",
+          "path": "learningBack/api/routers/userdata.py",
           "line": 6,
           "fragment": "from core import modules, userdata"
         }
       },
       {
-        "from": "learningBack/core/routers/userdata.py",
+        "from": "learningBack/api/routers/userdata.py",
         "to": "learningBack/core/userdata.py",
         "evidence": {
-          "path": "learningBack/core/routers/userdata.py",
+          "path": "learningBack/api/routers/userdata.py",
           "line": 6,
           "fragment": "from core import modules, userdata"
         }
       },
       {
-        "from": "learningBack/core/routers/userdata.py",
+        "from": "learningBack/api/routers/userdata.py",
         "to": "learningBack/core/deps.py",
         "evidence": {
-          "path": "learningBack/core/routers/userdata.py",
+          "path": "learningBack/api/routers/userdata.py",
           "line": 7,
           "fragment": "from core.deps import CurrentSuperuser, CurrentUser, SessionDep"
         }
       },
       {
-        "from": "learningBack/core/routers/userdata.py",
+        "from": "learningBack/api/routers/userdata.py",
         "to": "learningBack/core/security.py",
         "evidence": {
-          "path": "learningBack/core/routers/userdata.py",
+          "path": "learningBack/api/routers/userdata.py",
           "line": 8,
           "fragment": "from core.security import verify_password"
         }
@@ -1189,11 +1189,11 @@ updated: 2026-10-05
       },
       {
         "from": "learningBack/core/stt.py",
-        "to": "learningBack/core/ai_gateway/base.py",
+        "to": "learningBack/core/ai_base.py",
         "evidence": {
           "path": "learningBack/core/stt.py",
           "line": 16,
-          "fragment": "from core.ai_gateway.base import ProviderError"
+          "fragment": "from core.ai_base import ProviderError"
         }
       },
       {
@@ -1207,11 +1207,11 @@ updated: 2026-10-05
       },
       {
         "from": "learningBack/core/tts.py",
-        "to": "learningBack/core/ai_gateway/base.py",
+        "to": "learningBack/core/ai_base.py",
         "evidence": {
           "path": "learningBack/core/tts.py",
           "line": 16,
-          "fragment": "from core.ai_gateway.base import ProviderError"
+          "fragment": "from core.ai_base import ProviderError"
         }
       },
       {
@@ -1261,7 +1261,7 @@ updated: 2026-10-05
       },
       {
         "from": "learningBack/core/worker.py",
-        "to": "learningBack/core/ai_gateway/__init__.py",
+        "to": "learningBack/core/ai_gateway.py",
         "evidence": {
           "path": "learningBack/core/worker.py",
           "line": 23,
@@ -1530,46 +1530,46 @@ updated: 2026-10-05
         }
       },
       {
-        "from": "learningBack/core/app.py",
-        "to": "learningBack/core/routers/methods.py",
+        "from": "learningBack/api/app.py",
+        "to": "learningBack/api/routers/methods.py",
         "evidence": {
-          "path": "learningBack/core/app.py",
+          "path": "learningBack/api/app.py",
           "line": 18,
-          "fragment": "from core.routers import methods as methods_router"
+          "fragment": "from api.routers import methods as methods_router"
         }
       },
       {
-        "from": "learningBack/core/app.py",
-        "to": "learningBack/core/routers/modules_admin.py",
+        "from": "learningBack/api/app.py",
+        "to": "learningBack/api/routers/modules_admin.py",
         "evidence": {
-          "path": "learningBack/core/app.py",
+          "path": "learningBack/api/app.py",
           "line": 19,
-          "fragment": "from core.routers import modules_admin"
+          "fragment": "from api.routers import modules_admin"
         }
       },
       {
-        "from": "learningBack/core/app.py",
-        "to": "learningBack/core/routers/userdata.py",
+        "from": "learningBack/api/app.py",
+        "to": "learningBack/api/routers/userdata.py",
         "evidence": {
-          "path": "learningBack/core/app.py",
+          "path": "learningBack/api/app.py",
           "line": 20,
-          "fragment": "from core.routers import userdata as userdata_router"
+          "fragment": "from api.routers import userdata as userdata_router"
         }
       },
       {
-        "from": "learningBack/core/app.py",
-        "to": "learningBack/core/routers/monitoring.py",
+        "from": "learningBack/api/app.py",
+        "to": "learningBack/api/routers/monitoring.py",
         "evidence": {
-          "path": "learningBack/core/app.py",
+          "path": "learningBack/api/app.py",
           "line": 21,
-          "fragment": "from core.routers import monitoring as monitoring_router"
+          "fragment": "from api.routers import monitoring as monitoring_router"
         }
       },
       {
-        "from": "learningBack/core/app.py",
+        "from": "learningBack/api/app.py",
         "to": "learningBack/core/versioning.py",
         "evidence": {
-          "path": "learningBack/core/app.py",
+          "path": "learningBack/api/app.py",
           "line": 16,
           "fragment": "from core.versioning import ClientVersionMiddleware, version_info"
         }
@@ -1647,10 +1647,10 @@ updated: 2026-10-05
         }
       },
       {
-        "from": "learningBack/core/routers/auth.py",
+        "from": "learningBack/api/routers/auth.py",
         "to": "learningBack/core/mail.py",
         "evidence": {
-          "path": "learningBack/core/routers/auth.py",
+          "path": "learningBack/api/routers/auth.py",
           "line": 11,
           "fragment": "from core.mail import reset_code_message, send_safely"
         }
@@ -1663,7 +1663,7 @@ updated: 2026-10-05
         "summary": "Общий способ, которым модуль объявляет способ изучения шага курса и отдаёт его через API выбора и смены.",
         "modules": [
           "learningBack/core/methods.py",
-          "learningBack/core/routers/methods.py"
+          "learningBack/api/routers/methods.py"
         ],
         "capability": "method-contract"
       },
@@ -1682,7 +1682,7 @@ updated: 2026-10-05
         "summary": "Контракт манифеста и администраторские действия над подключённым модулем: включить, согласиться на расширение, отключить, удалить данные.",
         "modules": [
           "learningBack/core/manifest.py",
-          "learningBack/core/routers/modules_admin.py"
+          "learningBack/api/routers/modules_admin.py"
         ],
         "capability": "module-registry"
       },
@@ -1701,7 +1701,7 @@ updated: 2026-10-05
         "summary": "Реестр типов данных человека с разрешениями модулям, журналом доступа, выгрузкой, удалением по типу, по сроку хранения и удалением аккаунта.",
         "modules": [
           "learningBack/core/userdata.py",
-          "learningBack/core/routers/userdata.py"
+          "learningBack/api/routers/userdata.py"
         ],
         "capability": "my-data"
       },
@@ -1711,7 +1711,7 @@ updated: 2026-10-05
         "summary": "Эксплуатационные механизмы: сводка здоровья и ошибки клиента, совместимость версии клиента, фоновый воркер AI-задач, отправка писем восстановления пароля.",
         "modules": [
           "learningBack/core/monitoring.py",
-          "learningBack/core/routers/monitoring.py",
+          "learningBack/api/routers/monitoring.py",
           "learningBack/core/versioning.py",
           "learningBack/core/worker.py",
           "learningBack/core/mail.py"
@@ -1813,51 +1813,51 @@ updated: 2026-10-05
         }
       },
       {
-        "from": "learningBack/core/routers/methods.py",
+        "from": "learningBack/api/routers/methods.py",
         "to": "db-postgres",
         "direction": "write",
         "evidence": {
-          "path": "learningBack/core/routers/methods.py",
+          "path": "learningBack/api/routers/methods.py",
           "line": 46,
           "fragment": "session.commit()"
         }
       },
       {
-        "from": "learningBack/core/routers/monitoring.py",
+        "from": "learningBack/api/routers/monitoring.py",
         "to": "db-postgres",
         "direction": "write",
         "evidence": {
-          "path": "learningBack/core/routers/monitoring.py",
+          "path": "learningBack/api/routers/monitoring.py",
           "line": 48,
           "fragment": "session.commit()"
         }
       },
       {
-        "from": "learningBack/core/routers/modules_admin.py",
+        "from": "learningBack/api/routers/modules_admin.py",
         "to": "db-postgres",
         "direction": "write",
         "evidence": {
-          "path": "learningBack/core/routers/modules_admin.py",
+          "path": "learningBack/api/routers/modules_admin.py",
           "line": 40,
           "fragment": "session.commit()"
         }
       },
       {
-        "from": "learningBack/core/routers/userdata.py",
+        "from": "learningBack/api/routers/userdata.py",
         "to": "db-postgres",
         "direction": "write",
         "evidence": {
-          "path": "learningBack/core/routers/userdata.py",
+          "path": "learningBack/api/routers/userdata.py",
           "line": 54,
           "fragment": "session.commit()"
         }
       },
       {
-        "from": "learningBack/core/routers/monitoring.py",
+        "from": "learningBack/api/routers/monitoring.py",
         "to": "mem-ratelimit",
         "direction": "both",
         "evidence": {
-          "path": "learningBack/core/routers/monitoring.py",
+          "path": "learningBack/api/routers/monitoring.py",
           "line": 35,
           "fragment": "_limiter.allow(str(user.id), CLIENT_ERROR_LIMIT, CLIENT_ERROR_WINDOW_SECONDS)"
         }

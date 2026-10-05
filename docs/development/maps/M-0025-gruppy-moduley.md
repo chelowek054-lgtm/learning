@@ -22,7 +22,7 @@ updated: 2026-10-05
         "title": "Каркас backend",
         "summary": "Сборка FastAPI-приложения, настройки, подключение к БД, общие зависимости запроса, ORM-модели ядра и реестр подключаемых модулей — то, чем пользуются все остальные части backend.",
         "modules": [
-          "learningBack/core/app.py",
+          "learningBack/api/app.py",
           "learningBack/core/config.py",
           "learningBack/core/db.py",
           "learningBack/core/deps.py",
@@ -50,7 +50,7 @@ updated: 2026-10-05
         ],
         "modules": [
           "learningBack/core/security.py",
-          "learningBack/core/routers/auth.py",
+          "learningBack/api/routers/auth.py",
           "learningBack/core/mail.py",
           "learningBack/core/ratelimit.py",
           "learningBack/migrations/versions/0002_auth.py",
@@ -73,7 +73,7 @@ updated: 2026-10-05
         "modules": [
           "learningBack/core/llm_cache.py",
           "learningBack/core/usage.py",
-          "learningBack/core/routers/usage.py",
+          "learningBack/api/routers/usage.py",
           "learningBack/migrations/versions/0008_clear_vendor_model_pins.py",
           "learningBack/migrations/versions/0009_llm_usage.py",
           "learningBack/migrations/versions/0012_llm_cache.py",
@@ -89,7 +89,7 @@ updated: 2026-10-05
         "summary": "Обрабатывает тяжёлые AI-задачи (оценка, расшифровка, генерация) асинхронно — в запросе или фоновым воркером, с повтором при временных сбоях провайдера.",
         "modules": [
           "learningBack/core/jobs.py",
-          "learningBack/core/routers/jobs.py",
+          "learningBack/api/routers/jobs.py",
           "learningBack/core/worker.py",
           "learningBack/scripts/worker.py",
           "learningBack/migrations/versions/0010_job_retry_after.py",
@@ -106,7 +106,7 @@ updated: 2026-10-05
           "learningFront/src/shared/api/db"
         ],
         "modules": [
-          "learningBack/core/routers/sync.py",
+          "learningBack/api/routers/sync.py",
           "learningBack/core/srs.py",
           "learningBack/migrations/versions/0007_srs_concept_link.py",
           "learningBack/migrations/versions/0011_srs_card_updated_at.py",
@@ -260,8 +260,8 @@ updated: 2026-10-05
           "learningFront/src/shared/lib/index.ts",
           "learningFront/src/shared/api/http.ts",
           "learningFront/src/shared/api/index.ts",
-          "learningFront/src/shared/api/preferences.ts",
-          "learningFront/src/shared/api/preferences.web.ts"
+          "learningFront/src/shared/ui/theme-storage.ts",
+          "learningFront/src/shared/ui/theme-storage.web.ts"
         ]
       },
       {

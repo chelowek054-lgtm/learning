@@ -75,3 +75,4 @@ links:
 - 2026-10-05 · в разработку · architect
 - 2026-10-05 · сделано: слой api — `core/app.py` и `core/routers` перенесены в `learningBack/api` (43 arch_parent_import); `core/ai_gateway` разложен в плоские модули core (ai_gateway, ai_base, ai_mock, ai_openai); `shared/ui` больше не импортирует engine и api (структурные типы в GradeView и заглушке, хранение темы в `shared/ui/theme-storage`); quiz перенесён в публичный API `shared/engine`, импорты идут через входы (learningBack PR 38, learningFront PR 23); тесты бэкенда и клиента проходят, uvicorn теперь `api.app:app` (Dockerfile, compose, Readme) · claude
 - 2026-10-05 · остаётся: переописать импорты в картах кода через консоль и пересчитать проверку · claude
+- 2026-10-05 · карты кода переписаны под новые пути (api, ai_base/ai_mock/ai_openai, theme-storage), устаревшие утверждения об импортах убраны; проверка архитектуры: 467 из 617 импортов, нарушений 0; консоль 0 ошибок, 35 предупреждений · claude

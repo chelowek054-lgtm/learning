@@ -842,15 +842,6 @@ updated: 2026-10-05
         }
       },
       {
-        "from": "learningFront/src/features/listening-drill/model/listening-model.ts",
-        "to": "learningFront/src/shared/lib/quiz.ts",
-        "evidence": {
-          "path": "learningFront/src/features/listening-drill/model/listening-model.ts",
-          "line": 3,
-          "fragment": "import { parseQuestions, type QuizQuestion } from '../../../shared/lib/quiz';"
-        }
-      },
-      {
         "from": "learningFront/src/features/listening-drill/model/listening-model.test.ts",
         "to": "learningFront/src/features/listening-drill/model/listening-model.ts",
         "evidence": {

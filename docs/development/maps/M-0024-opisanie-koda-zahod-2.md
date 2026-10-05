@@ -778,15 +778,6 @@ updated: 2026-10-05
         }
       },
       {
-        "from": "learningFront/src/features/reading-drill/model/reading-model.ts",
-        "to": "learningFront/src/shared/lib/quiz.ts",
-        "evidence": {
-          "path": "learningFront/src/features/reading-drill/model/reading-model.ts",
-          "line": 13,
-          "fragment": "} from '../../../shared/lib/quiz';"
-        }
-      },
-      {
         "from": "learningFront/src/features/reading-drill/model/reading-model.test.ts",
         "to": "learningFront/src/features/reading-drill/model/reading-model.ts",
         "evidence": {
@@ -1130,15 +1121,6 @@ updated: 2026-10-05
       },
       {
         "from": "learningFront/src/shared/api/voice-outbox.ts",
-        "to": "learningFront/src/shared/lib/id.ts",
-        "evidence": {
-          "path": "learningFront/src/shared/api/voice-outbox.ts",
-          "line": 6,
-          "fragment": "import { newId } from '../lib/id';"
-        }
-      },
-      {
-        "from": "learningFront/src/shared/api/voice-outbox.ts",
         "to": "learningFront/src/shared/api/current-user.ts",
         "evidence": {
           "path": "learningFront/src/shared/api/voice-outbox.ts",
@@ -1295,7 +1277,7 @@ updated: 2026-10-05
         "to": "learningFront/src/shared/engine/module/manifest-check.ts",
         "evidence": {
           "path": "learningFront/src/shared/engine/index.ts",
-          "line": 24,
+          "line": 35,
           "fragment": "export { CONTRACT_VERSION, ManifestError } from './module/manifest-check';"
         }
       },
@@ -1304,7 +1286,7 @@ updated: 2026-10-05
         "to": "learningFront/src/shared/engine/scheduler/card-merge.ts",
         "evidence": {
           "path": "learningFront/src/shared/engine/index.ts",
-          "line": 29,
+          "line": 40,
           "fragment": "export { compareCardStates, serverVersionWins } from './scheduler/card-merge';"
         }
       },
@@ -1315,15 +1297,6 @@ updated: 2026-10-05
           "path": "learningFront/src/shared/engine/scheduler/card-merge.test.ts",
           "line": 2,
           "fragment": "import { compareCardStates, serverVersionWins } from './card-merge';"
-        }
-      },
-      {
-        "from": "learningFront/src/shared/api/sync-service.ts",
-        "to": "learningFront/src/shared/engine/scheduler/card-merge.ts",
-        "evidence": {
-          "path": "learningFront/src/shared/api/sync-service.ts",
-          "line": 11,
-          "fragment": "import { serverVersionWins } from '../engine/scheduler/card-merge';"
         }
       },
       {
@@ -1681,3 +1654,4 @@ updated: 2026-10-05
 - 2026-10-05 · заведена черновиком · модель
 - 2026-10-05 · на подтверждение · architect
 - 2026-10-05 · подтверждён · architect
+- 2026-10-03 · обновлены номера строк в свидетельствах (2): код сдвинулся, содержание карты не менялось · claude

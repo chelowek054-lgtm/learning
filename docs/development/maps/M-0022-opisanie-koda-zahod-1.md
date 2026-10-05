@@ -590,7 +590,7 @@ updated: 2026-10-05
     "imports": [
       {
         "from": "learningBack/modules/knowledge/goal_intake.py",
-        "to": "learningBack/core/ai_gateway/__init__.py",
+        "to": "learningBack/core/ai_gateway.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/goal_intake.py",
           "line": 21,
@@ -635,7 +635,7 @@ updated: 2026-10-05
       },
       {
         "from": "learningBack/modules/knowledge/subdomains.py",
-        "to": "learningBack/core/ai_gateway/__init__.py",
+        "to": "learningBack/core/ai_gateway.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/subdomains.py",
           "line": 14,
@@ -653,7 +653,7 @@ updated: 2026-10-05
       },
       {
         "from": "learningBack/modules/languages/api.py",
-        "to": "learningBack/core/ai_gateway/__init__.py",
+        "to": "learningBack/core/ai_gateway.py",
         "evidence": {
           "path": "learningBack/modules/languages/api.py",
           "line": 9,
@@ -662,11 +662,11 @@ updated: 2026-10-05
       },
       {
         "from": "learningBack/modules/languages/api.py",
-        "to": "learningBack/core/ai_gateway/base.py",
+        "to": "learningBack/core/ai_base.py",
         "evidence": {
           "path": "learningBack/modules/languages/api.py",
           "line": 10,
-          "fragment": "from core.ai_gateway.base import ProviderError"
+          "fragment": "from core.ai_base import ProviderError"
         }
       },
       {
