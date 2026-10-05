@@ -2,7 +2,7 @@
 id: R-0039
 type: requirement
 title: 'Починить нарушения архитектуры: 215'
-status: draft
+status: dropped
 created: 2026-10-05
 updated: 2026-10-05
 ---
@@ -14,3 +14,4 @@ updated: 2026-10-05
 ## Журнал
 
 - 2026-10-05 · заведена · приложение
+- 2026-10-05 · отменён · architect

@@ -55,7 +55,7 @@ services:
     # Применяем миграции, затем поднимаем сервер.
     command: >
       sh -c "uv run --no-dev alembic upgrade head &&
-             uv run --no-dev uvicorn core.app:app --host 0.0.0.0 --port 8000"
+             uv run --no-dev uvicorn api.app:app --host 0.0.0.0 --port 8000"
 
   # Фоновый воркер долгих AI-задач (T-0049). Включается профилем и JOBS_MODE=worker у api:
   #   JOBS_MODE=worker docker compose --profile worker up -d

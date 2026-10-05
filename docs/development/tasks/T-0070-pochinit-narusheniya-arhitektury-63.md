@@ -2,7 +2,7 @@
 id: T-0070
 type: task
 title: 'Починить нарушения архитектуры: 63'
-status: backlog
+status: dropped
 change: fix
 created: 2026-10-05
 updated: 2026-10-05
@@ -83,3 +83,4 @@ links:
 ## Журнал
 
 - 2026-10-05 · заведена · приложение
+- 2026-10-05 · отменён · architect
