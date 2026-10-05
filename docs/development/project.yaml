@@ -43,6 +43,8 @@ architecture:
     - root: learningFront/src
       order: [app, pages, widgets, features, entities, shared]
       slices: isolated
+      # По FSD у app и shared нет срезов — только сегменты, и они видят друг друга.
+      unsliced: [app, shared]
     - root: learningBack
       order: [modules, core]
       slices: via-entry
