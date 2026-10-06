@@ -1498,8 +1498,8 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/placement.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/cross_links_api.py",
-          "line": 10,
-          "fragment": "from modules.knowledge.placement import NoProbeAvailable"
+          "line": 15,
+          "fragment": "from modules.knowledge.placement import PROBE_KIND, NoProbeAvailable, record_answer"
         }
       },
       {
@@ -1938,7 +1938,7 @@ updated: 2026-10-05
         "direction": "write",
         "evidence": {
           "path": "learningBack/modules/knowledge/cross_links_api.py",
-          "line": 28,
+          "line": 39,
           "fragment": "session.commit()"
         }
       },
@@ -2002,4 +2002,5 @@ updated: 2026-10-05
 - 2026-10-05 · заведена черновиком · модель
 - 2026-10-05 · на подтверждение · architect
 - 2026-10-05 · подтверждён · architect
+- 2026-10-03 · обновлены номера строк в свидетельствах (2): код сдвинулся, содержание карты не менялось · claude
 - 2026-10-03 · обновлены номера строк в свидетельствах (2): код сдвинулся, содержание карты не менялось · claude

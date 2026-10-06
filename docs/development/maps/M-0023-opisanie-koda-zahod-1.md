@@ -631,7 +631,7 @@ updated: 2026-10-05
         "evidence": {
           "path": "learningFront/src/features/goal-intake/index.ts",
           "line": 2,
-          "fragment": "export { subjectOf } from './model/dialog';"
+          "fragment": "export { directIntake, subjectOf } from './model/dialog';"
         }
       },
       {
@@ -640,7 +640,7 @@ updated: 2026-10-05
         "evidence": {
           "path": "learningFront/src/pages/onboarding/ui/onboarding-screen.tsx",
           "line": 11,
-          "fragment": "import { GoalIntakeDialog, subjectOf } from '@/features/goal-intake';"
+          "fragment": "import { directIntake, GoalIntakeDialog, subjectOf } from '@/features/goal-intake';"
         }
       },
       {
@@ -879,11 +879,11 @@ updated: 2026-10-05
       },
       {
         "from": "learningFront/src/features/listening-drill/ui/listening-drill-activity.tsx",
-        "to": "learningFront/src/shared/lib/index.ts",
+        "to": "learningFront/src/shared/engine/index.ts",
         "evidence": {
           "path": "learningFront/src/features/listening-drill/ui/listening-drill-activity.tsx",
           "line": 9,
-          "fragment": "import { gradeQuestions, newId, type QuizQuestion, type QuizResult } from '@/shared/lib';"
+          "fragment": "import { gradeQuestions, type QuizQuestion, type QuizResult } from '@/shared/engine';"
         }
       },
       {

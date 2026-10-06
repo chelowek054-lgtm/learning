@@ -1300,15 +1300,6 @@ updated: 2026-10-05
         }
       },
       {
-        "from": "learningFront/src/shared/lib/index.ts",
-        "to": "learningFront/src/shared/lib/quiz.ts",
-        "evidence": {
-          "path": "learningFront/src/shared/lib/index.ts",
-          "line": 13,
-          "fragment": "} from './quiz';"
-        }
-      },
-      {
         "from": "scripts/deploy-staging.sh",
         "to": "scripts/backup-db.sh",
         "evidence": {
