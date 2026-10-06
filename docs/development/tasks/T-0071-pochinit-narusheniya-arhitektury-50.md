@@ -2,10 +2,10 @@
 id: T-0071
 type: task
 title: 'Починить нарушения архитектуры: 50'
-status: in_progress
+status: in_review
 change: fix
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-06
 links:
   implements: [R-0040]
   affects: [M-0004, M-0009, M-0013, M-0021, M-0023, M-0024]
@@ -76,3 +76,4 @@ links:
 - 2026-10-05 · сделано: слой api — `core/app.py` и `core/routers` перенесены в `learningBack/api` (43 arch_parent_import); `core/ai_gateway` разложен в плоские модули core (ai_gateway, ai_base, ai_mock, ai_openai); `shared/ui` больше не импортирует engine и api (структурные типы в GradeView и заглушке, хранение темы в `shared/ui/theme-storage`); quiz перенесён в публичный API `shared/engine`, импорты идут через входы (learningBack PR 38, learningFront PR 23); тесты бэкенда и клиента проходят, uvicorn теперь `api.app:app` (Dockerfile, compose, Readme) · claude
 - 2026-10-05 · остаётся: переописать импорты в картах кода через консоль и пересчитать проверку · claude
 - 2026-10-05 · карты кода переписаны под новые пути (api, ai_base/ai_mock/ai_openai, theme-storage), устаревшие утверждения об импортах убраны; проверка архитектуры: 467 из 617 импортов, нарушений 0; консоль 0 ошибок, 35 предупреждений · claude
+- 2026-10-06 · на проверку: код и карты приведены в соответствие с A-0023, нарушений 0; проверка повторяется живым запросом консоли «Архитектура», отдельной записи проверки нет · claude
