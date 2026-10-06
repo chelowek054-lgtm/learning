@@ -2,7 +2,7 @@
 id: R-0047
 type: requirement
 title: Загрузка проверенных учебников в канон графа
-status: draft
+status: approved
 created: 2026-10-06
 updated: 2026-10-06
 ---
@@ -15,3 +15,4 @@ updated: 2026-10-06
 ## Журнал
 
 - 2026-10-06 · заведена из docs/inbox/requirement-textbook-upload-tool.md, docs/inbox/decision-knowledge-pipeline-and-graph-db.md · приложение
+- 2026-10-06 · подтверждён · пользователь (в чате: «Подтвердил»); для A-0028 принято предложение — белый список каталогов, затем API поиска

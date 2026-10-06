@@ -27,6 +27,9 @@ trap cleanup EXIT
 
 cleanup
 psql_in -d postgres -c "CREATE DATABASE $TMPDB" >/dev/null
+# Дамп снят с --clean: он начинается с DROP EXTENSION, а библиотека AGE (shared_preload_libraries)
+# на DROP EXTENSION в базе без расширения падает. Поэтому расширения создаём заранее; дамп их пересоздаст.
+psql_in -d "$TMPDB" -c "CREATE EXTENSION IF NOT EXISTS vector" -c "CREATE EXTENSION IF NOT EXISTS age" >/dev/null
 gzip -dc "$FILE" | $COMPOSE exec -T postgres psql -U "$PGUSER" -d "$TMPDB" -v ON_ERROR_STOP=1 -q >/dev/null
 
 version() { psql_in -d "$1" -c "select version_num from alembic_version"; }

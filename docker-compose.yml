@@ -5,7 +5,10 @@
 
 services:
   postgres:
-    image: postgres:16-alpine
+    # PostgreSQL 17 с Apache AGE и pgvector (A-0024, A-0026): граф знаний живёт в той же базе.
+    build:
+      context: ./deploy/postgres
+    image: praxis-postgres:17
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-praxis}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-praxis}

@@ -2,7 +2,7 @@
 id: R-0043
 type: requirement
 title: Поиск источников и разбор их в граф со ссылками на фрагмент
-status: draft
+status: approved
 created: 2026-10-06
 updated: 2026-10-06
 ---
@@ -15,3 +15,4 @@ updated: 2026-10-06
 ## Журнал
 
 - 2026-10-06 · заведена из docs/inbox/requirement-source-search-and-ingestion.md, docs/inbox/decision-knowledge-pipeline-and-graph-db.md · приложение
+- 2026-10-06 · подтверждён · пользователь (в чате: «Подтвердил»); для A-0028 принято предложение — белый список каталогов, затем API поиска

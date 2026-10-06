@@ -2,7 +2,7 @@
 id: A-0026
 type: decision
 title: Переход PostgreSQL 16 → 17 с расширениями AGE и pgvector
-status: draft
+status: approved
 created: 2026-10-06
 updated: 2026-10-06
 ---
@@ -15,3 +15,4 @@ updated: 2026-10-06
 ## Журнал
 
 - 2026-10-06 · заведена из docs/inbox/decision-postgres-17-migration.md · приложение
+- 2026-10-06 · подтверждён · пользователь (в чате: «Подтвердил»); для A-0028 принято предложение — белый список каталогов, затем API поиска
