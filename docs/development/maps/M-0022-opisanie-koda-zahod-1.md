@@ -900,7 +900,7 @@ updated: 2026-10-05
         "evidence": {
           "path": "learningBack/modules/knowledge/router.py",
           "line": 42,
-          "fragment": "from modules.knowledge import events, goal_intake, subdomains"
+          "fragment": "from modules.knowledge import events, goal_intake, provenance, subdomains"
         }
       },
       {
@@ -909,7 +909,7 @@ updated: 2026-10-05
         "evidence": {
           "path": "learningBack/modules/knowledge/router.py",
           "line": 42,
-          "fragment": "from modules.knowledge import events, goal_intake, subdomains"
+          "fragment": "from modules.knowledge import events, goal_intake, provenance, subdomains"
         }
       },
       {
