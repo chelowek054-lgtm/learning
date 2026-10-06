@@ -693,7 +693,7 @@ updated: 2026-10-05
         "to": "learningFront/src/features/goal-intake/model/dialog.ts",
         "evidence": {
           "path": "learningFront/src/features/goal-intake/model/dialog.test.ts",
-          "line": 12,
+          "line": 17,
           "fragment": "} from './dialog';"
         }
       },
@@ -1123,3 +1123,4 @@ updated: 2026-10-05
 - 2026-10-05 · заведена черновиком · модель
 - 2026-10-05 · на подтверждение · architect
 - 2026-10-05 · подтверждён · architect
+- 2026-10-03 · обновлены номера строк в свидетельствах (1): код сдвинулся, содержание карты не менялось · claude

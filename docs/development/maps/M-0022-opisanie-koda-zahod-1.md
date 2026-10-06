@@ -593,7 +593,7 @@ updated: 2026-10-05
         "to": "learningBack/core/ai_gateway.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/goal_intake.py",
-          "line": 21,
+          "line": 26,
           "fragment": "from core.ai_gateway import get_ai_gateway, has_llm"
         }
       },
@@ -602,7 +602,7 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/models.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/goal_intake.py",
-          "line": 22,
+          "line": 27,
           "fragment": "from modules.knowledge.models import GoalIntake"
         }
       },
@@ -1129,7 +1129,7 @@ updated: 2026-10-05
         "direction": "both",
         "evidence": {
           "path": "learningBack/modules/knowledge/goal_intake.py",
-          "line": 209,
+          "line": 284,
           "fragment": "row = session.query(GoalIntake).filter_by(user_id=user_id, domain=domain).one_or_none()"
         }
       },
@@ -1223,3 +1223,4 @@ updated: 2026-10-05
 - 2026-10-05 · заведена черновиком · модель
 - 2026-10-05 · на подтверждение · architect
 - 2026-10-05 · подтверждён · architect
+- 2026-10-03 · обновлены номера строк в свидетельствах (3): код сдвинулся, содержание карты не менялось · claude
