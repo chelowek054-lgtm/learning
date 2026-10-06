@@ -1615,7 +1615,7 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/api.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/__init__.py",
-          "line": 57,
+          "line": 64,
           "fragment": "from modules.knowledge import api"
         }
       },
@@ -1624,7 +1624,7 @@ updated: 2026-10-05
         "to": "learningBack/core/userdata.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/__init__.py",
-          "line": 78,
+          "line": 85,
           "fragment": "from core.userdata import DataType, model_type"
         }
       },
@@ -2002,3 +2002,4 @@ updated: 2026-10-05
 - 2026-10-05 · заведена черновиком · модель
 - 2026-10-05 · на подтверждение · architect
 - 2026-10-05 · подтверждён · architect
+- 2026-10-03 · обновлены номера строк в свидетельствах (2): код сдвинулся, содержание карты не менялось · claude
