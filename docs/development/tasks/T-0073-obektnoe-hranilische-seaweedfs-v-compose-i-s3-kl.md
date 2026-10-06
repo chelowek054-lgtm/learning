@@ -2,11 +2,12 @@
 id: T-0073
 type: task
 title: Объектное хранилище SeaweedFS в compose и S3-клиент в бэкенде
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-06
 updated: 2026-10-06
 links:
+  implements: [R-0043]
   decided_by: [A-0025]
   affects: [M-0026]
 ---
@@ -18,3 +19,5 @@ links:
 ## Журнал
 
 - 2026-10-06 · заведена из docs/inbox/decision-object-storage.md · приложение
+- 2026-10-06 · взята в работу, сделана: сервис SeaweedFS 4.48 в compose (закрытые бакеты, ключи из окружения, в staging порт наружу закрыт), `core/objects.py` — контракт ObjectStore, S3 через boto3 и память для тестов, подписанные ссылки (learningBack PR 40); `scripts/backup_objects.py` — копия с манифестом и сверкой, том для копий у api; раздел в environments.md · claude
+- 2026-10-06 · на проверку: тесты проходят на живом SeaweedFS (контракт, подписанная ссылка читается, без подписи 403, копия ловит повреждение и пропажу), из контейнера api запись и ссылка работают; связь implements R-0043 добавлена, иначе консоль давала ошибку; не проверено на staging и с реверс-прокси · claude

@@ -23,6 +23,29 @@ services:
       timeout: 5s
       retries: 10
 
+  # Объектное хранилище источников (A-0025, T-0073): SeaweedFS с S3 API. MinIO Community не развивается.
+  # Ключи доступа — из окружения; бакеты закрытые, администраторам файлы отдаются подписанными ссылками.
+  seaweedfs:
+    image: chrislusf/seaweedfs:4.48
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - >
+        printf '{"identities":[{"name":"praxis","credentials":[{"accessKey":"%s","secretKey":"%s"}],"actions":["Admin","Read","Write","List","Tagging"]}]}'
+        "$$S3_ACCESS_KEY" "$$S3_SECRET_KEY" > /tmp/s3.json &&
+        exec weed server -dir=/data -s3 -s3.config=/tmp/s3.json -s3.port=8333 -master.volumeSizeLimitMB=256 -volume.max=100
+    environment:
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY:-praxis}
+      S3_SECRET_KEY: ${S3_SECRET_KEY:-praxis-secret}
+    ports:
+      - "${S3_PORT:-8333}:8333"
+    volumes:
+      - ./.data/seaweedfs:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:9333/cluster/status || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
   api:
     build:
       context: ./learningBack
@@ -43,6 +66,11 @@ services:
       POSTGRES_PORT: 5432
       # Ключ LLM — только через окружение, никогда в образ (инвариант №2).
       LLM_API_KEY: ${LLM_API_KEY:-}
+      S3_ENDPOINT: ${S3_ENDPOINT:-http://seaweedfs:8333}
+      S3_PUBLIC_ENDPOINT: ${S3_PUBLIC_ENDPOINT:-http://localhost:${S3_PORT:-8333}}
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY:-praxis}
+      S3_SECRET_KEY: ${S3_SECRET_KEY:-praxis-secret}
+      S3_BUCKET: ${S3_BUCKET:-praxis-sources}
       SMTP_HOST: ${SMTP_HOST:-}
       SMTP_PORT: ${SMTP_PORT:-587}
       SMTP_USER: ${SMTP_USER:-}
@@ -62,6 +90,9 @@ services:
 
   # Фоновый воркер долгих AI-задач (T-0049). Включается профилем и JOBS_MODE=worker у api:
   #   JOBS_MODE=worker docker compose --profile worker up -d
+    volumes:
+      - ./.data/backups:/app/.data/backups   # сюда пишет scripts.backup_objects
+
   worker:
     profiles: ["worker"]
     build:
@@ -79,6 +110,11 @@ services:
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
       LLM_API_KEY: ${LLM_API_KEY:-}
+      S3_ENDPOINT: ${S3_ENDPOINT:-http://seaweedfs:8333}
+      S3_PUBLIC_ENDPOINT: ${S3_PUBLIC_ENDPOINT:-http://localhost:${S3_PORT:-8333}}
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY:-praxis}
+      S3_SECRET_KEY: ${S3_SECRET_KEY:-praxis-secret}
+      S3_BUCKET: ${S3_BUCKET:-praxis-sources}
       LLM_BASE_URL: ${LLM_BASE_URL:-https://routerai.ru/api/v1}
       LLM_MODEL_GENERATION: ${LLM_MODEL_GENERATION:-deepseek/deepseek-v4-flash-0731}
       LLM_MODEL_SCORING: ${LLM_MODEL_SCORING:-deepseek/deepseek-v4-flash-0731}
