@@ -8,6 +8,7 @@
     python scripts/live_checks.py ielts      # эссе IELTS Task 2 по четырём критериям (V-0077)
     python scripts/live_checks.py rubrics    # Task 1 и TOEFL по своим рубрикам (V-0075)
     python scripts/live_checks.py placement  # плейсмент по живому графу: зонды расширяют границу (V-0057)
+    python scripts/live_checks.py profile    # профиль навыка → граф с этапами → полнота (R-0048); идёт минуты
 
 Код выхода 0 — проверка пройдена, 1 — нет. Заглушка вместо реальной модели считается провалом:
 признак — расход токенов у пользователя в llm_usage и комментарии оценки не «mock».
@@ -68,7 +69,7 @@ def call(method: str, path: str, body: dict | None = None, token: str | None = N
     # Провайдер модели иногда недоступен (API отвечает 502): это не провал проверки, повторяем.
     for attempt in range(3):
         try:
-            with OPENER.open(req, timeout=300) as resp:
+            with OPENER.open(req, timeout=1200) as resp:
                 return json.loads(resp.read() or b"{}")
         except urllib.error.HTTPError as e:
             if e.code == 502 and attempt < 2:
@@ -275,7 +276,66 @@ def run_placement() -> str:
     return f"зондов {answered}, освоено узлов: {known}, затронуто узлов: {len(last_estimate)}"
 
 
-CHECKS = {"llm": run_llm, "ielts": run_ielts, "rubrics": run_rubrics, "placement": run_placement}
+def run_profile() -> str:
+    """Новый предмет по подтверждённой цели: профиль навыка → граф с этапами → отчёт полноты (R-0048)."""
+    token, uid = new_user()
+    domain = f"profile-{uuid.uuid4().hex[:6]}"
+    area = "Матрицы и линейная алгебра"
+    check(
+        call(
+            "POST",
+            "/graph/goal/confirm",
+            {"domain": domain, "area": area, "goal": "для работы с моделями машинного обучения", "level": "apply"},
+            token,
+        )["confirmed"],
+        "цель не подтверждена",
+    )
+    started = time.monotonic()
+    graph = call("POST", "/graph/canon/build", {"domain": domain, "topic": area}, token)
+    minutes = (time.monotonic() - started) / 60
+    nodes = graph["nodes"]
+    staged = [n for n in nodes if n.get("stage")]
+    stages = {n["stage"] for n in staged}
+    check(len(nodes) > 8, f"граф не больше прежних восьми понятий: {len(nodes)}")
+    check(len(staged) >= len(nodes) * 0.8, f"у большинства понятий нет этапа: {len(staged)} из {len(nodes)}")
+    check(len(stages) >= 3, f"этапов меньше трёх: {sorted(stages)}")
+    check(graph["edges"], "в графе нет ни одной связи")
+    check(all(n.get("level") for n in staged[:5]), "у понятий не проставлен уровень")
+
+    state = call("GET", f"/graph/profile/{domain}", token=token)
+    check(state["status"] == "confirmed" and state["profile"], f"профиль не в статусе confirmed: {state['status']}")
+    areas = state["profile"]["areas"]
+    check(len(areas) >= 2, f"областей в профиле меньше двух: {[a['title'] for a in areas]}")
+    cover = call("GET", f"/graph/profile/{domain}/coverage", token=token)
+    check(cover["summary"]["coverage"] >= 0.9, f"полнота ниже 90%: {cover['summary']}")
+    check(tokens_spent(uid) > 0, "расход токенов не записан: профиль построен не реальной моделью")
+
+    sql = (
+        "select count(*) from job where type = 'profile_sources' "
+        f"and user_id = '{uid}'"
+    )
+    out = subprocess.run(
+        ["docker", "exec", DB_CONTAINER, "psql", "-U", "praxis", "-d", "praxis", "-Atc", sql],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    queued = int(out.stdout.strip() or 0) if out.returncode == 0 else -1
+    titles = ", ".join(f"{a['title']} ({len(a['concepts'])})" for a in areas)
+    return (
+        f"{minutes:.1f} мин; областей {len(areas)}: {titles}; понятий в цели {len(nodes)}, "
+        f"этапов {len(stages)}, связей {len(graph['edges'])}; полнота {cover['summary']['coverage']}; "
+        f"задач поиска источников {queued}"
+    )
+
+
+CHECKS = {
+    "llm": run_llm,
+    "ielts": run_ielts,
+    "rubrics": run_rubrics,
+    "placement": run_placement,
+    "profile": run_profile,
+}
 
 if __name__ == "__main__":
     name = sys.argv[1] if len(sys.argv) > 1 else ""
