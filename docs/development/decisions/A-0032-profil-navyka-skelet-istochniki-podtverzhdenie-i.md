@@ -2,7 +2,7 @@
 id: A-0032
 type: decision
 title: Профиль навыка — скелет, источники — подтверждение и наполнение
-status: draft
+status: approved
 created: 2026-10-07
 updated: 2026-10-07
 ---
@@ -15,3 +15,5 @@ updated: 2026-10-07
 ## Журнал
 
 - 2026-10-07 · заведена из docs/inbox/requirement-graph-depth-reference.md · приложение
+- 2026-10-07 · на подтверждение · architect
+- 2026-10-07 · подтверждён · architect

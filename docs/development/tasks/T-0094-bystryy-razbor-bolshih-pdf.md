@@ -2,7 +2,7 @@
 id: T-0094
 type: task
 title: Быстрый разбор больших PDF
-status: backlog
+status: dropped
 change: feature
 created: 2026-10-07
 updated: 2026-10-07
@@ -19,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-10-07 · заведена из docs/inbox/requirement-graph-depth-reference.md · приложение
+- 2026-10-07 · закрыта как дубль T-0100: консоль завела её из той же заметки с отдельным требованием; работа и журнал ведутся там · claude

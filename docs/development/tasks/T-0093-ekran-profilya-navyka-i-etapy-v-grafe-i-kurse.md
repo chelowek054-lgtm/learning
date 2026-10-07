@@ -7,8 +7,8 @@ change: feature
 created: 2026-10-07
 updated: 2026-10-07
 links:
-  implements: [R-0048]
-  depends_on: [T-0088, T-0090]
+  implements: [R-0048, R-0049]
+  depends_on: [T-0095, T-0090]
   affects: [M-0028]
 ---
 
@@ -19,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-10-07 · заведена из docs/inbox/requirement-graph-depth-reference.md · приложение
+- 2026-10-07 · связи: зависит от T-0095 и T-0090 вместо закрытого дубля T-0088; реализует и R-0049 · claude

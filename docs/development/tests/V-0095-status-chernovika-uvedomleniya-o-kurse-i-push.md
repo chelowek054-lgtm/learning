@@ -2,9 +2,9 @@
 id: V-0095
 type: verification
 title: Статус черновика, уведомления о курсе и push
-status: draft
+status: approved
 created: 2026-10-06
-updated: 2026-10-06
+updated: 2026-10-07
 kind: manual
 links:
   verifies: [R-0044]
@@ -18,3 +18,5 @@ links:
 ## Журнал
 
 - 2026-10-06 · заведена · приложение
+- 2026-10-07 · на подтверждение · architect
+- 2026-10-07 · подтверждён · architect

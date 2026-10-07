@@ -2,9 +2,9 @@
 id: V-0097
 type: verification
 title: Роль специалиста по областям и очередь проверки
-status: draft
+status: approved
 created: 2026-10-06
-updated: 2026-10-06
+updated: 2026-10-07
 kind: manual
 links:
   verifies: [R-0046]
@@ -18,3 +18,5 @@ links:
 ## Журнал
 
 - 2026-10-06 · заведена · приложение
+- 2026-10-07 · на подтверждение · architect
+- 2026-10-07 · подтверждён · architect

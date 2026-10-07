@@ -2,9 +2,9 @@
 id: V-0094
 type: verification
 title: Источники, разбор в граф со ссылками на фрагмент, слияние и поиск
-status: draft
+status: approved
 created: 2026-10-06
-updated: 2026-10-06
+updated: 2026-10-07
 kind: manual
 links:
   verifies: [R-0043]
@@ -18,3 +18,5 @@ links:
 ## Журнал
 
 - 2026-10-06 · заведена · приложение
+- 2026-10-07 · на подтверждение · architect
+- 2026-10-07 · подтверждён · architect
