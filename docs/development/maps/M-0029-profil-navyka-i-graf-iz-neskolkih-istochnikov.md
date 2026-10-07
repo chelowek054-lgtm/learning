@@ -2,7 +2,7 @@
 id: M-0029
 type: map
 title: Профиль навыка и граф из нескольких источников
-status: draft
+status: approved
 created: 2026-10-07
 updated: 2026-10-07
 ---
@@ -78,3 +78,8 @@ updated: 2026-10-07
 ## Журнал
 
 - 2026-10-07 · заведена из docs/inbox/requirement-graph-depth-reference.md · приложение
+- 2026-10-07 · на подтверждение · architect
+- 2026-10-07 · подтверждён · architect
+- 2026-10-07 · возвращён в черновик · architect
+- 2026-10-07 · на подтверждение · architect
+- 2026-10-07 · подтверждён · architect
