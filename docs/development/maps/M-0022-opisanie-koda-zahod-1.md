@@ -899,8 +899,8 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/goal_intake.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/router.py",
-          "line": 42,
-          "fragment": "from modules.knowledge import events, goal_intake, notifications, provenance, subdomains"
+          "line": 50,
+          "fragment": "    goal_intake,"
         }
       },
       {
@@ -908,8 +908,8 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/subdomains.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/router.py",
-          "line": 42,
-          "fragment": "from modules.knowledge import events, goal_intake, notifications, provenance, subdomains"
+          "line": 55,
+          "fragment": "    subdomains,"
         }
       },
       {
@@ -917,7 +917,7 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/events.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/router.py",
-          "line": 43,
+          "line": 57,
           "fragment": "from modules.knowledge.events import NodeChanged"
         }
       },
@@ -1223,4 +1223,5 @@ updated: 2026-10-05
 - 2026-10-05 · заведена черновиком · модель
 - 2026-10-05 · на подтверждение · architect
 - 2026-10-05 · подтверждён · architect
+- 2026-10-03 · обновлены номера строк в свидетельствах (3): код сдвинулся, содержание карты не менялось · claude
 - 2026-10-03 · обновлены номера строк в свидетельствах (3): код сдвинулся, содержание карты не менялось · claude
