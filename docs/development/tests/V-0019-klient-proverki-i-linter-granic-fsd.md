@@ -23,3 +23,4 @@ Integration, npm: `cd learningFront && npm run check`. Доказывает: typ
 - 2026-10-01 · на подтверждение · architect
 - 2026-10-01 · подтверждён · architect
 - 2026-10-06 · в отчёте 2026-10-06 упала: в основном рабочем каталоге не была установлена новая зависимость expo-notifications (ошибка typecheck); после npm install полный npm run check проходит (typecheck, lint, format, 190 тестов); перепрогнать отдельно · claude
+- 2026-10-07 · в отчёте упала: типы маршрутов клиента не были перегенерированы (нет /skill-profile); после краткого запуска expo типы обновлены, tsc чистый, npm run check проходит · claude
