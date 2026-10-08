@@ -734,15 +734,6 @@ updated: 2026-10-05
         }
       },
       {
-        "from": "learningFront/src/features/graph-editor/ui/graph-map.tsx",
-        "to": "learningFront/src/features/graph-editor/ui/goal-planner.tsx",
-        "evidence": {
-          "path": "learningFront/src/features/graph-editor/ui/graph-map.tsx",
-          "line": 12,
-          "fragment": "import { GoalPlanner } from './goal-planner';"
-        }
-      },
-      {
         "from": "learningFront/src/features/graph-editor/ui/goal-planner.tsx",
         "to": "learningFront/src/shared/api/index.ts",
         "evidence": {

@@ -5,8 +5,6 @@ title: Быстрый разбор больших PDF источников
 status: approved
 created: 2026-10-07
 updated: 2026-10-07
-links:
-  refines: [R-0043]
 ---
 
 # Быстрый разбор больших PDF источников
@@ -20,3 +18,4 @@ links:
 - 2026-10-07 · заведена из docs/inbox/requirement-graph-depth-reference.md · приложение
 - 2026-10-07 · на подтверждение · architect
 - 2026-10-07 · подтверждён · architect
+- 2026-10-07 · убрана связь неверного типа вне приложения: refines [R-0043] · claude

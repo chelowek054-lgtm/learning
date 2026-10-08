@@ -4,9 +4,10 @@ type: phase
 title: Письмо IELTS/TOEFL и сквозная проверка
 status: planned
 created: 2026-10-01
-updated: 2026-10-01
+updated: 2026-10-08
 links:
-  covers: [T-0017, T-0018, T-0025]
+  covers: [T-0025, T-0017, T-0018]
+rank: 14
 ---
 
 # Письмо IELTS/TOEFL и сквозная проверка
@@ -16,3 +17,4 @@ links:
 ## Журнал
 
 - 2026-10-01 · заведена · приложение
+- 2026-10-08 · порядок по важности обновлён · architect
