@@ -4,7 +4,7 @@ type: map
 title: 'Описание кода: заход 2'
 status: approved
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-07
 ---
 
 # Описание кода: заход 2
@@ -1592,8 +1592,8 @@ updated: 2026-10-05
         "direction": "both",
         "evidence": {
           "path": "scripts/live_checks.py",
-          "line": 71,
-          "fragment": "with OPENER.open(req, timeout=300) as resp:"
+          "line": 72,
+          "fragment": "with OPENER.open(req, timeout=1200) as resp:"
         }
       },
       {
@@ -1602,7 +1602,7 @@ updated: 2026-10-05
         "direction": "read",
         "evidence": {
           "path": "scripts/live_checks.py",
-          "line": 94,
+          "line": 95,
           "fragment": "select coalesce(sum(prompt_tokens + completion_tokens), 0) from llm_usage"
         }
       }
@@ -1646,3 +1646,4 @@ updated: 2026-10-05
 - 2026-10-05 · на подтверждение · architect
 - 2026-10-05 · подтверждён · architect
 - 2026-10-03 · обновлены номера строк в свидетельствах (2): код сдвинулся, содержание карты не менялось · claude
+- 2026-10-07 · обновлены номера строк и фрагмент в свидетельствах по scripts/live_checks.py (71→72, timeout 300→1200; 94→95): код сдвинулся, содержание карты не менялось · claude

@@ -4,9 +4,10 @@ type: phase
 title: Speaking track
 status: planned
 created: 2026-10-01
-updated: 2026-10-01
+updated: 2026-10-08
 links:
-  covers: [T-0040, T-0041, T-0042, T-0043, T-0044]
+  covers: [T-0044, T-0040, T-0041, T-0042, T-0043]
+rank: 15
 ---
 
 # Speaking track
@@ -16,3 +17,4 @@ links:
 ## Журнал
 
 - 2026-10-01 · заведена · приложение
+- 2026-10-08 · порядок по важности обновлён · architect

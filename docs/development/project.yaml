@@ -12,7 +12,11 @@ paths:
   tests: tests
   diagrams: diagrams
   maps: maps
+  reference: reference
 sources:
+  shared:
+    - path: builtin
+      tags: [general, backend, database, fastapi, frontend, typescript, vue, infra, nuxt, postgres, python]
   # Где лежит код: по нему проверяются ссылки из документов.
   code:
     # Корень бэкенда целиком: его .gitignore (__pycache__, .venv) действует только
