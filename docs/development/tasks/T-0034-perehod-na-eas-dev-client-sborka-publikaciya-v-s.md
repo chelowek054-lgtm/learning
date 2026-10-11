@@ -21,3 +21,4 @@ links:
 - 2026-09-30 · заведена из docs/inbox/platform-and-release.md · приложение
 - 2026-10-01 · добавлены связи вне приложения: decided_by A-0006 · claude
 - 2026-10-11 · сделано в репозитории (learningFront PR 42): профили EAS с каналами и адресами API-заглушками, expo-updates, runtimeVersion по версии приложения, идентификаторы ru.praxis.app; порядок выпуска — docs/60-operations/release.md. Не сделано, нужны ваши аккаунты: eas init и projectId, учётные записи Apple и Google, ключи FCM/APNs, реальные адреса API, сама сборка и публикация · claude
+- 2026-10-11 · повторная проверка 2026-10-11: ЖДЁТ ВНЕШНЕГО: app.json/eas.json валидны, адреса API — заглушки; нужны eas init, аккаунты Apple/Google, FCM/APNs · claude
