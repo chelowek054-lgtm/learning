@@ -2,10 +2,10 @@
 id: T-0023
 type: task
 title: 'Запуск клиента в Expo Go: старт, миграции, регистрация модулей'
-status: backlog
+status: dropped
 change: feature
 created: 2026-09-30
-updated: 2026-10-01
+updated: 2026-10-11
 links:
   implements: [R-0017]
   decided_by: [A-0006]
@@ -20,3 +20,4 @@ links:
 
 - 2026-09-30 · заведена из docs/inbox/platform-and-release.md · приложение
 - 2026-10-01 · добавлены связи вне приложения: decided_by A-0006 · claude
+- 2026-10-11 · отменена по решению человека: задача требует запуска в Expo Go на телефоне; человек заведёт новые сам, проверки идут в веб-версии · claude

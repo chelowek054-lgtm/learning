@@ -2,10 +2,10 @@
 id: T-0025
 type: task
 title: Сквозной прогон письма и ML-трека офлайн на устройстве
-status: backlog
+status: dropped
 change: feature
 created: 2026-09-30
-updated: 2026-10-01
+updated: 2026-10-11
 links:
   implements: [R-0017, R-0026, R-0014]
   affects: [M-0003]
@@ -18,3 +18,4 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/platform-and-release.md, docs/inbox/writing.md, docs/inbox/ml-track.md · приложение
+- 2026-10-11 · отменена по решению человека: задача требует запуска в Expo Go на телефоне; человек заведёт новые сам, проверки идут в веб-версии · claude
