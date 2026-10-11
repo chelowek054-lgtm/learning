@@ -2,10 +2,10 @@
 id: T-0103
 type: task
 title: Параллельное наполнение всех областей с видимым статусом по каждой
-status: in_review
+status: in_progress
 change: feature
 created: 2026-10-07
-updated: 2026-10-07
+updated: 2026-10-11
 links:
   implements: [R-0056]
   affects: [M-0033]
@@ -19,3 +19,4 @@ links:
 
 - 2026-10-07 · заведена из docs/inbox/graph-build-background-and-visibility.md, docs/inbox/user-flow-skill-composition.md · приложение
 - 2026-10-07 · сделана (PR 69/35): все области наполняются параллельно, статус по каждой виден; готовая область сразу публикуется в граф; живая проверка: 5 областей, готовность приходила по очереди · claude
+- 2026-10-11 · ВОЗВРАЩЕНА по проверке 2026-10-11 (живой прогон T-0101/T-0102 — общий): статусы по областям приходят, все области параллельно, прогресс виден. Ошибка: пустая область помечается успешной. Вход: POST /graph/profile/python-data/fill по профилю из 8 областей (python_basics known). Ожидалось: пустой результат модели → область failed и в повтор. Факт: pandas и data_visualization остались с 0 понятий, data_cleaning_and_wrangling получила 1; в progress все три done, итог confirmed, error=None. Место: profile_fill.py:92 и :99 — результат propose_concepts не проверяется на пустоту; clean_concepts (skill_profile.py:228-255) молча отсеивает элементы. Причину (пустой ответ модели или фильтрация) не выяснили · claude
