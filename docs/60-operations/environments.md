@@ -28,6 +28,26 @@ scripts/deploy-staging.sh
 
 Скрипт подтягивает `main`, собирает образы, поднимает базу, делает копию и проверяет, что она восстанавливается, затем поднимает API и воркер. Миграции применяются командой запуска контейнера до старта сервера. Если `/health` не ответил, скрипт завершается с ошибкой и подсказывает откат.
 
+## Деплой на сервер с вашего компьютера
+
+Три скрипта в `scripts/`; ни один не знает конкретного провайдера хостинга (`hosting-options.md`), нужен только SSH.
+
+| Скрипт | Когда | Что делает |
+|---|---|---|
+| `bootstrap-server.sh user@host repo-url [каталог]` | один раз на новом сервере | Ставит Docker, клонирует проект с сабмодулями, создаёт `.env` из `.env.example` и останавливается: секреты вписываете вы |
+| `deploy-remote.sh user@host [каталог]` | каждый деплой | По SSH запускает на сервере `scripts/deploy-staging.sh`: код из `origin/main` → образы → копия базы и проверка → миграции и API → `/health`. Деплоится `origin/main`, незапушенное не уходит |
+| `backup-offsite.sh` (на сервере, `OFFSITE_TARGET=user@host:/dir`) | раз в сутки после `backup-db.sh` | Отправляет `.data/backups` на другой сервер по rsync; закрывает пункт «копии на том же сервере» |
+
+Порядок первого запуска:
+
+1. `scripts/bootstrap-server.sh deploy@host git@github.com:ORG/learning.git`
+2. На сервере вписать секреты в `~/praxis/.env` (список — в `.env.example`; обязательны в staging).
+3. Поставить TLS-прокси (Caddy или nginx) на порт `API_PORT`.
+4. `scripts/deploy-remote.sh deploy@host ~/praxis`
+5. В cron на сервере: `scripts/backup-db.sh && scripts/restore-check.sh && OFFSITE_TARGET=... scripts/backup-offsite.sh`
+
+Скрипты проверены на синтаксис; на реальном сервере не запускались.
+
 ## Резервные копии
 
 - `scripts/backup-db.sh [каталог] [дней]` — сжатый дамп в `.data/backups`, хранится 14 дней по умолчанию.
