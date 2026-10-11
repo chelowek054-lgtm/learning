@@ -5,7 +5,7 @@ title: Подхват прерванной сборки без повторно�
 status: in_review
 change: feature
 created: 2026-10-07
-updated: 2026-10-07
+updated: 2026-10-11
 links:
   implements: [R-0056]
   affects: [M-0033]
@@ -19,3 +19,4 @@ links:
 
 - 2026-10-07 · заведена из docs/inbox/graph-build-background-and-visibility.md, docs/inbox/user-flow-first-run.md · приложение
 - 2026-10-07 · сделана (PR 69): при старте API прерванные сборки возобновляются; повтор после сбоя продолжает с недостающих областей; на устройстве/после реального перезапуска не проверено · claude
+- 2026-10-11 · проверена 2026-10-11: PASS — docker restart посреди сборки (3 области done, 2 working): сборка подхватилась сама (attempts 2), готовые области не пересчитывались (created 12/13/19), недостающие доделались, профиль confirmed за ~4 мин; resume_interrupted берёт pending/running при building, не трогает done/failed, outline, confirmed. Замечание: строка «Возобновлено сборок профиля» не видна в логах — log.info при уровне WARNING не печатается (api/app.py:48-49) · claude

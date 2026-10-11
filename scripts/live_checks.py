@@ -142,6 +142,15 @@ def grade(token: str, activity_type: str, rubric_id: str, answer: str, payload: 
     )
     pulled = call("GET", "/sync/pull", token=token)
     done = [j for j in pulled.get("jobs", []) if j["id"] == jid]
+    # pull отдаёт только завершённые задачи. Временный сбой модели оставляет задачу в очереди с отсрочкой
+    # (core/jobs.py): ждём её срока и повторяем, как сделал бы клиент, а не считаем проверку проваленной.
+    for _ in range(2):
+        if done:
+            break
+        time.sleep(65)
+        call("POST", "/sync/push", {"activities": [], "responses": [], "jobs": []}, token)
+        pulled = call("GET", "/sync/pull", token=token)
+        done = [j for j in pulled.get("jobs", []) if j["id"] == jid]
     check(done and done[0]["status"] == "done", f"job оценки не завершён: {done}")
     mine = [r for r in pulled.get("responses", []) if r["id"] == rid]
     check(mine and mine[0].get("grade"), "оценка не пришла вместе с ответом")
