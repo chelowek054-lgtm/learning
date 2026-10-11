@@ -2,10 +2,10 @@
 id: T-0035
 type: task
 title: '70-business/: модель, аудитория, монетизация, юнит-экономика'
-status: backlog
+status: in_review
 change: feature
 created: 2026-09-30
-updated: 2026-10-01
+updated: 2026-10-11
 links:
   implements: [R-0021]
   affects: [M-0003]
@@ -18,3 +18,4 @@ links:
 ## Журнал
 
 - 2026-09-30 · заведена из docs/inbox/platform-and-release.md · приложение
+- 2026-10-11 · черновик docs/70-business/model.md: аудитория, расход токенов по замеру, формула юнит-экономики, варианты монетизации, рекомендация; цены на модель не подставлены, решения за человеком · claude
