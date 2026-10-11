@@ -16,7 +16,7 @@ paths:
 sources:
   shared:
     - path: builtin
-      tags: [general, backend, database, fastapi, frontend, typescript, vue, infra, nuxt, postgres, python]
+      tags: [general, backend, database, fastapi, frontend, typescript, vue, infra, nuxt, postgres, python, design]
   # Где лежит код: по нему проверяются ссылки из документов.
   code:
     # Корень бэкенда целиком: его .gitignore (__pycache__, .venv) действует только
@@ -39,3 +39,13 @@ policy:
   require_verification_before_done: true
   stale_in_progress_days: 14
   map_portion_files: 40
+# Дизайн: на каком стеке собран клиент и где лежат снимки экранов (docs/16-design-system.md консоли).
+design:
+  stacks:
+    - id: expo
+      files:
+        theme: learningFront/src/shared/config/design.ts
+  screens: docs/development/design/screens
+  mockups: docs/development/design/mockups
+  widths: [375, 768, 1280]
+  themes: [light, dark]
