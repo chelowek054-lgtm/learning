@@ -2,10 +2,10 @@
 id: T-0120
 type: task
 title: Сетка плашек на «Сегодня» с главным действием дня
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-08
-updated: 2026-10-08
+updated: 2026-10-11
 links:
   implements: [R-0063]
   verified_by: [V-0117]
@@ -19,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-10-08 · заведена из docs/inbox/today-as-miniapp-tiles.md · приложение
+- 2026-10-11 · сделана (PR 41): плашки на «Сегодня» (повторение, освоено, проверка уровня, читать дальше, цель), скрытие запоминается; плашки пока не отдельные модули. Без проверок · claude
