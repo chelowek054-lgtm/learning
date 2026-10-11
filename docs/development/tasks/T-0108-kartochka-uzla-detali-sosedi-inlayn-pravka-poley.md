@@ -2,10 +2,10 @@
 id: T-0108
 type: task
 title: 'Карточка узла: детали, соседи, инлайн-правка полей'
-status: in_review
+status: in_progress
 change: feature
 created: 2026-10-07
-updated: 2026-10-08
+updated: 2026-10-11
 links:
   implements: [R-0058]
   verified_by: [V-0110]
@@ -20,3 +20,4 @@ links:
 
 - 2026-10-07 · заведена из docs/inbox/admin-graph-visualization.md · приложение
 - 2026-10-08 · сделана (PR 70): боковая карточка узла с соседями, источниками и правкой полей; версия растёт при смене названия или пояснения; подтверждение и отклонение через журнал проверки · claude
+- 2026-10-11 · ВОЗВРАЩЕНА по проверке 2026-10-11: поля, соседи, источники, смена title/summary (версия растёт, повтор не растит), валидации, статусы approved/draft/rejected с причиной — работают. Ошибка: вход POST /admin/graph/api/node/aaaaaaaa-0000-0000-0000-000000000001 с телом {"stageOrder":"abc"}; ожидался 422 (например bad_stage_order); факт 500: int(fields["stageOrder"]) без перехвата ValueError (graph_admin_data.py:242-244); из интерфейса воспроизводится — «Номер этапа» обычный текстовый input (graph.html:254). Замечание: невалидный JSON/не UTF-8 молча считается пустым телом и даёт 200 без изменений (graph_admin.py:34-38) · claude

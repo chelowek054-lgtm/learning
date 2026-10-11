@@ -5,7 +5,7 @@ title: Разделить сборку на быстрый контур и фо�
 status: in_review
 change: feature
 created: 2026-10-07
-updated: 2026-10-07
+updated: 2026-10-11
 links:
   implements: [R-0055]
   affects: [M-0033]
@@ -19,3 +19,4 @@ links:
 
 - 2026-10-07 · заведена из docs/inbox/user-flow-skill-composition.md · приложение
 - 2026-10-07 · сделана (learningBack PR 69, learningFront PR 35): контур — отдельная быстрая фаза (статус outline), «Собрать карту» запускает наполнение; на живой модели контур пришёл за ~3 мин (дольше ожидаемой минуты) · claude
+- 2026-10-11 · проверена 2026-10-11 (живая модель, пользователь verify-45d74ef3, область python-data, цель «основы Python для анализа данных», apply; pytest 33 зелёных): PASS по сути — /fill до контура 422, /start 202 → outline за ~20 с (8 областей, 0 понятий), /fill 202, повторный /fill 409, progress.areas приходит, через ~150 с confirmed. Замечания: (1) ВХОД POST /graph/profile/python-data/build сразу после outline → 200, статус confirmed, скелет без понятий, а R-0055 требует, чтобы наполнение не стартовало без «Собрать карту»: build_graph (profile_store.py ~286) и confirm (~340) проверяют только BUILDING и пустой профиль, не OUTLINE; на экране кнопки нет, дыра только в API; из-за этого PUT после этого вернул draft вместо outline (save_edit, profile_store.py:272). (2) см. T-0103: пустые области помечаются успешными · claude
