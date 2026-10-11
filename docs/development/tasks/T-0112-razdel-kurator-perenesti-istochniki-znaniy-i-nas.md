@@ -2,10 +2,10 @@
 id: T-0112
 type: task
 title: 'Раздел «Куратор»: перенести источники знаний и настройки разработчика'
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-07
-updated: 2026-10-07
+updated: 2026-10-11
 links:
   implements: [R-0060]
   verified_by: [V-0114]
@@ -19,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-10-07 · заведена из docs/inbox/frontend-navigation-and-profile-cleanup.md · приложение
+- 2026-10-11 · сделана (PR 38): раздел «Куратор» (источники знаний, «Разработчику») виден администратору, из профиля убраны. Без проверок · claude

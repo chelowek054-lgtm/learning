@@ -2,10 +2,10 @@
 id: T-0115
 type: task
 title: 'Личный слой на схеме: отличие от канона, добавление и правка личных узлов'
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-07
-updated: 2026-10-07
+updated: 2026-10-11
 links:
   implements: [R-0061]
   depends_on: [T-0113]
@@ -19,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-10-07 · заведена из docs/inbox/client-graph-visualization.md · приложение
+- 2026-10-11 · сделана (PR 41): личные узлы овалом; добавить своё понятие со связью с выбранным, убрать своё; переименование не делалось. Без проверок · claude

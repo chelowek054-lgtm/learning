@@ -2,10 +2,10 @@
 id: T-0114
 type: task
 title: Легенда схемы и состояния освоения вместо служебных подписей
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-07
-updated: 2026-10-07
+updated: 2026-10-11
 links:
   implements: [R-0061]
   depends_on: [T-0113]
@@ -19,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-10-07 · заведена из docs/inbox/client-graph-visualization.md · приложение
+- 2026-10-11 · сделана (PR 37): легенда над схемой (сворачивается, запоминается), состояния освоения, понятные подписи. Без проверок · claude

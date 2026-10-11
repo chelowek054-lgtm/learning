@@ -2,10 +2,10 @@
 id: T-0116
 type: task
 title: Карточка узла по нажатию на схеме
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-07
-updated: 2026-10-07
+updated: 2026-10-11
 links:
   implements: [R-0061]
   depends_on: [T-0113]
@@ -19,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-10-07 · заведена из docs/inbox/client-graph-visualization.md · приложение
+- 2026-10-11 · сделана (PR 37): карточка узла по нажатию с соседями, состоянием и «Изучать». Без проверок · claude

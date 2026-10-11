@@ -2,10 +2,10 @@
 id: T-0119
 type: task
 title: Экран «Моя библиотека» и запись «предмет человека»
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-08
-updated: 2026-10-08
+updated: 2026-10-11
 links:
   implements: [R-0062]
   verified_by: [V-0116]
@@ -19,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-10-08 · заведена из docs/inbox/library-and-miniapp-platform.md · приложение
+- 2026-10-11 · сделана (learningBack PR 72, learningFront PR 40): запись user_subject (миграция 0034), API списка/добавления/паузы/удаления, экран «Моя библиотека» из профиля и «Сегодня»; подпись предмета на карточке повторения и шапка вкладок не делались. Без проверок · claude

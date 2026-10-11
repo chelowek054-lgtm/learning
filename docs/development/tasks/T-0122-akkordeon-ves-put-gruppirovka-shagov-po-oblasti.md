@@ -2,10 +2,10 @@
 id: T-0122
 type: task
 title: 'Аккордеон «Весь путь»: группировка шагов по области и этапу'
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-08
-updated: 2026-10-08
+updated: 2026-10-11
 links:
   implements: [R-0065]
   verified_by: [V-0119]
@@ -20,3 +20,4 @@ links:
 ## Журнал
 
 - 2026-10-08 · заведена из docs/inbox/course-path-tree-and-accordion.md · приложение
+- 2026-10-11 · сделана (learningFront PR 39): «Весь путь» — аккордеон область → этап → шаги, свёрнутость запоминается; подписи «не проверено», «обязательное». Без проверок · claude

@@ -2,10 +2,10 @@
 id: T-0123
 type: task
 title: Слой «шаги курса» на холсте схемы пути и переключатель «Список/Дерево»
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-08
-updated: 2026-10-08
+updated: 2026-10-11
 links:
   implements: [R-0066]
   verified_by: [V-0120]
@@ -20,3 +20,4 @@ links:
 ## Журнал
 
 - 2026-10-08 · заведена из docs/inbox/course-path-tree-and-accordion.md · приложение
+- 2026-10-11 · сделана (PR 39): режим «Дерево» — шаги курса на холсте схемы (пройдено / сейчас / закрыто). Без проверок · claude
