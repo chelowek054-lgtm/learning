@@ -28,6 +28,18 @@ learning/                 ← суперпроект (docs — источник 
 | [Ф5 — Расширение обучения](./docs/50-plans/phase-5-learning-expansion.md) | ⚪ 0/16 |
 | [Ф6 — Продукт и релиз](./docs/50-plans/phase-6-product-release.md) | ⚪ 0/18 |
 
+## Деплой на сервер
+
+Staging разворачивается по SSH тремя скриптами (подробности и порядок первого запуска — `docs/60-operations/environments.md`):
+
+```bash
+scripts/bootstrap-server.sh deploy@host git@github.com:ORG/learning.git   # один раз: Docker, клон, .env
+scripts/deploy-remote.sh deploy@host ~/praxis                              # каждый деплой из origin/main
+OFFSITE_TARGET=user@backup:/srv/praxis scripts/backup-offsite.sh           # на сервере, в cron: копии за пределы сервера
+```
+
+Выпуск мобильного приложения (EAS, магазины, OTA) — `docs/60-operations/release.md`; выбор хостинга — `docs/60-operations/hosting-options.md`.
+
 ## Документация — единый источник правды
 
 - 📚 [`docs/`](./docs/README.md) — карта и правила DocDD
