@@ -4,6 +4,7 @@ type: task
 title: 'Личный слой на схеме: отличие от канона, добавление и правка личных узлов'
 status: in_review
 change: feature
+reuse: none
 created: 2026-10-07
 updated: 2026-10-11
 links:

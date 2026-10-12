@@ -4,6 +4,7 @@ type: task
 title: 'Инструмент загрузки учебника: API и экран администратора'
 status: done
 change: feature
+reuse: none
 created: 2026-10-06
 updated: 2026-10-06
 links:

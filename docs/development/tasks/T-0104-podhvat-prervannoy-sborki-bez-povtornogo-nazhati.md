@@ -4,6 +4,7 @@ type: task
 title: Подхват прерванной сборки без повторного нажатия
 status: done
 change: feature
+reuse: none
 created: 2026-10-07
 updated: 2026-10-11
 links:

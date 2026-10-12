@@ -4,6 +4,7 @@ type: task
 title: Доставка уведомлений о курсе вне приложения (push)
 status: in_review
 change: feature
+reuse: none
 created: 2026-10-06
 updated: 2026-10-11
 links:

@@ -4,6 +4,7 @@ type: task
 title: 'Исполнение политики данных: удаление по срокам, согласие при регистрации, удаление аккаунта'
 status: done
 change: feature
+reuse: none
 created: 2026-09-30
 updated: 2026-10-04
 links:

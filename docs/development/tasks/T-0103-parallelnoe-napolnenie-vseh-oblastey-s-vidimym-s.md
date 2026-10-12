@@ -4,6 +4,7 @@ type: task
 title: Параллельное наполнение всех областей с видимым статусом по каждой
 status: done
 change: feature
+reuse: none
 created: 2026-10-07
 updated: 2026-10-11
 links:

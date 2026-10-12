@@ -4,6 +4,7 @@ type: task
 title: Разбор документа в понятия со ссылками на фрагмент
 status: done
 change: feature
+reuse: none
 created: 2026-10-06
 updated: 2026-10-06
 links:

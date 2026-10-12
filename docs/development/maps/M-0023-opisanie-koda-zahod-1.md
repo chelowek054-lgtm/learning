@@ -675,7 +675,7 @@ updated: 2026-10-05
         "to": "learningFront/src/features/goal-intake/model/dialog.ts",
         "evidence": {
           "path": "learningFront/src/features/goal-intake/ui/goal-intake-dialog.tsx",
-          "line": 38,
+          "line": 41,
           "fragment": "} from '../model/dialog';"
         }
       },
@@ -684,7 +684,7 @@ updated: 2026-10-05
         "to": "learningFront/src/shared/api/index.ts",
         "evidence": {
           "path": "learningFront/src/features/goal-intake/model/dialog.ts",
-          "line": 8,
+          "line": 9,
           "fragment": "} from '@/shared/api';"
         }
       },
@@ -729,7 +729,7 @@ updated: 2026-10-05
         "to": "learningFront/src/features/graph-editor/ui/goal-gate.tsx",
         "evidence": {
           "path": "learningFront/src/features/graph-editor/ui/graph-map.tsx",
-          "line": 11,
+          "line": 20,
           "fragment": "import { GoalGate } from './goal-gate';"
         }
       },
@@ -882,7 +882,7 @@ updated: 2026-10-05
         "to": "learningFront/src/shared/ui/index.ts",
         "evidence": {
           "path": "learningFront/src/features/listening-drill/ui/listening-drill-activity.tsx",
-          "line": 22,
+          "line": 23,
           "fragment": "} from '@/shared/ui';"
         }
       },
@@ -891,7 +891,7 @@ updated: 2026-10-05
         "to": "learningFront/src/features/listening-drill/model/audio-cache.ts",
         "evidence": {
           "path": "learningFront/src/features/listening-drill/ui/listening-drill-activity.tsx",
-          "line": 23,
+          "line": 24,
           "fragment": "import { cachedUri, ensureCached } from '../model/audio-cache';"
         }
       },
@@ -900,7 +900,7 @@ updated: 2026-10-05
         "to": "learningFront/src/features/listening-drill/model/listening-model.ts",
         "evidence": {
           "path": "learningFront/src/features/listening-drill/ui/listening-drill-activity.tsx",
-          "line": 29,
+          "line": 30,
           "fragment": "} from '../model/listening-model';"
         }
       },
@@ -909,7 +909,7 @@ updated: 2026-10-05
         "to": "learningFront/src/features/listening-drill/model/plays-store.ts",
         "evidence": {
           "path": "learningFront/src/features/listening-drill/ui/listening-drill-activity.tsx",
-          "line": 30,
+          "line": 31,
           "fragment": "import { addPlay, getPlays } from '../model/plays-store';"
         }
       },
@@ -1115,3 +1115,4 @@ updated: 2026-10-05
 - 2026-10-05 · на подтверждение · architect
 - 2026-10-05 · подтверждён · architect
 - 2026-10-03 · обновлены номера строк в свидетельствах (1): код сдвинулся, содержание карты не менялось · claude
+- 2026-10-12 · свидетельства сверены с кодом: сдвинуто строк 7, снято утверждений о кодe, которого уже нет: 0 · claude

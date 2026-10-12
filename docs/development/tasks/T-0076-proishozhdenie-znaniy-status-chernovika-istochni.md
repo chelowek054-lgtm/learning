@@ -4,6 +4,7 @@ type: task
 title: 'Происхождение знаний: статус черновика, источники понятий и связей'
 status: done
 change: feature
+reuse: none
 created: 2026-10-06
 updated: 2026-10-06
 links:

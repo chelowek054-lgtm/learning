@@ -4,6 +4,7 @@ type: task
 title: Переход на PostgreSQL 17 с AGE и pgvector
 status: done
 change: feature
+reuse: none
 created: 2026-10-06
 updated: 2026-10-06
 links:

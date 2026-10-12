@@ -4,6 +4,7 @@ type: task
 title: 'Слияние понятий: близость по векторам и решение модели'
 status: done
 change: feature
+reuse: none
 created: 2026-10-06
 updated: 2026-10-06
 links:

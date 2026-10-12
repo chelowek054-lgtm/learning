@@ -4,6 +4,7 @@ type: task
 title: Префикс версии API /v1 и проверка совместимости клиента
 status: done
 change: feature
+reuse: none
 created: 2026-09-30
 updated: 2026-10-01
 links:

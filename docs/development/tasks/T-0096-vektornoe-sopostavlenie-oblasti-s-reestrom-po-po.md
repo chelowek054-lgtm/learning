@@ -4,6 +4,7 @@ type: task
 title: Векторное сопоставление области с реестром по порогу близости
 status: done
 change: feature
+reuse: none
 created: 2026-10-07
 updated: 2026-10-11
 links:

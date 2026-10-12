@@ -5,8 +5,6 @@ title: Визуальный граф канона в админке вместо
 status: approved
 created: 2026-10-07
 updated: 2026-10-07
-links:
-  covers: [M-0034]
 ---
 
 # Визуальный граф канона в админке вместо трёх таблиц
@@ -21,3 +19,4 @@ links:
 - 2026-10-07 · заведена из docs/inbox/admin-graph-visualization.md, docs/inbox/vizualizaciya-grafa-v-admin.md · приложение
 - 2026-10-07 · на подтверждение · architect
 - 2026-10-07 · подтверждён · architect
+- 2026-10-12 · убрана связь неверного типа (covers); текст записи не менялся · claude

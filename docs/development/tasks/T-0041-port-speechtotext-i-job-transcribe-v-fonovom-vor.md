@@ -4,6 +4,7 @@ type: task
 title: Порт SpeechToText и job transcribe в фоновом воркере
 status: done
 change: feature
+reuse: none
 created: 2026-09-30
 updated: 2026-10-04
 links:

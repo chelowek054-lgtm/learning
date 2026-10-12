@@ -4,6 +4,7 @@ type: task
 title: Карточка узла по нажатию на схеме
 status: in_progress
 change: feature
+reuse: none
 created: 2026-10-07
 updated: 2026-10-11
 links:

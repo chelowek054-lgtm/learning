@@ -4,6 +4,7 @@ type: task
 title: Диалог уточнения и подтверждения цели в онбординге
 status: done
 change: feature
+reuse: none
 created: 2026-10-02
 updated: 2026-10-04
 links:

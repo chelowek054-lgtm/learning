@@ -4,6 +4,7 @@ type: task
 title: Этапы и уровень сложности в модели графа области
 status: done
 change: feature
+reuse: none
 created: 2026-10-07
 updated: 2026-10-11
 links:

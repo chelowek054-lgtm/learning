@@ -4,6 +4,7 @@ type: task
 title: Сквозной прогон графа, плейсмента, курса и шага на устройстве
 status: in_progress
 change: feature
+reuse: none
 created: 2026-09-30
 updated: 2026-10-11
 links:

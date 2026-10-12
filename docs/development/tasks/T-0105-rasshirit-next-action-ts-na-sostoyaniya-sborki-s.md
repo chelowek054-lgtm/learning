@@ -4,6 +4,7 @@ type: task
 title: Расширить next-action.ts на состояния сборки, сбоя и карты без уровня
 status: in_review
 change: feature
+reuse: none
 created: 2026-10-07
 updated: 2026-10-11
 links:

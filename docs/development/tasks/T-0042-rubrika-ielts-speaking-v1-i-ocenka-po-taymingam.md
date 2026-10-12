@@ -4,6 +4,7 @@ type: task
 title: Рубрика ielts_speaking v1 и оценка по таймингам
 status: done
 change: feature
+reuse: none
 created: 2026-09-30
 updated: 2026-10-04
 links:
