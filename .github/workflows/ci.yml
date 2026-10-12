@@ -6,7 +6,8 @@ on:
   pull_request:
 
 jobs:
-  invariants-and-docs:
+  # Имя job совпадает с обязательной проверкой защиты ветки main («check», как в learningFront и learningBack).
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
