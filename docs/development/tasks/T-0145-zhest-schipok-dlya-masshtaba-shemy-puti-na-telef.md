@@ -2,7 +2,7 @@
 id: T-0145
 type: task
 title: Жест «щипок» для масштаба схемы пути на телефоне
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-12
 updated: 2026-10-12
@@ -19,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/skhema-puti-nedodelki-polnoekrannogo-rezhima.md · приложение
+- 2026-10-12 · на проверку: learningFront#54 — щипок двумя пальцами меняет масштаб (обработчики касаний на холсте). Проверки не писались и не проходились (по просьбе, сделать потом); check (tsc, eslint, prettier, 286 тестов) зелёный, на экране и устройстве не смотрели · claude

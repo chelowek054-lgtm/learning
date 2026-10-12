@@ -2,7 +2,7 @@
 id: T-0144
 type: task
 title: Навигация по соседям клавишами-стрелками на схеме пути
-status: backlog
+status: in_review
 change: fix
 created: 2026-10-12
 updated: 2026-10-12
@@ -18,3 +18,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/skhema-puti-nedodelki-polnoekrannogo-rezhima.md · приложение
+- 2026-10-12 · на проверку: learningFront#54 — стрелки клавиатуры в полноэкранном режиме на вебе переходят по соседям (model/keys.ts). Проверки не писались и не проходились (по просьбе, сделать потом); check (tsc, eslint, prettier, 286 тестов) зелёный, на экране и устройстве не смотрели · claude

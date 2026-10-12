@@ -2,7 +2,7 @@
 id: T-0138
 type: task
 title: Починить пунктир личной связи на схеме пути
-status: backlog
+status: in_review
 change: fix
 created: 2026-10-12
 updated: 2026-10-12
@@ -18,3 +18,4 @@ T-0115 описывает личную связь «цветом и пункти
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/legenda-vezde-gde-est-graf.md · приложение
+- 2026-10-12 · на проверку: learningFront#54 — личная связь снова пунктиром (dashBars в model/scheme.ts). Проверки не писались и не проходились (по просьбе, сделать потом); check (tsc, eslint, prettier, 286 тестов) зелёный, на экране и устройстве не смотрели · claude
