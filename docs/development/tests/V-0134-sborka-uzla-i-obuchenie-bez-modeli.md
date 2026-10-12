@@ -2,7 +2,7 @@
 id: V-0134
 type: verification
 title: Сборка узла и обучение без модели
-status: draft
+status: approved
 created: 2026-10-12
 updated: 2026-10-12
 kind: manual
@@ -17,3 +17,5 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/sborka-uzla-i-bank-zadaniy-bez-llm-pri-obuchenii.md · приложение
+- 2026-10-12 · на подтверждение · architect
+- 2026-10-12 · подтверждён · architect

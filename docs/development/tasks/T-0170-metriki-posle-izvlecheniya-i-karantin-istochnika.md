@@ -2,10 +2,10 @@
 id: T-0170
 type: task
 title: Метрики после извлечения и карантин источника
-status: backlog
+status: in_progress
 change: feature
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-13
 links:
   implements: [R-0078]
   depends_on: [T-0169, T-0157]
@@ -20,3 +20,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/otsev-nelikvidnyh-istochnikov.md · приложение
+- 2026-10-13 · learningBack#80 (влит), CI main зелёный: доля отброшенных после извлечения понижает источник до C или отправляет в карантин; правило «C не единственная опора» в сборке узла. НЕ СДЕЛАНО: метрики противоречий и доли нового · claude

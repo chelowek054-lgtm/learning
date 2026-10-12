@@ -2,10 +2,10 @@
 id: T-0151
 type: task
 title: Пересборка тестового графа по новой схеме
-status: backlog
+status: in_progress
 change: feature
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-13
 links:
   implements: [R-0071]
   depends_on: [T-0150, T-0156, T-0157]
@@ -20,3 +20,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/utverzhdenie-edinica-znaniya-grafa.md · приложение
+- 2026-10-13 · learningBack#80 (влит), CI main зелёный: скрипт scripts/run_textbooks.py гонит учебники через весь конвейер (приём → извлечение → слияние → сверка → сборка узла) и печатает отчёт. НЕ СДЕЛАНО: сам прогон на реальных учебниках — за человеком · claude

@@ -2,10 +2,10 @@
 id: T-0165
 type: task
 title: 'Виды решений по проблеме: сторона, условия, спорно, консенсус устарел'
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-13
 links:
   implements: [R-0077]
   depends_on: [T-0158]
@@ -20,3 +20,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/oshibochnyy-konsensus-i-ispravlenie-znaniy.md · приложение
+- 2026-10-13 · learningBack#80 (влит), CI main зелёный: решения a, b, both, disputed, outdated с журналом и сбросом хэша узла (reconcile.resolve); экрана нет · claude

@@ -2,10 +2,10 @@
 id: T-0157
 type: task
 title: Один запрос сверки на узел и разбор ответа
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-13
 links:
   implements: [R-0074]
   depends_on: [T-0149]
@@ -20,3 +20,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/sverka-utverzhdeniy-i-pul-problem.md · приложение
+- 2026-10-13 · learningBack#80 (влит), CI main зелёный: reconcile.py — один запрос на узел, вердикты «совпадает / нейтрально / противоречит», источник к принятому, противоречие в ClaimConflict; разные области применимости не противоречат; автопубликация при двух источниках A/B · claude

@@ -2,10 +2,10 @@
 id: T-0177
 type: task
 title: Словари строк ru/en в клиенте и перевод экранов
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-13
 links:
   implements: [R-0081]
   verified_by: [V-0140]
@@ -19,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/i18n-interfeysa-russkiy-i-angliyskiy.md · приложение
+- 2026-10-13 · learningFront#57 (влит), check зелёный: словари ru и en (около 730 ключей), строки экранов и фич берутся по ключу, множественное число по правилам языка, даты и числа по языку. НЕ СДЕЛАНО: названия активностей модулей (entities/module), сообщения слоя shared/api; в браузере проверена только схема пути на английском · claude

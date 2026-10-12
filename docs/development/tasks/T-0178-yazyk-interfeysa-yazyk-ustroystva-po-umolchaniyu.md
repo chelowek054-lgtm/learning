@@ -2,10 +2,10 @@
 id: T-0178
 type: task
 title: 'Язык интерфейса: язык устройства по умолчанию и переключатель в профиле'
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-13
 links:
   implements: [R-0081]
   depends_on: [T-0177]
@@ -20,3 +20,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/i18n-interfeysa-russkiy-i-angliyskiy.md · приложение
+- 2026-10-13 · learningFront#57 (влит), check зелёный: язык устройства по умолчанию, иначе английский; переключатель в профиле с запоминанием; язык интерфейса отдельно от языка изучения не вводился (язык изучения — T-0174) · claude

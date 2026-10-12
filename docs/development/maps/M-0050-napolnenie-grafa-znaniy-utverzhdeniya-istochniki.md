@@ -2,7 +2,7 @@
 id: M-0050
 type: map
 title: 'Наполнение графа знаний: утверждения, источники, сверка, сборка узла, языки'
-status: draft
+status: approved
 created: 2026-10-12
 updated: 2026-10-12
 ---
@@ -150,3 +150,5 @@ updated: 2026-10-12
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/utverzhdenie-edinica-znaniya-grafa.md, docs/inbox/istochniki-tolko-s-licenziey-i-vidimost-uchaschemusya.md, docs/inbox/odno-ponyatie-v-neskolkih-oblastyah.md, docs/inbox/sverka-utverzhdeniy-i-pul-problem.md, docs/inbox/sborka-uzla-i-bank-zadaniy-bez-llm-pri-obuchenii.md, docs/inbox/protukhanie-znaniy-v-grafe.md, docs/inbox/oshibochnyy-konsensus-i-ispravlenie-znaniy.md, docs/inbox/otsev-nelikvidnyh-istochnikov.md, docs/inbox/mnogoyazychnyy-graf-znaniy.md, docs/inbox/razbor-istochnikov-na-dvuh-yazykah.md, docs/inbox/i18n-interfeysa-russkiy-i-angliyskiy.md · приложение
+- 2026-10-12 · на подтверждение · architect
+- 2026-10-12 · подтверждён · architect

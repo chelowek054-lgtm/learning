@@ -2,7 +2,7 @@
 id: R-0076
 type: requirement
 title: У знаний есть срок актуальности, просроченное обновляется
-status: draft
+status: approved
 created: 2026-10-12
 updated: 2026-10-12
 ---
@@ -16,3 +16,5 @@ updated: 2026-10-12
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/protukhanie-znaniy-v-grafe.md · приложение
+- 2026-10-12 · на подтверждение · architect
+- 2026-10-12 · подтверждён · architect

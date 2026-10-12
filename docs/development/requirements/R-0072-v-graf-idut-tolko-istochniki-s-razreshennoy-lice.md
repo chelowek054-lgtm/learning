@@ -2,7 +2,7 @@
 id: R-0072
 type: requirement
 title: В граф идут только источники с разрешённой лицензией, учащийся видит место в оригинале
-status: draft
+status: approved
 created: 2026-10-12
 updated: 2026-10-12
 links:
@@ -19,3 +19,5 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/istochniki-tolko-s-licenziey-i-vidimost-uchaschemusya.md · приложение
+- 2026-10-12 · на подтверждение · architect
+- 2026-10-12 · подтверждён · architect
