@@ -635,15 +635,6 @@ updated: 2026-10-05
         }
       },
       {
-        "from": "learningFront/src/pages/onboarding/ui/onboarding-screen.tsx",
-        "to": "learningFront/src/features/goal-intake/index.ts",
-        "evidence": {
-          "path": "learningFront/src/pages/onboarding/ui/onboarding-screen.tsx",
-          "line": 11,
-          "fragment": "import { directIntake, GoalIntakeDialog, subjectOf } from '@/features/goal-intake';"
-        }
-      },
-      {
         "from": "learningFront/src/features/goal-intake/ui/goal-intake-dialog.tsx",
         "to": "learningFront/src/entities/session/index.ts",
         "evidence": {
@@ -657,7 +648,7 @@ updated: 2026-10-05
         "to": "learningFront/src/shared/api/index.ts",
         "evidence": {
           "path": "learningFront/src/features/goal-intake/ui/goal-intake-dialog.tsx",
-          "line": 16,
+          "line": 17,
           "fragment": "} from '@/shared/api';"
         }
       },
@@ -666,7 +657,7 @@ updated: 2026-10-05
         "to": "learningFront/src/shared/ui/index.ts",
         "evidence": {
           "path": "learningFront/src/features/goal-intake/ui/goal-intake-dialog.tsx",
-          "line": 28,
+          "line": 18,
           "fragment": "} from '@/shared/ui';"
         }
       },
@@ -675,7 +666,7 @@ updated: 2026-10-05
         "to": "learningFront/src/features/goal-intake/model/dialog.ts",
         "evidence": {
           "path": "learningFront/src/features/goal-intake/ui/goal-intake-dialog.tsx",
-          "line": 41,
+          "line": 31,
           "fragment": "} from '../model/dialog';"
         }
       },
@@ -1116,3 +1107,4 @@ updated: 2026-10-05
 - 2026-10-05 · подтверждён · architect
 - 2026-10-03 · обновлены номера строк в свидетельствах (1): код сдвинулся, содержание карты не менялось · claude
 - 2026-10-12 · свидетельства сверены с кодом: сдвинуто строк 7, снято утверждений о кодe, которого уже нет: 0 · claude
+- 2026-10-12 · свидетельства сверены с кодом: сдвинуто строк 3, снято утверждений о кодe, которого уже нет: 1 · claude (learningFront/src/pages/onboarding/ui/onboarding-screen.tsx → learningFront/src/features/goal-intake/index.ts)
