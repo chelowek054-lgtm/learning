@@ -4,6 +4,7 @@ type: task
 title: Межобластные предпосылки со ступенью освоения и подтягивание предков в курс
 status: done
 change: feature
+reuse: none
 created: 2026-10-03
 updated: 2026-10-04
 links:

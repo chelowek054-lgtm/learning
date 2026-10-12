@@ -4,6 +4,7 @@ type: task
 title: Объектное хранилище SeaweedFS в compose и S3-клиент в бэкенде
 status: done
 change: feature
+reuse: none
 created: 2026-10-06
 updated: 2026-10-06
 links:

@@ -4,6 +4,7 @@ type: task
 title: 'Переход на EAS: dev-client, сборка, публикация в сторах, OTA'
 status: in_review
 change: feature
+reuse: none
 created: 2026-09-30
 updated: 2026-10-11
 links:

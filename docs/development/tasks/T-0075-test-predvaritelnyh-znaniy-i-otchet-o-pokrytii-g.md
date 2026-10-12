@@ -4,6 +4,7 @@ type: task
 title: Тест предварительных знаний и отчёт о покрытии графа
 status: done
 change: feature
+reuse: none
 created: 2026-10-06
 updated: 2026-10-06
 links:

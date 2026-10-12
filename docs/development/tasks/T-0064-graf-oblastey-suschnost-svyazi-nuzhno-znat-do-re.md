@@ -4,6 +4,7 @@ type: task
 title: 'Граф областей: сущность, связи «нужно знать до», реестр и вычисляемый уровень'
 status: done
 change: feature
+reuse: none
 created: 2026-10-03
 updated: 2026-10-04
 links:

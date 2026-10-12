@@ -4,6 +4,7 @@ type: task
 title: Политика хранения голоса
 status: in_review
 change: feature
+reuse: none
 created: 2026-09-30
 updated: 2026-10-11
 links:

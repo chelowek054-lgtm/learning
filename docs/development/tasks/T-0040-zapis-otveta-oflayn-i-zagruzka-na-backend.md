@@ -4,6 +4,7 @@ type: task
 title: Запись ответа офлайн и загрузка на backend
 status: done
 change: feature
+reuse: none
 created: 2026-09-30
 updated: 2026-10-04
 links:

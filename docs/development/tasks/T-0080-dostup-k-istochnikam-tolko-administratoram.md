@@ -4,6 +4,7 @@ type: task
 title: Доступ к источникам только администраторам
 status: done
 change: feature
+reuse: none
 created: 2026-10-06
 updated: 2026-10-06
 links:

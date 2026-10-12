@@ -4,6 +4,7 @@ type: task
 title: Уведомление «курс готов» и «курс дополнен» с пометкой о черновике
 status: done
 change: feature
+reuse: none
 created: 2026-10-06
 updated: 2026-10-06
 links:

@@ -4,6 +4,7 @@ type: task
 title: Единый контракт модуля и реестр для платформы
 status: done
 change: feature
+reuse: none
 created: 2026-10-01
 updated: 2026-10-01
 links:

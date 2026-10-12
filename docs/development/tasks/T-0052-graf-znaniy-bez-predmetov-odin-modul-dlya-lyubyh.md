@@ -4,6 +4,7 @@ type: task
 title: Граф знаний без предметов — один модуль для любых областей
 status: done
 change: feature
+reuse: none
 created: 2026-10-01
 updated: 2026-10-01
 links:

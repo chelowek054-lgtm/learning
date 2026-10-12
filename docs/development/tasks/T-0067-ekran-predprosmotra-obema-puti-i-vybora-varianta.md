@@ -4,6 +4,7 @@ type: task
 title: Экран предпросмотра объёма пути и выбора варианта
 status: done
 change: feature
+reuse: none
 created: 2026-10-03
 updated: 2026-10-04
 links:

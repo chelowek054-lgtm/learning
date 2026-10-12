@@ -4,6 +4,7 @@ type: task
 title: Контракт способа изучения и общий формат свидетельства об освоении
 status: done
 change: feature
+reuse: none
 created: 2026-10-02
 updated: 2026-10-04
 links:

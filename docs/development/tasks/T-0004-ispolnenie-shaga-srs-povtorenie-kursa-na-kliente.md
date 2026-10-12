@@ -4,6 +4,7 @@ type: task
 title: Исполнение шага срс (повторение) курса на клиенте
 status: done
 change: feature
+reuse: none
 created: 2026-09-30
 updated: 2026-10-01
 links:

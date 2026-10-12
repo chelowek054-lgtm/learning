@@ -4,6 +4,7 @@ type: task
 title: Единое хранилище данных пользователя с доступом по разрешениям
 status: done
 change: feature
+reuse: none
 created: 2026-10-01
 updated: 2026-10-04
 links:

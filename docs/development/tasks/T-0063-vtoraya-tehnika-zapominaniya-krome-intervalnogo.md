@@ -4,6 +4,7 @@ type: task
 title: Вторая техника запоминания, кроме интервального повторения
 status: done
 change: feature
+reuse: none
 created: 2026-10-02
 updated: 2026-10-04
 links:

@@ -4,6 +4,7 @@ type: task
 title: Мониторинг ошибок и алерты на failed-jobs, расход токенов
 status: done
 change: feature
+reuse: none
 created: 2026-09-30
 updated: 2026-10-01
 links:

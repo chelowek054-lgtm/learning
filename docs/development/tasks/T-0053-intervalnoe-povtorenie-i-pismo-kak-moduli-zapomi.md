@@ -4,6 +4,7 @@ type: task
 title: Интервальное повторение и письмо как модули запоминания
 status: done
 change: feature
+reuse: none
 created: 2026-10-01
 updated: 2026-10-01
 links:

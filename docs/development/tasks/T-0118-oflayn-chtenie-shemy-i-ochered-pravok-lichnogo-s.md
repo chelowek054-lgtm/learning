@@ -4,6 +4,7 @@ type: task
 title: Офлайн-чтение схемы и очередь правок личного слоя
 status: in_review
 change: feature
+reuse: none
 created: 2026-10-07
 updated: 2026-10-11
 links:

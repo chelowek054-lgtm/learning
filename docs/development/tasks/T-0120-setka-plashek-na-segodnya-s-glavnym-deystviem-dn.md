@@ -4,6 +4,7 @@ type: task
 title: Сетка плашек на «Сегодня» с главным действием дня
 status: in_progress
 change: feature
+reuse: none
 created: 2026-10-08
 updated: 2026-10-11
 links:

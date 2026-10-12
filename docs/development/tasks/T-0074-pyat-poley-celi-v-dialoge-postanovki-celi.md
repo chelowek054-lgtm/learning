@@ -4,6 +4,7 @@ type: task
 title: Пять полей цели в диалоге постановки цели
 status: done
 change: feature
+reuse: none
 created: 2026-10-06
 updated: 2026-10-06
 links:

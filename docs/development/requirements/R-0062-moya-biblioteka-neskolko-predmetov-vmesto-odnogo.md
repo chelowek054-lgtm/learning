@@ -5,8 +5,6 @@ title: '«Моя библиотека»: несколько предметов �
 status: approved
 created: 2026-10-08
 updated: 2026-10-08
-links:
-  affects: [R-0059]
 ---
 
 # «Моя библиотека»: несколько предметов вместо одного в профиле
@@ -18,3 +16,4 @@ links:
 - 2026-10-08 · заведена из docs/inbox/library-and-miniapp-platform.md, docs/inbox/ux-rework-order-of-work.md · приложение
 - 2026-10-08 · на подтверждение · architect
 - 2026-10-08 · подтверждён · architect
+- 2026-10-12 · убрана связь неверного типа (affects); текст записи не менялся · claude

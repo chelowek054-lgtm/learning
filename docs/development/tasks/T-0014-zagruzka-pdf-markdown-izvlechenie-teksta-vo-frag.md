@@ -4,6 +4,7 @@ type: task
 title: Загрузка PDF/Markdown, извлечение текста во фрагменты, клиент выбора файла
 status: done
 change: feature
+reuse: none
 created: 2026-09-30
 updated: 2026-10-01
 links:

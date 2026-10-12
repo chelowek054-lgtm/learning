@@ -4,6 +4,7 @@ type: task
 title: Автоматический поиск источников по областям «нет в графе»
 status: done
 change: feature
+reuse: none
 created: 2026-10-06
 updated: 2026-10-06
 links:
