@@ -2,7 +2,7 @@
 id: T-0179
 type: task
 title: Коды ошибок сервера и уведомления на языке пользователя
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-12
 updated: 2026-10-12
@@ -20,3 +20,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/i18n-interfeysa-russkiy-i-angliyskiy.md · приложение
+- 2026-10-12 · learningBack#81 (влит), CI зелёный, learningFront#58 (влит), check зелёный: ошибки ApiError отдают code и params (detail остаётся строкой), клиент выбирает фразу по коду (errorText); уведомления курса и понятий, push и письмо восстановления пароля строятся на языке пользователя (core/messages.py); оценка открытого ответа просит объяснение на языке ответа; переведены названия активностей модулей и сообщения слоя API. НЕ СДЕЛАНО: прежние HTTPException по всему серверу остаются без кода (русский detail) · claude

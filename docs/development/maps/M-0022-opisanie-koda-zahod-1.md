@@ -629,7 +629,7 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/models.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/path_volume.py",
-          "line": 17,
+          "line": 18,
           "fragment": "from modules.knowledge.models import Concept, Domain"
         }
       },
@@ -899,7 +899,7 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/goal_intake.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/router.py",
-          "line": 50,
+          "line": 53,
           "fragment": "    goal_intake,"
         }
       },
@@ -908,7 +908,7 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/subdomains.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/router.py",
-          "line": 55,
+          "line": 58,
           "fragment": "    subdomains,"
         }
       },
@@ -917,7 +917,7 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/events.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/router.py",
-          "line": 57,
+          "line": 60,
           "fragment": "from modules.knowledge.events import NodeChanged"
         }
       },
@@ -1139,7 +1139,7 @@ updated: 2026-10-05
         "direction": "read",
         "evidence": {
           "path": "learningBack/modules/knowledge/path_volume.py",
-          "line": 25,
+          "line": 26,
           "fragment": "for name, n in session.query(Concept.domain, func.count(Concept.id))"
         }
       },
