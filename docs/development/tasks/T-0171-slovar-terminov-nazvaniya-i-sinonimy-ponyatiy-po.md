@@ -2,10 +2,10 @@
 id: T-0171
 type: task
 title: 'Словарь терминов: названия и синонимы понятий по языкам'
-status: in_review
+status: done
 change: feature
 created: 2026-10-12
-updated: 2026-10-13
+updated: 2026-10-12
 links:
   decided_by: [A-0034]
   implements: [R-0079]
@@ -23,3 +23,4 @@ links:
 - 2026-10-12 · заведена из docs/inbox/mnogoyazychnyy-graf-znaniy.md · приложение
 - 2026-10-12 · добавлена связь decided_by A-0034 (основной язык графа — английский), перенесена с требования · claude
 - 2026-10-13 · learningBack#80 (влит), CI main зелёный: concept_term хранит названия по языкам, название и перевод пишутся при извлечении, слияние сверяет имена по словарю · claude
+- 2026-10-12 · закрыта: проверки V-0138 passed по последнему отчёту прогона · claude

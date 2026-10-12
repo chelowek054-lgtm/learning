@@ -6,6 +6,7 @@ status: approved
 created: 2026-10-12
 updated: 2026-10-12
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_v0138_v0139_languages.py -q'
 links:
   verifies: [R-0079]
 ---
@@ -19,3 +20,4 @@ links:
 - 2026-10-12 · заведена из docs/inbox/mnogoyazychnyy-graf-znaniy.md · приложение
 - 2026-10-12 · на подтверждение · architect
 - 2026-10-12 · подтверждён · architect
+- 2026-10-12 · добавлена команда автоматической проверки (tests/test_v0138_v0139_languages.py): ru и en в одном узле, готовые тексты на языке изучения · claude

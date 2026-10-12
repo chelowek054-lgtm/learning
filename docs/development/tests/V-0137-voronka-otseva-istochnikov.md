@@ -6,6 +6,7 @@ status: approved
 created: 2026-10-12
 updated: 2026-10-12
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_v0137_funnel.py -q'
 links:
   verifies: [R-0078]
 ---
@@ -19,3 +20,4 @@ links:
 - 2026-10-12 · заведена из docs/inbox/otsev-nelikvidnyh-istochnikov.md · приложение
 - 2026-10-12 · на подтверждение · architect
 - 2026-10-12 · подтверждён · architect
+- 2026-10-12 · добавлена команда автоматической проверки (tests/test_v0137_funnel.py): дубль и почти-дубль, мусор, не по теме, уровень C, карантин · claude

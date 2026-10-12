@@ -1,6 +1,7 @@
 """Прогон автоматических проверок DocDD и запись отчёта (docs/02-workspace-contract.md, «Отчёты»).
 
-Запуск: python scripts/docdd-report.py [--dry-run] [--root ПУТЬ_К_ПРОЕКТУ]
+Запуск: python scripts/docdd-report.py [--dry-run] [--jobs N] [--root ПУТЬ_К_ПРОЕКТУ]
+`--jobs N` гонит проверки в N потоках: каждая берёт свою тестовую базу, друг другу они не мешают.
 
 Берёт записи типа verification из docs/development/tests. Команду читает из поля
 `command`, а если его нет — из текста записи: первая команда в обратных кавычках
@@ -16,6 +17,7 @@
 
 from __future__ import annotations
 
+import concurrent.futures as cf
 import datetime as dt
 import json
 import re
@@ -95,15 +97,26 @@ def main() -> int:
 
     started = dt.datetime.now(dt.timezone.utc)
     results: dict[str, str] = {}
-    for vid, command in todo:
+    jobs = int(sys.argv[sys.argv.index("--jobs") + 1]) if "--jobs" in sys.argv else 1
+
+    def run(item: tuple[str, str]) -> tuple[str, str, str]:
+        vid, command = item
         try:
             proc = subprocess.run(
                 command, shell=True, cwd=ROOT, capture_output=True, timeout=TIMEOUT_SECONDS
             )
-            results[vid] = "passed" if proc.returncode == 0 else "failed"
+            tail = (proc.stdout + proc.stderr)[-1500:].decode("utf-8", "replace")
+            return vid, "passed" if proc.returncode == 0 else "failed", tail
         except subprocess.TimeoutExpired:
-            results[vid] = "failed"
-        print(f"  {results[vid]:6} {vid}  {command[:80]}")
+            return vid, "failed", "превышено время ожидания"
+
+    commands = dict(todo)
+    with cf.ThreadPoolExecutor(max_workers=max(1, jobs)) as pool:
+        for vid, result, tail in pool.map(run, todo):
+            results[vid] = result
+            print(f"  {result:6} {vid}  {commands[vid][:80]}", flush=True)
+            if result == "failed":
+                print("    " + tail.replace(chr(10), chr(10) + "    "), flush=True)
 
     failed = sum(1 for v in results.values() if v == "failed")
     REPORTS.mkdir(parents=True, exist_ok=True)

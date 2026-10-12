@@ -6,6 +6,7 @@ status: approved
 created: 2026-10-12
 updated: 2026-10-12
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_v0134_node_compile_offline.py -q'
 links:
   verifies: [R-0075]
 ---
@@ -19,3 +20,4 @@ links:
 - 2026-10-12 · заведена из docs/inbox/sborka-uzla-i-bank-zadaniy-bez-llm-pri-obuchenii.md · приложение
 - 2026-10-12 · на подтверждение · architect
 - 2026-10-12 · подтверждён · architect
+- 2026-10-12 · добавлена команда автоматической проверки (tests/test_v0134_node_compile_offline.py): сборка отбрасывает предложение без ссылки, повторной сборки нет, обучение без модели · claude

@@ -2,10 +2,10 @@
 id: T-0169
 type: task
 title: Проба моделью и уровень доверия источника
-status: in_review
+status: done
 change: feature
 created: 2026-10-12
-updated: 2026-10-13
+updated: 2026-10-12
 links:
   implements: [R-0078]
   depends_on: [T-0168]
@@ -21,3 +21,4 @@ links:
 
 - 2026-10-12 · заведена из docs/inbox/otsev-nelikvidnyh-istochnikov.md · приложение
 - 2026-10-13 · learningBack#80 (влит), CI main зелёный: одна проба моделью по выборке фрагментов, уровень A/B/C и причины в документе; не учебный текст — отказ · claude
+- 2026-10-12 · закрыта: проверки V-0137 passed по последнему отчёту прогона · claude

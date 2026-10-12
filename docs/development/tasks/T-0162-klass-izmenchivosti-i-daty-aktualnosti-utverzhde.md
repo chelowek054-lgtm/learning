@@ -2,10 +2,10 @@
 id: T-0162
 type: task
 title: Класс изменчивости и даты актуальности утверждения
-status: in_review
+status: done
 change: feature
 created: 2026-10-12
-updated: 2026-10-13
+updated: 2026-10-12
 links:
   implements: [R-0076]
   depends_on: [T-0150]
@@ -21,3 +21,4 @@ links:
 
 - 2026-10-12 · заведена из docs/inbox/protukhanie-znaniy-v-grafe.md · приложение
 - 2026-10-13 · learningBack#80 (влит), CI main зелёный: класс изменчивости, «актуально на» и «пересмотреть после» у утверждения, класс ставится в запросе извлечения · claude
+- 2026-10-12 · закрыта: проверки V-0135 passed по последнему отчёту прогона · claude

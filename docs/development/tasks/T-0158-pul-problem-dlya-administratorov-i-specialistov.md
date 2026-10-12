@@ -2,7 +2,7 @@
 id: T-0158
 type: task
 title: Пул проблем для администраторов и специалистов
-status: in_review
+status: done
 change: feature
 created: 2026-10-12
 updated: 2026-10-12
@@ -22,3 +22,4 @@ links:
 - 2026-10-12 · заведена из docs/inbox/sverka-utverzhdeniy-i-pul-problem.md, docs/inbox/oshibochnyy-konsensus-i-ispravlenie-znaniy.md · приложение
 - 2026-10-13 · learningBack#80 (влит), CI main зелёный: API пула (GET /graph/claims/problems, POST …/resolve). НЕ СДЕЛАНО: экран пула для администраторов в клиенте · claude
 - 2026-10-12 · learningFront#58 (влит), check зелёный: экран «Пул проблем» (профиль администратора → карточка): открытые и решённые проблемы, оба утверждения с источниками и цитатами, решения a/b/обе/спорно/устарело, кнопка пересборки области, список жалоб учащихся по убыванию числа. Отмены решения нет. В браузере не проверялось · claude
+- 2026-10-12 · закрыта: проверки V-0133 passed по последнему отчёту прогона · claude
