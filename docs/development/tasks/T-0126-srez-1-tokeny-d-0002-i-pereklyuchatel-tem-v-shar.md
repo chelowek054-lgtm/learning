@@ -2,7 +2,7 @@
 id: T-0126
 type: task
 title: 'Срез 1: токены D-0002 и переключатель тем в shared клиента'
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-12
 updated: 2026-10-12
@@ -20,3 +20,5 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/realizaciya-novogo-dizayna-v-react-native.md · приложение
+- 2026-10-12 · в работу: тени и градиенты решены эталоном консоли 1.9.0 (elevation, backdrop), язык интерфейса — ru по умолчанию, компоненты вне реестра срезу 1 не нужны · claude
+- 2026-10-12 · на проверку: learningFront#45 — design.ts выгружен консолью (1.9.0), четыре темы, выбор темы в профиле; npm run check: 258 тестов, 0 ошибок; в браузере и на устройстве не смотрели · claude
