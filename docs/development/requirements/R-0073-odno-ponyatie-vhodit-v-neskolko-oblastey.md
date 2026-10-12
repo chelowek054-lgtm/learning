@@ -2,7 +2,7 @@
 id: R-0073
 type: requirement
 title: Одно понятие входит в несколько областей
-status: draft
+status: approved
 created: 2026-10-12
 updated: 2026-10-12
 ---
@@ -16,3 +16,5 @@ updated: 2026-10-12
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/odno-ponyatie-v-neskolkih-oblastyah.md · приложение
+- 2026-10-12 · на подтверждение · architect
+- 2026-10-12 · подтверждён · architect

@@ -2,7 +2,7 @@
 id: V-0138
 type: verification
 title: Многоязычный граф
-status: draft
+status: approved
 created: 2026-10-12
 updated: 2026-10-12
 kind: manual
@@ -17,3 +17,5 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/mnogoyazychnyy-graf-znaniy.md · приложение
+- 2026-10-12 · на подтверждение · architect
+- 2026-10-12 · подтверждён · architect

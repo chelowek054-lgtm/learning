@@ -2,7 +2,7 @@
 id: R-0074
 type: requirement
 title: Новые утверждения сверяются с узлом, противоречия — в пул проблем
-status: draft
+status: approved
 created: 2026-10-12
 updated: 2026-10-12
 links: {}
@@ -18,3 +18,5 @@ links: {}
 
 - 2026-10-12 · заведена из docs/inbox/sverka-utverzhdeniy-i-pul-problem.md · приложение
 - 2026-10-12 · сняты связи refines и decided_by: их ставят задача или дизайн, не требование (link_wrong_type); опора на решение перенесена на задачи · claude
+- 2026-10-12 · на подтверждение · architect
+- 2026-10-12 · подтверждён · architect

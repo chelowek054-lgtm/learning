@@ -2,10 +2,10 @@
 id: T-0168
 type: task
 title: 'Шаги воронки без модели: дубли, качество текста, тема'
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-13
 links:
   implements: [R-0078]
   depends_on: [T-0152]
@@ -20,3 +20,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/otsev-nelikvidnyh-istochnikov.md · приложение
+- 2026-10-13 · learningBack#80 (влит), CI main зелёный: funnel.py — лицензия, язык, объём и мусор, дубли по фрагментам, близость оглавления к области (если есть настоящие эмбеддинги). НЕ СДЕЛАНО: почти-дубли по смыслу, доля служебного текста · claude

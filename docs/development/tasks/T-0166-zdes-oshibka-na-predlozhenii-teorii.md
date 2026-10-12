@@ -2,10 +2,10 @@
 id: T-0166
 type: task
 title: «Здесь ошибка» на предложении теории
-status: backlog
+status: in_progress
 change: feature
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-13
 links:
   implements: [R-0077]
   depends_on: [T-0159, T-0158]
@@ -20,3 +20,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/oshibochnyy-konsensus-i-ispravlenie-znaniy.md · приложение
+- 2026-10-13 · learningBack#80 (влит), CI main зелёный: POST /graph/claims/{id}/report и GET /graph/claims/reports. НЕ СДЕЛАНО: кнопка «Здесь ошибка» в клиенте · claude
