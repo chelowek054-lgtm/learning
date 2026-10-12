@@ -7,7 +7,7 @@ created: 2026-10-12
 updated: 2026-10-12
 kind: manual
 links:
-  verifies: [D-0003]
+  verifies: [T-0139]
 ---
 
 # Малая кнопка: видимый размер и зона нажатия 44px
@@ -19,3 +19,4 @@ links:
 - 2026-10-12 · заведена из docs/inbox/malaya-knopka-kompaktnyy-razmer-kontrola.md · приложение
 - 2026-10-12 · на подтверждение · architect
 - 2026-10-12 · подтверждён · architect
+- 2026-10-12 · verifies переведена с D-0003 на T-0139: проверка проверяет требование или задачу, а не дизайн · claude

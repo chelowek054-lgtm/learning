@@ -5,8 +5,7 @@ title: Легенда графа верна и видна во всех вида
 status: approved
 created: 2026-10-12
 updated: 2026-10-12
-links:
-  covers: [M-0047]
+links: {}
 ---
 
 # Легенда графа верна и видна во всех видах, где граф рисуется
@@ -18,3 +17,4 @@ links:
 - 2026-10-12 · заведена из docs/inbox/legenda-vezde-gde-est-graf.md · приложение
 - 2026-10-12 · на подтверждение · architect
 - 2026-10-12 · подтверждён · architect
+- 2026-10-12 · снята связь covers: её ставит фаза, а не требование (link_wrong_type) · claude
