@@ -1,0 +1,37 @@
+name: Образ PostgreSQL (AGE + pgvector)
+
+# Образ praxis-postgres:17 нужен тестам backend в CI: в голом postgres нет ни vector, ни AGE
+# (A-0024, A-0026). Собирается из deploy/postgres и публикуется в GHCR; пакет связан с репозиторием
+# и поэтому доступен без токена, пока репозиторий публичный.
+on:
+  push:
+    branches: [main]
+    paths:
+      - deploy/postgres/**
+      - .github/workflows/postgres-image.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v6
+        with:
+          context: deploy/postgres
+          push: true
+          tags: ghcr.io/chelowek054-lgtm/praxis-postgres:17
+          labels: |
+            org.opencontainers.image.source=https://github.com/chelowek054-lgtm/learning
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
