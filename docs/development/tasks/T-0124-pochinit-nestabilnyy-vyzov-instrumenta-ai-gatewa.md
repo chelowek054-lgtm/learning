@@ -2,7 +2,7 @@
 id: T-0124
 type: task
 title: Починить нестабильный вызов инструмента AI-gateway в живых проверках
-status: in_progress
+status: in_review
 change: fix
 created: 2026-10-12
 updated: 2026-10-12
@@ -25,3 +25,4 @@ links:
 
 - 2026-10-12 · заведена из docs/inbox/zhivye-proverki-model-ne-vyzyvaet-instrument.md · приложение
 - 2026-10-12 · взята в работу и сделана в коде: learningBack#76: если инструмент не вызван, структура берётся из текста ответа (при всех обязательных полях схемы); при повторе добавляется подсказка вызвать инструмент; llm_model_fallback — запасная модель после трёх неудач (по умолчанию выключена). Локально pytest зелёный, живые прогоны V-0121 не запускались. PR не влит: CI learningBack красный и до этого PR (в postgres:16 нет vector и AGE), влить без обхода защиты нельзя · claude
+- 2026-10-12 · learningBack#76 влит, CI main зелёный. CI починен: образ praxis-postgres:17 (AGE + pgvector) публикуется суперпроектом в GHCR (ghcr.io/chelowek054-lgtm/praxis-postgres:17, pull без токена), learningBack#79 переводит на него сервис Postgres. Живые прогоны V-0121 не запускались · claude
