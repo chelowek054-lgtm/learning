@@ -2,10 +2,10 @@
 id: T-0156
 type: task
 title: Слияние понятий по всему графу с порогами близости
-status: in_review
+status: done
 change: feature
 created: 2026-10-12
-updated: 2026-10-13
+updated: 2026-10-12
 links:
   implements: [R-0073]
   depends_on: [T-0155]
@@ -21,3 +21,4 @@ links:
 
 - 2026-10-12 · заведена из docs/inbox/odno-ponyatie-v-neskolkih-oblastyah.md, docs/inbox/sverka-utverzhdeniy-i-pul-problem.md · приложение
 - 2026-10-13 · learningBack#80 (влит), CI main зелёный: слияние по всему графу; от merge_auto_similarity (0.92) с совпавшим именем (в том числе по словарю терминов) без вопроса к модели, серая зона — суд модели с кэшем; утверждения, термины и области вливаемого переходят к оставшемуся · claude
+- 2026-10-12 · закрыта: проверки V-0132 passed по последнему отчёту прогона · claude

@@ -6,6 +6,7 @@ status: approved
 created: 2026-10-12
 updated: 2026-10-12
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_v0135_freshness.py -q'
 links:
   verifies: [R-0076]
 ---
@@ -19,3 +20,4 @@ links:
 - 2026-10-12 · заведена из docs/inbox/protukhanie-znaniy-v-grafe.md · приложение
 - 2026-10-12 · на подтверждение · architect
 - 2026-10-12 · подтверждён · architect
+- 2026-10-12 · добавлена команда автоматической проверки (tests/test_v0135_freshness.py): просроченное, замена быстрых утверждений, возврат в повторение, проверка ссылок · claude

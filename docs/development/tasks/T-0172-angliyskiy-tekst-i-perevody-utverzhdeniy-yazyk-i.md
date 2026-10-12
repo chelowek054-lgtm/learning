@@ -2,10 +2,10 @@
 id: T-0172
 type: task
 title: Английский текст и переводы утверждений, язык источника и фрагмента
-status: in_review
+status: done
 change: feature
 created: 2026-10-12
-updated: 2026-10-13
+updated: 2026-10-12
 links:
   implements: [R-0079]
   depends_on: [T-0150]
@@ -21,3 +21,4 @@ links:
 
 - 2026-10-12 · заведена из docs/inbox/mnogoyazychnyy-graf-znaniy.md, docs/inbox/razbor-istochnikov-na-dvuh-yazykah.md · приложение
 - 2026-10-13 · learningBack#80 (влит), CI main зелёный: английский текст и перевод на русский утверждения приходят в одном запросе извлечения; язык документа определяется при приёме · claude
+- 2026-10-12 · закрыта: проверки V-0138 passed по последнему отчёту прогона · claude

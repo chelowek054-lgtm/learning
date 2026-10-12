@@ -2,10 +2,10 @@
 id: T-0159
 type: task
 title: Сборка теории узла из утверждений со ссылками
-status: in_review
+status: done
 change: feature
 created: 2026-10-12
-updated: 2026-10-13
+updated: 2026-10-12
 links:
   implements: [R-0075]
   depends_on: [T-0149]
@@ -21,3 +21,4 @@ links:
 
 - 2026-10-12 · заведена из docs/inbox/sborka-uzla-i-bank-zadaniy-bez-llm-pri-obuchenii.md · приложение
 - 2026-10-13 · learningBack#80 (влит), CI main зелёный: node_compile.py — один запрос на понятие по хэшу набора утверждений, разделы со ссылками на утверждения, предложение без ссылки отбрасывается · claude
+- 2026-10-12 · закрыта: проверки V-0134 passed по последнему отчёту прогона · claude

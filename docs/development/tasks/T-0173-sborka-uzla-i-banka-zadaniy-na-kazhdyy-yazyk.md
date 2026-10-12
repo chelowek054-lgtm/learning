@@ -2,10 +2,10 @@
 id: T-0173
 type: task
 title: Сборка узла и банка заданий на каждый язык
-status: in_review
+status: done
 change: feature
 created: 2026-10-12
-updated: 2026-10-13
+updated: 2026-10-12
 links:
   implements: [R-0079]
   depends_on: [T-0160, T-0172]
@@ -21,3 +21,4 @@ links:
 
 - 2026-10-12 · заведена из docs/inbox/mnogoyazychnyy-graf-znaniy.md · приложение
 - 2026-10-13 · learningBack#80 (влит), CI main зелёный: сборка теории и заданий на каждый язык из graph_languages одним запросом, content.i18n · claude
+- 2026-10-12 · закрыта: проверки V-0138 passed по последнему отчёту прогона · claude

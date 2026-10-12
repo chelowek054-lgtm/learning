@@ -2,7 +2,7 @@
 id: T-0164
 type: task
 title: Проверка ссылок на оригинал
-status: in_review
+status: done
 change: feature
 created: 2026-10-12
 updated: 2026-10-12
@@ -21,3 +21,4 @@ links:
 
 - 2026-10-12 · заведена из docs/inbox/protukhanie-znaniy-v-grafe.md · приложение
 - 2026-10-12 · learningBack#81 (влит), CI зелёный: задача check_links и POST /graph/sources/check-links проверяют адреса источников (HEAD, при отказе GET) раз в 30 дней; мёртвая ссылка помечается в meta и в ответе утверждений (linkDead), фрагмент и атрибуция остаются · claude
+- 2026-10-12 · закрыта: проверки V-0135 passed по последнему отчёту прогона · claude

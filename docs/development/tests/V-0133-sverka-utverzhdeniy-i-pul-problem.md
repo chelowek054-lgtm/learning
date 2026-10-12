@@ -6,6 +6,7 @@ status: approved
 created: 2026-10-12
 updated: 2026-10-12
 kind: manual
+command: 'cd learningBack && uv run pytest tests/test_v0133_reconcile_pool.py -q'
 links:
   verifies: [R-0074]
 ---
@@ -19,3 +20,4 @@ links:
 - 2026-10-12 · заведена из docs/inbox/sverka-utverzhdeniy-i-pul-problem.md · приложение
 - 2026-10-12 · на подтверждение · architect
 - 2026-10-12 · подтверждён · architect
+- 2026-10-12 · добавлена команда автоматической проверки (tests/test_v0133_reconcile_pool.py): один запрос на три утверждения, одна проблема в пуле, спорное вне сборки · claude

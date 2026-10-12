@@ -19,3 +19,4 @@ links:
 - 2026-10-12 · заведена из docs/inbox/i18n-interfeysa-russkiy-i-angliyskiy.md · приложение
 - 2026-10-12 · на подтверждение · architect
 - 2026-10-12 · подтверждён · architect
+- 2026-10-12 · автоматическая часть пройдена (learningFront/src/shared/i18n/i18n.test.ts и learningBack/tests/test_v0140_server_messages.py: ключи ru и en совпадают, множественное число для 1, 2, 5, 11, 21, текст ошибки по коду). НЕ ПРОЙДЕНО: ручная проверка всех вкладок на обоих языках на трёх ширинах · claude
