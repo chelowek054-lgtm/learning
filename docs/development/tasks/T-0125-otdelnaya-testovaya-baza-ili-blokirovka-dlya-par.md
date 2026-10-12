@@ -2,7 +2,7 @@
 id: T-0125
 type: task
 title: Отдельная тестовая база или блокировка для параллельных прогонов backend-тестов
-status: in_progress
+status: in_review
 change: fix
 created: 2026-10-12
 updated: 2026-10-12
@@ -23,3 +23,4 @@ links:
 
 - 2026-10-12 · заведена из docs/inbox/zhivye-proverki-model-ne-vyzyvaet-instrument.md · приложение
 - 2026-10-12 · взята в работу и сделана в коде: learningBack#75: база, scratch-база проверки миграций и бакет бэкапа получают имя на запуск, тестовая база удаляется в конце; два одновременных pytest проходят без ложных падений (локально). PR не влит: CI learningBack красный и до этого PR (нет vector и AGE в образе postgres:16) · claude
+- 2026-10-12 · learningBack#75 влит, CI main зелёный; два одновременных pytest проходят без ложных падений (локально). Проверку V-0122 не проходили · claude
