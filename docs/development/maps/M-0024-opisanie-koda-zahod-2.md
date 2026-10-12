@@ -971,7 +971,7 @@ updated: 2026-10-07
         "to": "learningFront/src/features/study-method/index.ts",
         "evidence": {
           "path": "learningFront/src/pages/profile/ui/profile-screen.tsx",
-          "line": 6,
+          "line": 7,
           "fragment": "import { StudyMethodPicker } from '@/features/study-method';"
         }
       },
@@ -1178,7 +1178,7 @@ updated: 2026-10-07
         "to": "learningFront/src/shared/api/app-version.ts",
         "evidence": {
           "path": "learningFront/src/shared/api/index.ts",
-          "line": 42,
+          "line": 58,
           "fragment": "export { APP_VERSION } from './app-version';"
         }
       },
@@ -1187,7 +1187,7 @@ updated: 2026-10-07
         "to": "learningFront/src/shared/api/client-outdated.ts",
         "evidence": {
           "path": "learningFront/src/shared/api/index.ts",
-          "line": 41,
+          "line": 57,
           "fragment": "export { ClientOutdatedError, onClientOutdated } from './client-outdated';"
         }
       },
@@ -1196,7 +1196,7 @@ updated: 2026-10-07
         "to": "learningFront/src/shared/api/error-reporter.ts",
         "evidence": {
           "path": "learningFront/src/shared/api/index.ts",
-          "line": 43,
+          "line": 59,
           "fragment": "export { installErrorReporter } from './error-reporter';"
         }
       },
@@ -1232,7 +1232,7 @@ updated: 2026-10-07
         "to": "learningFront/src/shared/api/voice-outbox.ts",
         "evidence": {
           "path": "learningFront/src/shared/api/index.ts",
-          "line": 45,
+          "line": 61,
           "fragment": "export { flushVoice, pendingVoice, queueVoice } from './voice-outbox';"
         }
       },
@@ -1472,7 +1472,7 @@ updated: 2026-10-07
         "direction": "write",
         "evidence": {
           "path": "learningFront/src/shared/api/client-outdated.ts",
-          "line": 27,
+          "line": 28,
           "fragment": "listeners.add(listener);"
         }
       },
@@ -1482,7 +1482,7 @@ updated: 2026-10-07
         "direction": "read",
         "evidence": {
           "path": "learningFront/src/shared/api/client-outdated.ts",
-          "line": 32,
+          "line": 33,
           "fragment": "for (const l of listeners) l(e);"
         }
       },
@@ -1542,7 +1542,7 @@ updated: 2026-10-07
         "direction": "read",
         "evidence": {
           "path": "scripts/restore-check.sh",
-          "line": 30,
+          "line": 33,
           "fragment": "gzip -dc \"$FILE\""
         }
       },
@@ -1562,7 +1562,7 @@ updated: 2026-10-07
         "direction": "read",
         "evidence": {
           "path": "scripts/restore-check.sh",
-          "line": 35,
+          "line": 38,
           "fragment": "LIVE_V=\"$(version \"$PGDB\")\""
         }
       },

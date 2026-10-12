@@ -2,10 +2,10 @@
 id: T-0155
 type: task
 title: Принадлежность понятия к областям
-status: in_progress
+status: in_review
 change: feature
 created: 2026-10-12
-updated: 2026-10-13
+updated: 2026-10-12
 links:
   implements: [R-0073]
   verified_by: [V-0132]
@@ -20,3 +20,4 @@ links:
 
 - 2026-10-12 · заведена из docs/inbox/odno-ponyatie-v-neskolkih-oblastyah.md · приложение
 - 2026-10-13 · learningBack#80 (влит), CI main зелёный: concept_area заполняется при извлечении и при слиянии, поиск похожих идёт по всему графу. НЕ СДЕЛАНО: курс, схема, плейсмент и освоенность по-прежнему читают concept.domain, а не принадлежность через concept_area · claude
+- 2026-10-12 · learningBack#81 (влит), CI зелёный: курс, плейсмент, освоенность, граф пользователя, центральность, сборка узлов, связь с уведомлениями и административная карта области берут понятия через concept_area (areas.in_area/area_concepts); этап, уровень и необязательность курса и графа — для этой области (areas.area_meta). НЕ СДЕЛАНО: очередь специалиста (review.py), счётчики областей в обзоре и prior_report по-прежнему считают по домашней области · claude

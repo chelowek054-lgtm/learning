@@ -2,7 +2,7 @@
 id: T-0163
 type: task
 title: Плановое обновление просроченных узлов и замена утверждений
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-12
 updated: 2026-10-12
@@ -20,3 +20,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/protukhanie-znaniy-v-grafe.md · приложение
+- 2026-10-12 · learningBack#81 (влит), CI зелёный: freshness.py — просроченные утверждения по областям без модели, задача refresh_stale ставит поиск свежих источников, POST /graph/claims/refresh, scripts/refresh_knowledge.py для cron; правило замены: у быстро устаревающих утверждений более свежая дата заменяет прежнее без пула (reconcile); пересобранный узел возвращает карточки изучавших в повторение. Расписание внешнее (приложение само по часам ничего не запускает) · claude

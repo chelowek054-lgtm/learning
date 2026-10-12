@@ -1408,7 +1408,7 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/models.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/chain_placement.py",
-          "line": 21,
+          "line": 22,
           "fragment": "from modules.knowledge.models import Concept"
         }
       },
@@ -1417,7 +1417,7 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/placement.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/chain_placement.py",
-          "line": 22,
+          "line": 23,
           "fragment": "from modules.knowledge.placement import ("
         }
       },
@@ -1462,7 +1462,7 @@ updated: 2026-10-05
         "to": "learningBack/core/deps.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/cross_links_api.py",
-          "line": 8,
+          "line": 9,
           "fragment": "from core.deps import CurrentSuperuser, CurrentUser, SessionDep"
         }
       },
@@ -1471,7 +1471,7 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/chain_placement.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/cross_links_api.py",
-          "line": 9,
+          "line": 10,
           "fragment": "from modules.knowledge import chain_placement, cross_links, path_volume"
         }
       },
@@ -1480,7 +1480,7 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/cross_links.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/cross_links_api.py",
-          "line": 9,
+          "line": 10,
           "fragment": "from modules.knowledge import chain_placement, cross_links, path_volume"
         }
       },
@@ -1489,7 +1489,7 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/path_volume.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/cross_links_api.py",
-          "line": 9,
+          "line": 10,
           "fragment": "from modules.knowledge import chain_placement, cross_links, path_volume"
         }
       },
@@ -1534,7 +1534,7 @@ updated: 2026-10-05
         "to": "learningBack/api/routers/methods.py",
         "evidence": {
           "path": "learningBack/api/app.py",
-          "line": 18,
+          "line": 19,
           "fragment": "from api.routers import methods as methods_router"
         }
       },
@@ -1543,7 +1543,7 @@ updated: 2026-10-05
         "to": "learningBack/api/routers/modules_admin.py",
         "evidence": {
           "path": "learningBack/api/app.py",
-          "line": 19,
+          "line": 20,
           "fragment": "from api.routers import modules_admin"
         }
       },
@@ -1552,7 +1552,7 @@ updated: 2026-10-05
         "to": "learningBack/api/routers/userdata.py",
         "evidence": {
           "path": "learningBack/api/app.py",
-          "line": 20,
+          "line": 21,
           "fragment": "from api.routers import userdata as userdata_router"
         }
       },
@@ -1561,7 +1561,7 @@ updated: 2026-10-05
         "to": "learningBack/api/routers/monitoring.py",
         "evidence": {
           "path": "learningBack/api/app.py",
-          "line": 21,
+          "line": 22,
           "fragment": "from api.routers import monitoring as monitoring_router"
         }
       },
@@ -1570,7 +1570,7 @@ updated: 2026-10-05
         "to": "learningBack/core/versioning.py",
         "evidence": {
           "path": "learningBack/api/app.py",
-          "line": 16,
+          "line": 17,
           "fragment": "from core.versioning import ClientVersionMiddleware, version_info"
         }
       },
@@ -1633,7 +1633,7 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/cross_links_api.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/router.py",
-          "line": 16,
+          "line": 18,
           "fragment": "from modules.knowledge.cross_links_api import router as _cross_links_router"
         }
       },
@@ -1642,7 +1642,7 @@ updated: 2026-10-05
         "to": "learningBack/modules/knowledge/domains_api.py",
         "evidence": {
           "path": "learningBack/modules/knowledge/router.py",
-          "line": 17,
+          "line": 19,
           "fragment": "from modules.knowledge.domains_api import router as _domains_router"
         }
       },
@@ -1651,7 +1651,7 @@ updated: 2026-10-05
         "to": "learningBack/core/mail.py",
         "evidence": {
           "path": "learningBack/api/routers/auth.py",
-          "line": 11,
+          "line": 13,
           "fragment": "from core.mail import reset_code_message, send_safely"
         }
       }
@@ -1798,7 +1798,7 @@ updated: 2026-10-05
         "direction": "both",
         "evidence": {
           "path": "learningBack/core/userdata.py",
-          "line": 102,
+          "line": 103,
           "fragment": "return [row_dict(r) for r in session.query(model).filter(column == user_id)]"
         }
       },
@@ -1868,7 +1868,7 @@ updated: 2026-10-05
         "direction": "both",
         "evidence": {
           "path": "learningBack/core/sandbox.py",
-          "line": 71,
+          "line": 70,
           "fragment": "window = _calls[module_id]"
         }
       },
@@ -1928,8 +1928,8 @@ updated: 2026-10-05
         "direction": "read",
         "evidence": {
           "path": "learningBack/modules/knowledge/chain_placement.py",
-          "line": 39,
-          "fragment": "goal = [c.id for c in session.query(Concept).filter(Concept.domain == domain).all()]"
+          "line": 40,
+          "fragment": "goal = [c.id for c in area_concepts(session, domain)]"
         }
       },
       {
@@ -1968,7 +1968,7 @@ updated: 2026-10-05
         "to": "GET /me/study-methods",
         "evidence": {
           "path": "learningFront/src/features/study-method/ui/study-method-picker.tsx",
-          "line": 17,
+          "line": 19,
           "fragment": "getStudyMethods()"
         }
       },
@@ -1977,7 +1977,7 @@ updated: 2026-10-05
         "to": "PUT /me/study-methods",
         "evidence": {
           "path": "learningFront/src/features/study-method/ui/study-method-picker.tsx",
-          "line": 32,
+          "line": 34,
           "fragment": "setStudyMethod(REMEMBER_PURPOSE, id)"
         }
       }

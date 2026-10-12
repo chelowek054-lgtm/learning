@@ -2,7 +2,7 @@
 id: T-0154
 type: task
 title: Ссылки на источник в теории узла в клиенте
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-12
 updated: 2026-10-12
@@ -20,3 +20,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/istochniki-tolko-s-licenziey-i-vidimost-uchaschemusya.md · приложение
+- 2026-10-12 · learningFront#58 (влит), check зелёный: под теорией шага (concept_study) кнопка «Источники» — утверждения узла с названием источника, главой, страницей, лицензией, уровнем доверия, датой актуальности и ссылкой на оригинал; цитата только если сервер её прислал. Компонент в entities/concept. НЕ СДЕЛАНО: показ в плашке узла на схеме; в браузере не проверялось · claude
