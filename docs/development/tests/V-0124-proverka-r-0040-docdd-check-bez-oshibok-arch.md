@@ -2,7 +2,7 @@
 id: V-0124
 type: verification
 title: 'Проверка R-0040: docdd check без ошибок arch_*'
-status: draft
+status: approved
 created: 2026-10-12
 updated: 2026-10-12
 kind: manual
@@ -18,3 +18,5 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/ostatok-svedeniy-konsoli-posle-ochistki.md · приложение
+- 2026-10-12 · на подтверждение · architect
+- 2026-10-12 · подтверждён · architect
