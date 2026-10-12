@@ -5,8 +5,7 @@ title: Схема пути группирует связи по этапам н�
 status: approved
 created: 2026-10-12
 updated: 2026-10-12
-links:
-  covers: [M-0048]
+links: {}
 ---
 
 # Схема пути группирует связи по этапам на крупных графах
@@ -18,3 +17,4 @@ links:
 - 2026-10-12 · заведена из docs/inbox/skhema-puti-gruppirovka-svyazey-vmesto-pautiny.md · приложение
 - 2026-10-12 · на подтверждение · architect
 - 2026-10-12 · подтверждён · architect
+- 2026-10-12 · снята связь covers: её ставит фаза, а не требование (link_wrong_type) · claude
