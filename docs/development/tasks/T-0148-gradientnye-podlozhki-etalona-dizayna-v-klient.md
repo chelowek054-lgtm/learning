@@ -2,7 +2,7 @@
 id: T-0148
 type: task
 title: Градиентные подложки эталона дизайна в клиент
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-12
 updated: 2026-10-12
@@ -19,3 +19,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/skhema-puti-nedodelki-polnoekrannogo-rezhima.md · приложение
+- 2026-10-12 · на проверку: learningFront#54 — подложка страницы backdrop.page из D-0002 (два радиальных пятна ролями accent и core) в Screen; в OLED и контрастной темах её нет. На нативных платформах через experimental_backgroundImage — не проверено, что он работает. Проверки не писались и не проходились (по просьбе, сделать потом); check (tsc, eslint, prettier, 286 тестов) зелёный, на экране и устройстве не смотрели · claude

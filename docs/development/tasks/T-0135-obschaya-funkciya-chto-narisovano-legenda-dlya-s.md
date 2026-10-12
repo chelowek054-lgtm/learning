@@ -2,7 +2,7 @@
 id: T-0135
 type: task
 title: Общая функция «что нарисовано → легенда» для схемы графа
-status: backlog
+status: in_review
 change: feature
 created: 2026-10-12
 updated: 2026-10-12
@@ -20,3 +20,4 @@ links:
 ## Журнал
 
 - 2026-10-12 · заведена из docs/inbox/legenda-vezde-gde-est-graf.md · приложение
+- 2026-10-12 · на проверку: learningFront#54 — общая функция legendFor (model/legend.ts): строки и числа по тому, что нарисовано; образцы нарисованы теми же приёмами (ui/scheme-legend.tsx). Админка канона в learningBack и макеты Claude Design не тронуты. Проверки не писались и не проходились (по просьбе, сделать потом); check (tsc, eslint, prettier, 286 тестов) зелёный, на экране и устройстве не смотрели · claude
