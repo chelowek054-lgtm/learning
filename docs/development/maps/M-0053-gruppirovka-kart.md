@@ -1318,7 +1318,7 @@ updated: 2026-10-20
           "learningFront/src/shared/engine/scheduler/card-merge.test.ts",
           "learningFront/src/shared/api/notification-route.test.ts",
           "learningFront/src/shared/config/design.test.ts",
-          "learningFront/src/shared/i18n/i18n.test.ts",
+          "learningFront/src/shared/i18n-core/i18n.test.ts",
           "learningFront/src/shared/ui/nav-layout.test.ts",
           "learningFront/src/shared/ui/theme-mode.test.ts"
         ]
