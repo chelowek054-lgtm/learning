@@ -6046,11 +6046,11 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/features/course/model/draft.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/features/course/model/draft.ts",
           "line": 3,
-          "fragment": "import { translate } from '../../../shared/i18n/translate';"
+          "fragment": "import { translate } from '../../../shared/i18n-core';"
         }
       },
       {
@@ -6064,11 +6064,11 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/features/course/model/group-steps.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/features/course/model/group-steps.ts",
           "line": 3,
-          "fragment": "import { translate } from '../../../shared/i18n/translate';"
+          "fragment": "import { translate } from '../../../shared/i18n-core';"
         }
       },
       {
@@ -6154,11 +6154,11 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/features/goal-intake/model/steps.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/features/goal-intake/model/steps.ts",
           "line": 1,
-          "fragment": "import { translate } from '../../../shared/i18n/translate';"
+          "fragment": "import { translate } from '../../../shared/i18n-core';"
         }
       },
       {
@@ -6262,11 +6262,11 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/features/graph-editor/model/build-progress.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/features/graph-editor/model/build-progress.ts",
           "line": 4,
-          "fragment": "import { translate } from '../../../shared/i18n/translate';"
+          "fragment": "import { translate } from '../../../shared/i18n-core';"
         }
       },
       {
@@ -6307,11 +6307,11 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/features/graph-editor/model/legend.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/features/graph-editor/model/legend.ts",
           "line": 5,
-          "fragment": "import { translate } from '../../../shared/i18n/translate';"
+          "fragment": "import { translate } from '../../../shared/i18n-core';"
         }
       },
       {
@@ -6334,11 +6334,11 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/features/graph-editor/model/overview.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/features/graph-editor/model/overview.ts",
           "line": 21,
-          "fragment": "import { translate } from '../../../shared/i18n/translate';"
+          "fragment": "import { translate } from '../../../shared/i18n-core';"
         }
       },
       {
@@ -6379,11 +6379,11 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/features/graph-editor/model/scheme.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/features/graph-editor/model/scheme.ts",
           "line": 4,
-          "fragment": "import { translate } from '../../../shared/i18n/translate';"
+          "fragment": "import { translate } from '../../../shared/i18n-core';"
         }
       },
       {
@@ -6415,11 +6415,11 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/features/graph-editor/model/stage-groups.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/features/graph-editor/model/stage-groups.ts",
           "line": 3,
-          "fragment": "import { translate } from '../../../shared/i18n/translate';"
+          "fragment": "import { translate } from '../../../shared/i18n-core';"
         }
       },
       {
@@ -7072,11 +7072,11 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/features/prior-test/model/report.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/features/prior-test/model/report.ts",
           "line": 3,
-          "fragment": "import { translate } from '../../../shared/i18n/translate';"
+          "fragment": "import { translate } from '../../../shared/i18n-core';"
         }
       },
       {
@@ -7162,11 +7162,11 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/features/push-settings/model/push-model.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/features/push-settings/model/push-model.ts",
           "line": 3,
-          "fragment": "import { translate } from '../../../shared/i18n/translate';"
+          "fragment": "import { translate } from '../../../shared/i18n-core';"
         }
       },
       {
@@ -7243,11 +7243,11 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/features/skill-profile/model/profile-model.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/features/skill-profile/model/profile-model.ts",
           "line": 9,
-          "fragment": "import { translate } from '../../../shared/i18n/translate';"
+          "fragment": "import { translate } from '../../../shared/i18n-core';"
         }
       },
       {
@@ -7333,11 +7333,11 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/features/sources/model/gaps-model.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/features/sources/model/gaps-model.ts",
           "line": 3,
-          "fragment": "import { translate } from '../../../shared/i18n/translate';"
+          "fragment": "import { translate } from '../../../shared/i18n-core';"
         }
       },
       {
@@ -7369,11 +7369,11 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/features/sources/model/sources-model.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/features/sources/model/sources-model.ts",
           "line": 3,
-          "fragment": "import { translate } from '../../../shared/i18n/translate';"
+          "fragment": "import { translate } from '../../../shared/i18n-core';"
         }
       },
       {
@@ -7693,20 +7693,20 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/shared/api/error-text.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/shared/api/error-text.ts",
           "line": 2,
-          "fragment": "import { translate } from '../i18n/translate';"
+          "fragment": "import { translate } from '../i18n-core';"
         }
       },
       {
         "from": "learningFront/src/shared/api/error-text.ts",
-        "to": "learningFront/src/shared/i18n/ru.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/shared/api/error-text.ts",
           "line": 3,
-          "fragment": "import { ru, type Key } from '../i18n/ru';"
+          "fragment": "import { ru, type Key } from '../i18n-core';"
         }
       },
       {
@@ -7837,11 +7837,11 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/shared/api/sources-api.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/shared/api/sources-api.ts",
           "line": 6,
-          "fragment": "import { translate } from '../i18n/translate';"
+          "fragment": "import { translate } from '../i18n-core';"
         }
       },
       {
@@ -7863,30 +7863,30 @@ updated: 2026-10-20
         }
       },
       {
-        "from": "learningFront/src/shared/i18n/en.ts",
-        "to": "learningFront/src/shared/i18n/core.ts",
+        "from": "learningFront/src/shared/i18n-core/en.ts",
+        "to": "learningFront/src/shared/i18n-core/core.ts",
         "evidence": {
-          "path": "learningFront/src/shared/i18n/en.ts",
+          "path": "learningFront/src/shared/i18n-core/en.ts",
           "line": 2,
           "fragment": "import type { Dictionary } from './core';"
         }
       },
       {
-        "from": "learningFront/src/shared/i18n/en.ts",
-        "to": "learningFront/src/shared/i18n/ru.ts",
+        "from": "learningFront/src/shared/i18n-core/en.ts",
+        "to": "learningFront/src/shared/i18n-core/ru.ts",
         "evidence": {
-          "path": "learningFront/src/shared/i18n/en.ts",
+          "path": "learningFront/src/shared/i18n-core/en.ts",
           "line": 3,
           "fragment": "import type { Key } from './ru';"
         }
       },
       {
         "from": "learningFront/src/shared/i18n/i18n-context.tsx",
-        "to": "learningFront/src/shared/i18n/core.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/shared/i18n/i18n-context.tsx",
-          "line": 22,
-          "fragment": "} from './core';"
+          "line": 23,
+          "fragment": "} from '../i18n-core';"
         }
       },
       {
@@ -7894,79 +7894,70 @@ updated: 2026-10-20
         "to": "learningFront/src/shared/i18n/lang-storage.ts",
         "evidence": {
           "path": "learningFront/src/shared/i18n/i18n-context.tsx",
-          "line": 23,
+          "line": 24,
           "fragment": "import { getStoredLang, setStoredLang } from './lang-storage';"
         }
       },
       {
         "from": "learningFront/src/shared/i18n/i18n-context.tsx",
-        "to": "learningFront/src/shared/i18n/translate.ts",
-        "evidence": {
-          "path": "learningFront/src/shared/i18n/i18n-context.tsx",
-          "line": 24,
-          "fragment": "import { currentLang, dictionaries, setCurrentLang } from './translate';"
-        }
-      },
-      {
-        "from": "learningFront/src/shared/i18n/i18n-context.tsx",
-        "to": "learningFront/src/shared/i18n/ru.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/shared/i18n/i18n-context.tsx",
           "line": 25,
-          "fragment": "import type { Key } from './ru';"
+          "fragment": "import { currentLang, dictionaries, setCurrentLang } from '../i18n-core';"
         }
       },
       {
-        "from": "learningFront/src/shared/i18n/i18n.test.ts",
+        "from": "learningFront/src/shared/i18n-core/i18n.test.ts",
         "to": "learningFront/src/shared/api/http.ts",
         "evidence": {
-          "path": "learningFront/src/shared/i18n/i18n.test.ts",
-          "line": 8,
+          "path": "learningFront/src/shared/i18n-core/i18n.test.ts",
+          "line": 5,
           "fragment": "import { ApiError, NetworkError } from '../api/http';"
         }
       },
       {
-        "from": "learningFront/src/shared/i18n/i18n.test.ts",
+        "from": "learningFront/src/shared/i18n-core/i18n.test.ts",
         "to": "learningFront/src/shared/api/error-text.ts",
         "evidence": {
-          "path": "learningFront/src/shared/i18n/i18n.test.ts",
-          "line": 9,
+          "path": "learningFront/src/shared/i18n-core/i18n.test.ts",
+          "line": 6,
           "fragment": "import { errorText } from '../api/error-text';"
         }
       },
       {
-        "from": "learningFront/src/shared/i18n/i18n.test.ts",
-        "to": "learningFront/src/shared/i18n/core.ts",
+        "from": "learningFront/src/shared/i18n-core/i18n.test.ts",
+        "to": "learningFront/src/shared/i18n-core/core.ts",
         "evidence": {
-          "path": "learningFront/src/shared/i18n/i18n.test.ts",
-          "line": 10,
+          "path": "learningFront/src/shared/i18n-core/i18n.test.ts",
+          "line": 7,
           "fragment": "import { pluralCategory, render, type Entry } from './core';"
         }
       },
       {
-        "from": "learningFront/src/shared/i18n/i18n.test.ts",
-        "to": "learningFront/src/shared/i18n/en.ts",
+        "from": "learningFront/src/shared/i18n-core/i18n.test.ts",
+        "to": "learningFront/src/shared/i18n-core/en.ts",
         "evidence": {
-          "path": "learningFront/src/shared/i18n/i18n.test.ts",
-          "line": 11,
+          "path": "learningFront/src/shared/i18n-core/i18n.test.ts",
+          "line": 8,
           "fragment": "import { en } from './en';"
         }
       },
       {
-        "from": "learningFront/src/shared/i18n/i18n.test.ts",
-        "to": "learningFront/src/shared/i18n/ru.ts",
+        "from": "learningFront/src/shared/i18n-core/i18n.test.ts",
+        "to": "learningFront/src/shared/i18n-core/ru.ts",
         "evidence": {
-          "path": "learningFront/src/shared/i18n/i18n.test.ts",
-          "line": 12,
+          "path": "learningFront/src/shared/i18n-core/i18n.test.ts",
+          "line": 9,
           "fragment": "import { ru } from './ru';"
         }
       },
       {
-        "from": "learningFront/src/shared/i18n/i18n.test.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "from": "learningFront/src/shared/i18n-core/i18n.test.ts",
+        "to": "learningFront/src/shared/i18n-core/translate.ts",
         "evidence": {
-          "path": "learningFront/src/shared/i18n/i18n.test.ts",
-          "line": 13,
+          "path": "learningFront/src/shared/i18n-core/i18n.test.ts",
+          "line": 10,
           "fragment": "import { setCurrentLang } from './translate';"
         }
       },
@@ -7981,81 +7972,81 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/shared/i18n/index.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/shared/i18n/index.ts",
           "line": 3,
-          "fragment": "export { currentLang, setCurrentLang, translate } from './translate';"
+          "fragment": "export { currentLang, setCurrentLang, translate } from '../i18n-core';"
         }
       },
       {
         "from": "learningFront/src/shared/i18n/index.ts",
-        "to": "learningFront/src/shared/i18n/core.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/shared/i18n/index.ts",
           "line": 18,
-          "fragment": "} from './core';"
+          "fragment": "} from '../i18n-core';"
         }
       },
       {
         "from": "learningFront/src/shared/i18n/index.ts",
-        "to": "learningFront/src/shared/i18n/ru.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/shared/i18n/index.ts",
           "line": 19,
-          "fragment": "export type { Key } from './ru';"
+          "fragment": "export type { Key } from '../i18n-core';"
         }
       },
       {
         "from": "learningFront/src/shared/i18n/lang-storage.ts",
-        "to": "learningFront/src/shared/i18n/core.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/shared/i18n/lang-storage.ts",
           "line": 4,
-          "fragment": "import { isLang, type Lang } from './core';"
+          "fragment": "import { isLang, type Lang } from '../i18n-core';"
         }
       },
       {
         "from": "learningFront/src/shared/i18n/lang-storage.web.ts",
-        "to": "learningFront/src/shared/i18n/core.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/shared/i18n/lang-storage.web.ts",
           "line": 2,
-          "fragment": "import { isLang, type Lang } from './core';"
+          "fragment": "import { isLang, type Lang } from '../i18n-core';"
         }
       },
       {
-        "from": "learningFront/src/shared/i18n/ru.ts",
-        "to": "learningFront/src/shared/i18n/core.ts",
+        "from": "learningFront/src/shared/i18n-core/ru.ts",
+        "to": "learningFront/src/shared/i18n-core/core.ts",
         "evidence": {
-          "path": "learningFront/src/shared/i18n/ru.ts",
+          "path": "learningFront/src/shared/i18n-core/ru.ts",
           "line": 3,
           "fragment": "import type { Dictionary } from './core';"
         }
       },
       {
-        "from": "learningFront/src/shared/i18n/translate.ts",
-        "to": "learningFront/src/shared/i18n/core.ts",
+        "from": "learningFront/src/shared/i18n-core/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/core.ts",
         "evidence": {
-          "path": "learningFront/src/shared/i18n/translate.ts",
+          "path": "learningFront/src/shared/i18n-core/translate.ts",
           "line": 2,
           "fragment": "import { deviceLocale, lookup, pickLanguage, type Lang, type Params } from './core';"
         }
       },
       {
-        "from": "learningFront/src/shared/i18n/translate.ts",
-        "to": "learningFront/src/shared/i18n/en.ts",
+        "from": "learningFront/src/shared/i18n-core/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/en.ts",
         "evidence": {
-          "path": "learningFront/src/shared/i18n/translate.ts",
+          "path": "learningFront/src/shared/i18n-core/translate.ts",
           "line": 3,
           "fragment": "import { en } from './en';"
         }
       },
       {
-        "from": "learningFront/src/shared/i18n/translate.ts",
-        "to": "learningFront/src/shared/i18n/ru.ts",
+        "from": "learningFront/src/shared/i18n-core/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/ru.ts",
         "evidence": {
-          "path": "learningFront/src/shared/i18n/translate.ts",
+          "path": "learningFront/src/shared/i18n-core/translate.ts",
           "line": 4,
           "fragment": "import { ru, type Key } from './ru';"
         }
@@ -8170,20 +8161,20 @@ updated: 2026-10-20
       },
       {
         "from": "learningFront/src/shared/ui/theme-mode.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/shared/ui/theme-mode.ts",
           "line": 3,
-          "fragment": "import { translate } from '../i18n/translate';"
+          "fragment": "import { translate } from '../i18n-core';"
         }
       },
       {
         "from": "learningFront/src/test-setup.ts",
-        "to": "learningFront/src/shared/i18n/translate.ts",
+        "to": "learningFront/src/shared/i18n-core/index.ts",
         "evidence": {
           "path": "learningFront/src/test-setup.ts",
           "line": 1,
-          "fragment": "import { setCurrentLang } from './shared/i18n/translate';"
+          "fragment": "import { setCurrentLang } from './shared/i18n-core';"
         }
       },
       {
@@ -8723,12 +8714,12 @@ updated: 2026-10-20
         }
       },
       {
-        "from": "learningFront/src/shared/i18n/i18n.test.ts",
+        "from": "learningFront/src/shared/i18n-core/i18n.test.ts",
         "to": "http-backend-api",
         "direction": "both",
         "evidence": {
-          "path": "learningFront/src/shared/i18n/i18n.test.ts",
-          "line": 8,
+          "path": "learningFront/src/shared/i18n-core/i18n.test.ts",
+          "line": 5,
           "fragment": "import { ApiError, NetworkError } from '../api/http';"
         }
       }
